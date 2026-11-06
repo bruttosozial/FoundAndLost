@@ -1,0 +1,21 @@
+[gd_scene format=3 uid="uid://c5cbhrcednbmc"]
+
+[ext_resource type="Script" uid="uid://dvk6qbqbyp5s3" path="res://Scripts/skelly.gd" id="1_ltsch"]
+[ext_resource type="Texture2D" uid="uid://bq2c64kuek34o" path="res://Assets/playerBlock.png" id="2_ltsch"]
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_3mm3k"]
+radius = 20.0
+height = 72.0
+
+[node name="Skell" type="CharacterBody2D" unique_id=1846132312]
+motion_mode = 1
+script = ExtResource("1_ltsch")
+
+[node name="PlayerBlock" type="Sprite2D" parent="." unique_id=1986204866]
+position = Vector2(-2.5000024, -7.9999995)
+scale = Vector2(0.52222216, 0.5375)
+texture = ExtResource("2_ltsch")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=899463909]
+position = Vector2(-4, -7)
+shape = SubResource("CapsuleShape2D_3mm3k")
