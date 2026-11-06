@@ -1,4 +1,8 @@
 extends IInteractable
+class_name InteractItem
+
+@export var item_res : ItemResource
+@export var player : PlayerController
 
 
 # Called when the node enters the scene tree for the first time.
@@ -12,3 +16,5 @@ func _process(delta: float) -> void:
 
 func interact():
 	print("pick up object!!")
+	player.pickup_item(item_res)
+	queue_free()
