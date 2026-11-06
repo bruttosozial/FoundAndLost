@@ -1,3 +1,12 @@
 [gd_scene format=3 uid="uid://cqb7314h1gu1l"]
 
+[ext_resource type="PackedScene" uid="uid://c5cbhrcednbmc" path="res://Scenes/Skelly.tscn" id="1_jjgbg"]
+[ext_resource type="PackedScene" uid="uid://dkt3pqekjg5wa" path="res://Scenes/block.tscn" id="2_bo1nx"]
+
 [node name="Main" type="Node2D" unique_id=312324733]
+
+[node name="Skell" parent="." unique_id=1846132312 instance=ExtResource("1_jjgbg")]
+position = Vector2(152, 299)
+
+[node name="block" parent="." unique_id=549148434 instance=ExtResource("2_bo1nx")]
+position = Vector2(429, 96)

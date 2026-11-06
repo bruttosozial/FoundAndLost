@@ -1,0 +1,18 @@
+[gd_scene format=3 uid="uid://dkt3pqekjg5wa"]
+
+[ext_resource type="Texture2D" uid="uid://bq2c64kuek34o" path="res://Assets/playerBlock.png" id="1_ejx3s"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_3mm3k"]
+size = Vector2(155.5, 243.5)
+
+[node name="block" type="StaticBody2D" unique_id=549148434]
+position = Vector2(117, 69)
+
+[node name="PlayerBlock" type="Sprite2D" parent="." unique_id=375237329]
+position = Vector2(391, 230)
+scale = Vector2(1.8222222, 1.5875)
+texture = ExtResource("1_ejx3s")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=938190729]
+position = Vector2(392.25, 230.25)
+shape = SubResource("RectangleShape2D_3mm3k")
