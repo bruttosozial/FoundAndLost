@@ -20,3 +20,6 @@ func on_range_entered(item: IInteractable):
 func on_range_left():
 	print("out of range!")
 	current_interactable = null
+
+func on_item_pickup():
+	pass
