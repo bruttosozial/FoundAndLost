@@ -4,5 +4,6 @@
 
 [resource]
 script = ExtResource("1_2fali")
-name = 0
+name = "Cassette Player"
+type = 0
 metadata/_custom_type_script = "uid://8x8i3immu4w4"

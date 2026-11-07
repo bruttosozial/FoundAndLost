@@ -1,0 +1,20 @@
+[gd_scene format=3 uid="uid://lmwovq6lfo6m"]
+
+[ext_resource type="Script" uid="uid://qm512egymlkw" path="res://Scripts/Interaction System/interact_station.gd" id="1_e18ms"]
+[ext_resource type="Texture2D" uid="uid://cbssrmergedy8" path="res://Assets/icon.svg" id="3_ovdsu"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_p30wa"]
+size = Vector2(152, 141)
+
+[node name="Station" type="Area2D" unique_id=282472610]
+script = ExtResource("1_e18ms")
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=997017612]
+texture = ExtResource("3_ovdsu")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=795924382]
+position = Vector2(0, -3)
+shape = SubResource("RectangleShape2D_p30wa")
+
+[connection signal="body_entered" from="." to="." method="_on_body_entered"]
+[connection signal="body_exited" from="." to="." method="_on_body_exited"]

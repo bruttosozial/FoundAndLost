@@ -5,6 +5,7 @@
 
 [resource]
 script = ExtResource("1_sn3cn")
+name = "Floppy Disk"
 texture = ExtResource("2_33jhy")
-name = 1
+type = 1
 metadata/_custom_type_script = "uid://gag8l24f5upt"
