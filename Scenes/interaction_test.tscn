@@ -5,6 +5,7 @@
 [ext_resource type="Texture2D" uid="uid://cbssrmergedy8" path="res://Assets/icon.svg" id="2_tudu8"]
 [ext_resource type="Resource" uid="uid://dd83h02c8trhs" path="res://Data/Items/cassette_item.tres" id="3_auvmn"]
 [ext_resource type="Script" uid="uid://qm512egymlkw" path="res://Scripts/Interaction System/interact_station.gd" id="3_snvpr"]
+[ext_resource type="Resource" uid="uid://cdvqvftetn8f0" path="res://Data/Stations/cassette_player_station.tres" id="6_auvmn"]
 [ext_resource type="PackedScene" uid="uid://c5cbhrcednbmc" path="res://Scenes/Skelly.tscn" id="7_auvmn"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_p30wa"]
@@ -15,34 +16,36 @@ size = Vector2(152, 141)
 [node name="InteractionController" type="Node2D" parent="." unique_id=2144833390]
 script = ExtResource("1_tudu8")
 
-[node name="Area2D" type="Area2D" parent="InteractionController" unique_id=1447200826 node_paths=PackedStringArray("player")]
+[node name="Item" type="Area2D" parent="InteractionController" unique_id=1447200826 node_paths=PackedStringArray("player")]
 position = Vector2(461, 88)
 script = ExtResource("1_0wg47")
 item_res = ExtResource("3_auvmn")
 player = NodePath("../../Skell")
 
-[node name="Sprite2D" type="Sprite2D" parent="InteractionController/Area2D" unique_id=224642937]
+[node name="Sprite2D" type="Sprite2D" parent="InteractionController/Item" unique_id=224642937]
 texture = ExtResource("2_tudu8")
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="InteractionController/Area2D" unique_id=1608936820]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="InteractionController/Item" unique_id=1608936820]
 position = Vector2(0, -3)
 shape = SubResource("RectangleShape2D_p30wa")
 
-[node name="Area2D2" type="Area2D" parent="InteractionController" unique_id=299712820]
+[node name="Station" type="Area2D" parent="InteractionController" unique_id=299712820 node_paths=PackedStringArray("player")]
 position = Vector2(98, 85)
 script = ExtResource("3_snvpr")
+station_res = ExtResource("6_auvmn")
+player = NodePath("../../Skell")
 
-[node name="Sprite2D" type="Sprite2D" parent="InteractionController/Area2D2" unique_id=1484260622]
+[node name="Sprite2D" type="Sprite2D" parent="InteractionController/Station" unique_id=1484260622]
 texture = ExtResource("2_tudu8")
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="InteractionController/Area2D2" unique_id=453294423]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="InteractionController/Station" unique_id=453294423]
 position = Vector2(0, -3)
 shape = SubResource("RectangleShape2D_p30wa")
 
 [node name="Skell" parent="." unique_id=1846132312 instance=ExtResource("7_auvmn")]
 position = Vector2(269, 109)
 
-[connection signal="body_entered" from="InteractionController/Area2D" to="InteractionController/Area2D" method="_on_body_entered"]
-[connection signal="body_exited" from="InteractionController/Area2D" to="InteractionController/Area2D" method="_on_body_exited"]
-[connection signal="body_entered" from="InteractionController/Area2D2" to="InteractionController/Area2D2" method="_on_body_entered"]
-[connection signal="body_exited" from="InteractionController/Area2D2" to="InteractionController/Area2D2" method="_on_body_exited"]
+[connection signal="body_entered" from="InteractionController/Item" to="InteractionController/Item" method="_on_body_entered"]
+[connection signal="body_exited" from="InteractionController/Item" to="InteractionController/Item" method="_on_body_exited"]
+[connection signal="body_entered" from="InteractionController/Station" to="InteractionController/Station" method="_on_body_entered"]
+[connection signal="body_exited" from="InteractionController/Station" to="InteractionController/Station" method="_on_body_exited"]
