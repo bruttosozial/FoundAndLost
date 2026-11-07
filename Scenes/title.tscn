@@ -1,0 +1,97 @@
+[gd_scene format=3 uid="uid://j3epusq8cqm4"]
+
+[ext_resource type="Script" uid="uid://ekx2mhxiums3" path="res://Scripts/title.gd" id="1_fp2oq"]
+[ext_resource type="Theme" uid="uid://bo45umqon0p4n" path="res://Resources/footage_deleted.tres" id="2_q2qps"]
+[ext_resource type="FontFile" uid="uid://cpgcxsfye7i8t" path="res://Assets/Fonts/home-video.regular.otf" id="3_yosvi"]
+
+[node name="Title" type="MarginContainer" unique_id=655081398]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/margin_left = 100
+theme_override_constants/margin_top = 100
+theme_override_constants/margin_right = 100
+theme_override_constants/margin_bottom = 100
+script = ExtResource("1_fp2oq")
+
+[node name="CenterContainer" type="CenterContainer" parent="." unique_id=858860992]
+layout_mode = 2
+
+[node name="VBoxContainer" type="VBoxContainer" parent="CenterContainer" unique_id=58974287]
+layout_mode = 2
+
+[node name="FoundAndLost" type="PanelContainer" parent="CenterContainer/VBoxContainer" unique_id=464159366]
+layout_mode = 2
+offset_transform_enabled = true
+theme = ExtResource("2_q2qps")
+
+[node name="MarginContainer" type="MarginContainer" parent="CenterContainer/VBoxContainer/FoundAndLost" unique_id=1723990131]
+layout_mode = 2
+theme_override_constants/margin_left = 10
+theme_override_constants/margin_top = 10
+theme_override_constants/margin_right = 10
+theme_override_constants/margin_bottom = 10
+
+[node name="RichTextLabel" type="RichTextLabel" parent="CenterContainer/VBoxContainer/FoundAndLost/MarginContainer" unique_id=2078990385]
+layout_mode = 2
+theme_override_colors/default_color = Color(0.7176471, 0, 0, 1)
+theme_override_fonts/normal_font = ExtResource("3_yosvi")
+theme_override_font_sizes/normal_font_size = 100
+text = "FOUND & LOST"
+fit_content = true
+autowrap_mode = 0
+
+[node name="PressEContainer" type="MarginContainer" parent="CenterContainer/VBoxContainer" unique_id=1971187590]
+custom_minimum_size = Vector2(0, 50)
+layout_mode = 2
+size_flags_vertical = 3
+offset_transform_enabled = true
+theme_override_constants/margin_left = 50
+theme_override_constants/margin_top = 5
+theme_override_constants/margin_right = 50
+theme_override_constants/margin_bottom = 5
+
+[node name="RichTextLabel" type="RichTextLabel" parent="CenterContainer/VBoxContainer/PressEContainer" unique_id=1773018471]
+propagate_maximum_size = true
+layout_mode = 2
+theme = ExtResource("2_q2qps")
+theme_override_font_sizes/normal_font_size = 30
+text = "PRESS E TO START"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="ControlExplanation" type="MarginContainer" parent="CenterContainer/VBoxContainer" unique_id=650053296]
+layout_mode = 2
+theme_override_constants/margin_left = 50
+theme_override_constants/margin_right = 50
+
+[node name="HBoxContainer" type="HBoxContainer" parent="CenterContainer/VBoxContainer/ControlExplanation" unique_id=2004700471]
+layout_mode = 2
+
+[node name="credit_roles" type="Label" parent="CenterContainer/VBoxContainer/ControlExplanation/HBoxContainer" unique_id=1536717054]
+propagate_maximum_size = true
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_fonts/font = ExtResource("3_yosvi")
+theme_override_font_sizes/font_size = 30
+text = "WASD
+ARROW KEYS
+
+E"
+horizontal_alignment = 2
+
+[node name="Control" type="Control" parent="CenterContainer/VBoxContainer/ControlExplanation/HBoxContainer" unique_id=1475478816]
+custom_minimum_size = Vector2(20, 0)
+layout_mode = 2
+
+[node name="credit_names" type="Label" parent="CenterContainer/VBoxContainer/ControlExplanation/HBoxContainer" unique_id=46260399]
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_fonts/font = ExtResource("3_yosvi")
+theme_override_font_sizes/font_size = 30
+text = "MOVE
+
+
+INTERACT"
