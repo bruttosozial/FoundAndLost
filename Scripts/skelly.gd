@@ -19,3 +19,8 @@ func pickup_item(item: ItemResource):
 	current_item = item
 	item_sprite.texture = item.texture
 	item_sprite.visible = true
+
+func remove_item():
+	current_item = null
+	item_sprite.texture = null
+	item_sprite.visible = false
