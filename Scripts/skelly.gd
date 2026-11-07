@@ -2,6 +2,7 @@ extends CharacterBody2D
 class_name PlayerController
 
 @onready var item_sprite = $ItemSprite2D
+@onready var animated_sprite = $AnimatedSprite2D
 @onready var interaction_help = $InteractionHelp
 @onready var interaction_label : RichTextLabel = $InteractionHelp/MarginContainer/RichTextLabel
 @onready var feedback_help = $FeedbackHelp
@@ -14,8 +15,19 @@ func _physics_process(delta: float) -> void:
 	var direction := Input.get_vector("ui_left", "ui_right", "ui_up", "ui_down")
 	if direction != Vector2.ZERO:
 		velocity = direction * speed
+		if direction == Vector2.UP:
+			animated_sprite.play("run")
+		if direction == Vector2.DOWN:
+			animated_sprite.play("run")
+		if direction == Vector2.LEFT:
+			animated_sprite.flip_h = false
+			animated_sprite.play("run")
+		if direction == Vector2.RIGHT:
+			animated_sprite.flip_h = true
+			animated_sprite.play("run")
 	else:
 		velocity = Vector2.ZERO
+		animated_sprite.play("idle")
 		
 	move_and_slide() 
 

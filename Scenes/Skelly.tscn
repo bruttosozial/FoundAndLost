@@ -4,11 +4,67 @@
 [ext_resource type="Texture2D" uid="uid://bq2c64kuek34o" path="res://Assets/playerBlock.png" id="2_ltsch"]
 [ext_resource type="Texture2D" uid="uid://cbssrmergedy8" path="res://Assets/icon.svg" id="3_yf50s"]
 [ext_resource type="Theme" uid="uid://bo45umqon0p4n" path="res://Resources/footage_deleted.tres" id="4_smh3g"]
-[ext_resource type="Theme" uid="uid://c06160pbjipuy" path="res://Resources/ui_feedback_theme.tres" id="5_4u5wa"]
+[ext_resource type="Texture2D" uid="uid://dl8qmlfs6c2wi" path="res://Assets/Character/sk_elleton-Sheet.png" id="5_4u5wa"]
+[ext_resource type="Texture2D" uid="uid://dr6rtk70wrrp2" path="res://Assets/Character/sk_elleton_idle-Sheet.png" id="5_tlx6r"]
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_3mm3k"]
 radius = 20.0
-height = 86.0
+height = 72.0
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_otwt0"]
+atlas = ExtResource("5_tlx6r")
+region = Rect2(0, 0, 32, 50)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_1uow1"]
+atlas = ExtResource("5_tlx6r")
+region = Rect2(32, 0, 32, 50)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_tlx6r"]
+atlas = ExtResource("5_4u5wa")
+region = Rect2(0, 0, 32, 50)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_g0km7"]
+atlas = ExtResource("5_4u5wa")
+region = Rect2(32, 0, 32, 50)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_137ib"]
+atlas = ExtResource("5_4u5wa")
+region = Rect2(64, 0, 32, 50)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_jpvyd"]
+atlas = ExtResource("5_4u5wa")
+region = Rect2(96, 0, 32, 50)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_r5iys"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_otwt0")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_1uow1")
+}],
+"loop": 1,
+"name": &"idle",
+"speed": 2.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_tlx6r")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_g0km7")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_137ib")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_jpvyd")
+}],
+"loop": 1,
+"name": &"run",
+"speed": 8.0
+}]
 
 [node name="Skell" type="CharacterBody2D" unique_id=1846132312]
 motion_mode = 1
@@ -20,7 +76,7 @@ scale = Vector2(0.52222216, 0.5375)
 texture = ExtResource("2_ltsch")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=899463909]
-position = Vector2(-1, -8)
+position = Vector2(-4, -7)
 shape = SubResource("CapsuleShape2D_3mm3k")
 
 [node name="ItemSprite2D" type="Sprite2D" parent="." unique_id=1224661117]
@@ -30,15 +86,10 @@ scale = Vector2(0.2, 0.2)
 texture = ExtResource("3_yf50s")
 
 [node name="InteractionHelp" type="PanelContainer" parent="." unique_id=1894509603]
-visible = false
-anchors_preset = 2
-anchor_top = 1.0
-anchor_bottom = 1.0
-offset_left = -104.0
+offset_left = -108.0
 offset_top = -88.0
-offset_right = 114.0
+offset_right = 110.0
 offset_bottom = -55.0
-grow_vertical = 0
 theme = ExtResource("4_smh3g")
 
 [node name="MarginContainer" type="MarginContainer" parent="InteractionHelp" unique_id=1817398628]
@@ -50,32 +101,15 @@ theme_override_constants/margin_bottom = 4
 
 [node name="RichTextLabel" type="RichTextLabel" parent="InteractionHelp/MarginContainer" unique_id=290549815]
 layout_mode = 2
-size_flags_vertical = 8
 theme = ExtResource("4_smh3g")
 theme_override_font_sizes/normal_font_size = 25
 text = "[E] INTERACT"
-fit_content = true
 horizontal_alignment = 1
 vertical_alignment = 1
 
-[node name="FeedbackHelp" type="PanelContainer" parent="." unique_id=1442202024]
-visible = false
-offset_left = -104.0
-offset_top = 32.0
-offset_right = 114.0
-offset_bottom = 65.0
-theme = ExtResource("5_4u5wa")
-
-[node name="MarginContainer" type="MarginContainer" parent="FeedbackHelp" unique_id=1659417366]
-layout_mode = 2
-theme_override_constants/margin_left = 5
-theme_override_constants/margin_top = 7
-theme_override_constants/margin_right = 5
-theme_override_constants/margin_bottom = 7
-
-[node name="RichTextLabel" type="RichTextLabel" parent="FeedbackHelp/MarginContainer" unique_id=258924067]
-layout_mode = 2
-text = "something"
-fit_content = true
-horizontal_alignment = 1
-vertical_alignment = 1
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=1289205680]
+position = Vector2(-2, -7)
+scale = Vector2(1.96875, 1.96875)
+sprite_frames = SubResource("SpriteFrames_r5iys")
+animation = &"idle"
+frame_progress = 0.37554845
