@@ -1,0 +1,56 @@
+[gd_scene format=3 uid="uid://ve74pp5vrdiv"]
+
+[ext_resource type="VideoStream" uid="uid://bo1mc8sdeulv6" path="res://Assets/media_details/video_placeholder_format_OK.ogv" id="1_hwmtu"]
+[ext_resource type="Script" uid="uid://bywo406y2jow" path="res://Scripts/Detail views/media_detail_video.gd" id="1_m00ei"]
+[ext_resource type="PackedScene" uid="uid://bt8utwxauv83n" path="res://Scenes/subtitle_player.tscn" id="3_rxnwp"]
+[ext_resource type="Theme" uid="uid://bo45umqon0p4n" path="res://Resources/footage_deleted.tres" id="4_uoivk"]
+
+[node name="MediaDetailVideo" type="Node2D" unique_id=1343591137]
+script = ExtResource("1_m00ei")
+
+[node name="PanelContainer" type="PanelContainer" parent="." unique_id=902186470]
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="VideoStreamPlayer" type="VideoStreamPlayer" parent="PanelContainer" unique_id=998938241]
+layout_mode = 2
+stream = ExtResource("1_hwmtu")
+autoplay = true
+
+[node name="MarginContainer" type="MarginContainer" parent="PanelContainer" unique_id=2674879]
+layout_mode = 2
+theme_override_constants/margin_bottom = 20
+
+[node name="SubtitlePlayer" parent="PanelContainer/MarginContainer" unique_id=373058500 instance=ExtResource("3_rxnwp")]
+layout_mode = 2
+size_flags_vertical = 8
+
+[node name="CloseHelp" type="MarginContainer" parent="PanelContainer" unique_id=1984090126]
+layout_mode = 2
+size_flags_horizontal = 8
+size_flags_vertical = 0
+theme_override_constants/margin_top = 20
+theme_override_constants/margin_right = 20
+
+[node name="PanelContainer" type="PanelContainer" parent="PanelContainer/CloseHelp" unique_id=911343627]
+custom_minimum_size = Vector2(250, 0)
+layout_mode = 2
+size_flags_horizontal = 8
+size_flags_vertical = 0
+theme = ExtResource("4_uoivk")
+
+[node name="MarginContainer" type="MarginContainer" parent="PanelContainer/CloseHelp/PanelContainer" unique_id=1800200968]
+layout_mode = 2
+theme_override_constants/margin_left = 5
+theme_override_constants/margin_top = 4
+theme_override_constants/margin_right = 5
+theme_override_constants/margin_bottom = 4
+
+[node name="RichTextLabel" type="RichTextLabel" parent="PanelContainer/CloseHelp/PanelContainer/MarginContainer" unique_id=420255694]
+layout_mode = 2
+theme = ExtResource("4_uoivk")
+theme_override_font_sizes/normal_font_size = 25
+text = "[E] TO CLOSE"
+fit_content = true
+horizontal_alignment = 1
+vertical_alignment = 1

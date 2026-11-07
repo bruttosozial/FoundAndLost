@@ -60,3 +60,9 @@ func show_feedback_help(text: String):
 func hide_feedback_help():
 	feedback_label.text = ""
 	feedback_help.visible = false
+
+func pause_player():
+	set_physics_process(false)
+
+func resume_player():
+	set_physics_process(true)

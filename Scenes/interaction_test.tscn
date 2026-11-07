@@ -19,15 +19,17 @@ position = Vector2(461, 88)
 item_res = ExtResource("3_auvmn")
 player = NodePath("../../Skell")
 
-[node name="Station" parent="InteractionController" unique_id=282472610 node_paths=PackedStringArray("player") instance=ExtResource("3_tudu8")]
-position = Vector2(98, 85)
-station_res = ExtResource("6_auvmn")
-player = NodePath("../../Skell")
-
 [node name="Item2" parent="InteractionController" unique_id=1837394349 node_paths=PackedStringArray("player") instance=ExtResource("2_0wg47")]
 position = Vector2(843, 429)
 item_res = ExtResource("6_p30wa")
 player = NodePath("../../Skell")
 
+[node name="Station" parent="InteractionController" unique_id=282472610 node_paths=PackedStringArray("player") instance=ExtResource("3_tudu8")]
+position = Vector2(98, 85)
+station_res = ExtResource("6_auvmn")
+player = NodePath("../../Skell")
+
 [node name="Skell" parent="." unique_id=1846132312 instance=ExtResource("7_auvmn")]
 position = Vector2(269, 109)
+
+[node name="AudioListener2D" type="AudioListener2D" parent="." unique_id=567075651]
