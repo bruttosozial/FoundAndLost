@@ -116,12 +116,13 @@ animations = [{
 }]
 
 [node name="Skell" type="CharacterBody2D" unique_id=1846132312]
+scale = Vector2(3, 3)
 motion_mode = 1
 script = ExtResource("1_ltsch")
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=899463909]
+[node name="CollisionShape2D" type="CollisionPolygon2D" parent="." unique_id=1462013392]
 position = Vector2(-4, -7)
-shape = SubResource("CapsuleShape2D_3mm3k")
+polygon = PackedVector2Array(8.333334, 26.666668, -9.666667, 27.333334, 7.3333335, 28.666668, 8.333334, 16)
 
 [node name="ItemSprite2D" type="Sprite2D" parent="." unique_id=1224661117]
 visible = false

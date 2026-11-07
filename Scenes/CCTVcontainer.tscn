@@ -4,6 +4,7 @@
 [ext_resource type="Script" uid="uid://chd53nuyycjbw" path="res://Scripts/GameManager.gd" id="1_yxhk7"]
 [ext_resource type="Shader" uid="uid://ddus3ugkyr6os" path="res://Shaders/vhs.gdshader" id="3_8gbba"]
 [ext_resource type="PackedScene" uid="uid://j3epusq8cqm4" path="res://Scenes/title.tscn" id="3_qxmvl"]
+[ext_resource type="AudioStream" uid="uid://bt106qqo4skhh" path="res://Assets/Sound/Background.wav" id="5_eq5en"]
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_jjvhh"]
 shader = ExtResource("3_8gbba")
@@ -21,7 +22,7 @@ shader_parameter/distort_intensity = 0.0190000009025
 shader_parameter/noise_opacity = 0.114000005415
 shader_parameter/noise_speed = 5.0
 shader_parameter/static_noise_intensity = 0.06
-shader_parameter/aberration = 0.0050000477375000685
+shader_parameter/aberration = 0.00500004773750006
 shader_parameter/brightness = 1.0
 shader_parameter/discolor = true
 shader_parameter/warp_amount = 0.10000000475
@@ -65,3 +66,7 @@ texture = ExtResource("1_bogj3")
 layer = -1
 
 [node name="Title" parent="SceneContainer" unique_id=655081398 instance=ExtResource("3_qxmvl")]
+
+[node name="BGMPlayer" type="AudioStreamPlayer2D" parent="." unique_id=678360526]
+stream = ExtResource("5_eq5en")
+volume_db = 10.0

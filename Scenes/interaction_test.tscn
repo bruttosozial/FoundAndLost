@@ -31,5 +31,6 @@ player = NodePath("../../Skell")
 
 [node name="Skell" parent="." unique_id=1846132312 instance=ExtResource("7_auvmn")]
 position = Vector2(269, 109)
+scale = Vector2(1, 1)
 
 [node name="AudioListener2D" type="AudioListener2D" parent="." unique_id=567075651]
