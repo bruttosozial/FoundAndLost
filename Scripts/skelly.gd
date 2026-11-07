@@ -27,7 +27,7 @@ func _physics_process(delta: float) -> void:
 			if direction == Vector2.DOWN:
 				playAnimation("")
 			if direction == Vector2.LEFT:
-        playAnimation("left")
+				playAnimation("left")
 				item_sprite.position.x = -25
 			if direction == Vector2.RIGHT:
 				playAnimation("right")
@@ -41,11 +41,11 @@ func _physics_process(delta: float) -> void:
 func playAnimation(flip: String):
 	if flip == "right":
 		animated_sprite.flip_h = true
-    animated_sprite_arm.flip_h = true
+		animated_sprite_arm.flip_h = true
 		animated_sprite.play("run")
 	elif  flip == "left":
 		animated_sprite.flip_h = false
-    animated_sprite_arm.flip_h = false
+		animated_sprite_arm.flip_h = false
 		animated_sprite.play("run")
 	else:
 		animated_sprite.play("run")
