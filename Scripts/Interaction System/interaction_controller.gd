@@ -1,5 +1,7 @@
 extends Node2D
 
+@export var player : PlayerController
+
 var current_interactable : IInteractable
 
 # Called when the node enters the scene tree for the first time.
@@ -14,12 +16,9 @@ func _process(delta: float) -> void:
 		current_interactable.interact()
 
 func on_range_entered(item: IInteractable):
-	print("in range!")
+	player.show_interaction_help()
 	current_interactable = item
 
 func on_range_left():
-	print("out of range!")
+	player.hide_interaction_help()
 	current_interactable = null
-
-func on_item_pickup():
-	pass

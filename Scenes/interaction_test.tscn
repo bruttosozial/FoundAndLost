@@ -1,51 +1,33 @@
 [gd_scene format=3 uid="uid://cf4gnvnyxsg56"]
 
-[ext_resource type="Script" uid="uid://bmit0npi6if2i" path="res://Scripts/Interaction System/interact_item.gd" id="1_0wg47"]
 [ext_resource type="Script" uid="uid://cqwkfip48jcms" path="res://Scripts/Interaction System/interaction_controller.gd" id="1_tudu8"]
-[ext_resource type="Texture2D" uid="uid://cbssrmergedy8" path="res://Assets/icon.svg" id="2_tudu8"]
+[ext_resource type="PackedScene" uid="uid://bgfal12hurkah" path="res://Scenes/item.tscn" id="2_0wg47"]
 [ext_resource type="Resource" uid="uid://dd83h02c8trhs" path="res://Data/Items/cassette_item.tres" id="3_auvmn"]
-[ext_resource type="Script" uid="uid://qm512egymlkw" path="res://Scripts/Interaction System/interact_station.gd" id="3_snvpr"]
+[ext_resource type="PackedScene" uid="uid://lmwovq6lfo6m" path="res://Scenes/station.tscn" id="3_tudu8"]
 [ext_resource type="Resource" uid="uid://cdvqvftetn8f0" path="res://Data/Stations/cassette_player_station.tres" id="6_auvmn"]
+[ext_resource type="Resource" uid="uid://dn4osqfp0ctc7" path="res://Data/Items/floppy_disk_item.tres" id="6_p30wa"]
 [ext_resource type="PackedScene" uid="uid://c5cbhrcednbmc" path="res://Scenes/Skelly.tscn" id="7_auvmn"]
-
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_p30wa"]
-size = Vector2(152, 141)
 
 [node name="Node2D" type="Node2D" unique_id=1525602964]
 
-[node name="InteractionController" type="Node2D" parent="." unique_id=2144833390]
+[node name="InteractionController" type="Node2D" parent="." unique_id=2144833390 node_paths=PackedStringArray("player")]
 script = ExtResource("1_tudu8")
+player = NodePath("../Skell")
 
-[node name="Item" type="Area2D" parent="InteractionController" unique_id=1447200826 node_paths=PackedStringArray("player")]
+[node name="Item" parent="InteractionController" unique_id=2104666413 node_paths=PackedStringArray("player") instance=ExtResource("2_0wg47")]
 position = Vector2(461, 88)
-script = ExtResource("1_0wg47")
 item_res = ExtResource("3_auvmn")
 player = NodePath("../../Skell")
 
-[node name="Sprite2D" type="Sprite2D" parent="InteractionController/Item" unique_id=224642937]
-texture = ExtResource("2_tudu8")
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="InteractionController/Item" unique_id=1608936820]
-position = Vector2(0, -3)
-shape = SubResource("RectangleShape2D_p30wa")
-
-[node name="Station" type="Area2D" parent="InteractionController" unique_id=299712820 node_paths=PackedStringArray("player")]
+[node name="Station" parent="InteractionController" unique_id=282472610 node_paths=PackedStringArray("player") instance=ExtResource("3_tudu8")]
 position = Vector2(98, 85)
-script = ExtResource("3_snvpr")
 station_res = ExtResource("6_auvmn")
 player = NodePath("../../Skell")
 
-[node name="Sprite2D" type="Sprite2D" parent="InteractionController/Station" unique_id=1484260622]
-texture = ExtResource("2_tudu8")
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="InteractionController/Station" unique_id=453294423]
-position = Vector2(0, -3)
-shape = SubResource("RectangleShape2D_p30wa")
+[node name="Item2" parent="InteractionController" unique_id=1837394349 node_paths=PackedStringArray("player") instance=ExtResource("2_0wg47")]
+position = Vector2(843, 429)
+item_res = ExtResource("6_p30wa")
+player = NodePath("../../Skell")
 
 [node name="Skell" parent="." unique_id=1846132312 instance=ExtResource("7_auvmn")]
 position = Vector2(269, 109)
-
-[connection signal="body_entered" from="InteractionController/Item" to="InteractionController/Item" method="_on_body_entered"]
-[connection signal="body_exited" from="InteractionController/Item" to="InteractionController/Item" method="_on_body_exited"]
-[connection signal="body_entered" from="InteractionController/Station" to="InteractionController/Station" method="_on_body_entered"]
-[connection signal="body_exited" from="InteractionController/Station" to="InteractionController/Station" method="_on_body_exited"]

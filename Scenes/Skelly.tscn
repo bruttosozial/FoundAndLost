@@ -4,6 +4,7 @@
 [ext_resource type="Texture2D" uid="uid://bq2c64kuek34o" path="res://Assets/playerBlock.png" id="2_ltsch"]
 [ext_resource type="Texture2D" uid="uid://cbssrmergedy8" path="res://Assets/icon.svg" id="3_yf50s"]
 [ext_resource type="Theme" uid="uid://bo45umqon0p4n" path="res://Resources/footage_deleted.tres" id="4_smh3g"]
+[ext_resource type="Theme" uid="uid://c06160pbjipuy" path="res://Resources/ui_feedback_theme.tres" id="5_4u5wa"]
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_3mm3k"]
 radius = 20.0
@@ -29,6 +30,7 @@ scale = Vector2(0.2, 0.2)
 texture = ExtResource("3_yf50s")
 
 [node name="InteractionHelp" type="PanelContainer" parent="." unique_id=1894509603]
+visible = false
 offset_left = -108.0
 offset_top = -88.0
 offset_right = 110.0
@@ -47,5 +49,27 @@ layout_mode = 2
 theme = ExtResource("4_smh3g")
 theme_override_font_sizes/normal_font_size = 25
 text = "[E] INTERACT"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="FeedbackHelp" type="PanelContainer" parent="." unique_id=1442202024]
+visible = false
+offset_left = -108.0
+offset_top = 41.0
+offset_right = 110.0
+offset_bottom = 74.0
+theme = ExtResource("5_4u5wa")
+
+[node name="MarginContainer" type="MarginContainer" parent="FeedbackHelp" unique_id=1659417366]
+layout_mode = 2
+theme_override_constants/margin_left = 5
+theme_override_constants/margin_top = 4
+theme_override_constants/margin_right = 5
+theme_override_constants/margin_bottom = 4
+
+[node name="RichTextLabel" type="RichTextLabel" parent="FeedbackHelp/MarginContainer" unique_id=258924067]
+layout_mode = 2
+theme_override_font_sizes/normal_font_size = 25
+text = "Something"
 horizontal_alignment = 1
 vertical_alignment = 1
