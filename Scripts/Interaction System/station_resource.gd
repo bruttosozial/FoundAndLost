@@ -1,4 +1,5 @@
 extends Resource
 class_name StationResource
 
-@export_enum("Cassette Player", "Old PC", "NES", "Film Projector") var name
+@export var name : String
+@export_enum("MUSIC", "TEXT", "GAME", "VIDEO") var type

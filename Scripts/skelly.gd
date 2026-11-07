@@ -3,8 +3,9 @@ class_name PlayerController
 
 @onready var item_sprite = $ItemSprite2D
 @onready var interaction_help = $InteractionHelp
+@onready var interaction_label : RichTextLabel = $InteractionHelp/MarginContainer/RichTextLabel
 @onready var feedback_help = $FeedbackHelp
-@onready var feedback_label = $FeedbackHelp/MarginContainer/RichTextLabel
+@onready var feedback_label : RichTextLabel = $FeedbackHelp/MarginContainer/RichTextLabel
 
 var speed = 300
 var current_item : ItemResource
@@ -28,11 +29,13 @@ func remove_item():
 	item_sprite.texture = null
 	item_sprite.visible = false
 
-func show_interaction_help():
+func show_interaction_help(text: String):
+	interaction_label.text = "E to " + text
 	interaction_help.visible = true
 
 func hide_interaction_help():
 	interaction_help.visible = false
+	interaction_label.text = ""
 
 func show_feedback_help(text: String):
 	feedback_label.text = text

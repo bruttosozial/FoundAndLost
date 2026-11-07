@@ -16,8 +16,8 @@ func _process(delta: float) -> void:
 		current_interactable.interact()
 
 func on_range_entered(item: IInteractable):
-	player.show_interaction_help()
 	current_interactable = item
+	player.show_interaction_help(current_interactable.interaction_text)
 
 func on_range_left():
 	player.hide_interaction_help()

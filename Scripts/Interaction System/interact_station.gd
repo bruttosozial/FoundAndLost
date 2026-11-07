@@ -9,8 +9,7 @@ class_name InteractStation
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
-	pass # Replace with function body.
-
+		interaction_text = "Use " + station_res.name
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta: float) -> void:
@@ -18,7 +17,7 @@ func _process(delta: float) -> void:
 
 func interact():
 	if(player.current_item):
-		if(player.current_item.name == station_res.name):
+		if(player.current_item.type == station_res.type):
 			player.remove_item()
 			print("Slotted media in!")
 			#TODO show detail view
