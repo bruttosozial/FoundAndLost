@@ -1,8 +1,10 @@
 [gd_scene format=3 uid="uid://ve74pp5vrdiv"]
 
 [ext_resource type="Script" uid="uid://bywo406y2jow" path="res://Scripts/Detail views/media_detail_video.gd" id="1_m00ei"]
-[ext_resource type="VideoStream" uid="uid://d03v1pukeys7s" path="res://Assets/media_details/film.ogv" id="2_uoivk"]
+[ext_resource type="Texture2D" uid="uid://cjw415phdigv5" path="res://Assets/Screens/projector/projector.png" id="2_xam08"]
+[ext_resource type="Material" uid="uid://b5t1tq20v25tk" path="res://Shaders/film-opacity.tres" id="3_jsyho"]
 [ext_resource type="PackedScene" uid="uid://bt8utwxauv83n" path="res://Scenes/subtitle_player.tscn" id="3_rxnwp"]
+[ext_resource type="VideoStream" uid="uid://7ulg14rsm2f7" path="res://Assets/media_details/output-1by1.ogv" id="4_jsyho"]
 [ext_resource type="Theme" uid="uid://bo45umqon0p4n" path="res://Resources/footage_deleted.tres" id="4_uoivk"]
 
 [node name="MediaDetailVideo" type="Control" unique_id=6383193]
@@ -22,13 +24,36 @@ anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
 
-[node name="VideoStreamPlayer" type="VideoStreamPlayer" parent="PanelContainer" unique_id=998938241]
+[node name="TextureRect" type="TextureRect" parent="PanelContainer" unique_id=1206404983]
+texture_filter = 1
+layout_mode = 2
+texture = ExtResource("2_xam08")
+
+[node name="VideoStreamMC" type="MarginContainer" parent="PanelContainer" unique_id=1493620809]
+modulate = Color(1, 1, 1, 0.3647059)
+self_modulate = Color(1, 1, 1, 0.4509804)
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+offset_transform_enabled = true
+theme_override_constants/margin_left = 100
+theme_override_constants/margin_top = 100
+theme_override_constants/margin_right = 100
+theme_override_constants/margin_bottom = 200
+
+[node name="VideoStreamPlayer" type="VideoStreamPlayer" parent="PanelContainer/VideoStreamMC" unique_id=998938241]
+modulate = Color(1, 1, 1, 0.4509804)
+self_modulate = Color(0.29954746, 0.29954746, 0.29954743, 1)
+material = ExtResource("3_jsyho")
 propagate_maximum_size = true
 layout_mode = 2
-stream = ExtResource("2_uoivk")
+size_flags_horizontal = 4
+size_flags_vertical = 4
+stream = ExtResource("4_jsyho")
 autoplay = true
 
 [node name="MarginContainer" type="MarginContainer" parent="PanelContainer" unique_id=2674879]
+visible = false
 layout_mode = 2
 theme_override_constants/margin_bottom = 20
 
@@ -66,3 +91,5 @@ vertical_alignment = 1
 layout_mode = 1
 size_flags_vertical = 8
 subtitles_filename = "abandonment_film"
+
+[connection signal="finished" from="PanelContainer/VideoStreamMC/VideoStreamPlayer" to="." method="_on_video_stream_player_finished"]
