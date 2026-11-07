@@ -86,4 +86,3 @@ func destroy_item():
 func play_destroy_animation():
 	
 	animated_sprite.play("destroy")
-	print("destroy")
