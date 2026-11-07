@@ -1,0 +1,48 @@
+[gd_scene format=3 uid="uid://mcctsegh8tsv"]
+
+[ext_resource type="Script" uid="uid://b67wdaeyofmy3" path="res://Scripts/Detail views/media_detail_game.gd" id="1_7h30u"]
+[ext_resource type="VideoStream" uid="uid://bo1mc8sdeulv6" path="res://Assets/media_details/video_placeholder_format_OK.ogv" id="1_86q6t"]
+[ext_resource type="Theme" uid="uid://bo45umqon0p4n" path="res://Resources/footage_deleted.tres" id="3_bgejd"]
+
+[node name="MediaDetailGame" type="Node2D" unique_id=1174348725]
+script = ExtResource("1_7h30u")
+
+[node name="PanelContainer" type="PanelContainer" parent="." unique_id=1647190410]
+custom_minimum_size = Vector2(1920, 1080)
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="VideoStreamPlayer" type="VideoStreamPlayer" parent="PanelContainer" unique_id=2043760188]
+layout_mode = 2
+stream = ExtResource("1_86q6t")
+autoplay = true
+
+[node name="CloseHelp" type="MarginContainer" parent="PanelContainer" unique_id=1808358193]
+layout_mode = 2
+size_flags_horizontal = 8
+size_flags_vertical = 0
+theme_override_constants/margin_top = 20
+theme_override_constants/margin_right = 20
+
+[node name="PanelContainer" type="PanelContainer" parent="PanelContainer/CloseHelp" unique_id=1495467720]
+custom_minimum_size = Vector2(250, 0)
+layout_mode = 2
+size_flags_horizontal = 8
+size_flags_vertical = 0
+theme = ExtResource("3_bgejd")
+
+[node name="MarginContainer" type="MarginContainer" parent="PanelContainer/CloseHelp/PanelContainer" unique_id=1602937491]
+layout_mode = 2
+theme_override_constants/margin_left = 5
+theme_override_constants/margin_top = 4
+theme_override_constants/margin_right = 5
+theme_override_constants/margin_bottom = 4
+
+[node name="RichTextLabel" type="RichTextLabel" parent="PanelContainer/CloseHelp/PanelContainer/MarginContainer" unique_id=660537868]
+layout_mode = 2
+theme = ExtResource("3_bgejd")
+theme_override_font_sizes/normal_font_size = 25
+text = "[X] TO CLOSE"
+fit_content = true
+horizontal_alignment = 1
+vertical_alignment = 1
