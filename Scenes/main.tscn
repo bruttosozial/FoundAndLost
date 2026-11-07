@@ -8,6 +8,7 @@
 [ext_resource type="Script" uid="uid://b8lgq3bk1bk3c" path="res://Scripts/second_perspective.gd" id="5_344ge"]
 [ext_resource type="Script" uid="uid://bhhsbb7kympkc" path="res://Scripts/third_perspective.gd" id="6_ynf5e"]
 [ext_resource type="Script" uid="uid://co0t8nlwjqo28" path="res://Scripts/fourth_perspective.gd" id="7_hptm8"]
+[ext_resource type="PackedScene" uid="uid://ga62wh6tp1sf" path="res://Scenes/boundary.tscn" id="9_ynf5e"]
 
 [node name="Main" type="Node2D" unique_id=312324733]
 
@@ -46,6 +47,20 @@ script = ExtResource("6_ynf5e")
 [node name="fourthPerspective" parent="." unique_id=1769204779 instance=ExtResource("3_jjvhh")]
 position = Vector2(947, 4)
 script = ExtResource("7_hptm8")
+
+[node name="Boundary" parent="." unique_id=235025924 instance=ExtResource("9_ynf5e")]
+position = Vector2(-8, -3)
+
+[node name="Boundary3" parent="." unique_id=87306768 instance=ExtResource("9_ynf5e")]
+position = Vector2(11, -161)
+rotation = 1.5707964
+
+[node name="Boundary4" parent="." unique_id=392623354 instance=ExtResource("9_ynf5e")]
+position = Vector2(1908, -103)
+rotation = 1.5707964
+
+[node name="Boundary2" parent="." unique_id=453792594 instance=ExtResource("9_ynf5e")]
+position = Vector2(-78, 1096)
 
 [connection signal="body_entered" from="firstPerspective" to="Skell/transitionCamera" method="_on_first_perspective_body_entered"]
 [connection signal="body_entered" from="secondPerspective" to="Skell/transitionCamera" method="_on_second_perspective_body_entered"]
