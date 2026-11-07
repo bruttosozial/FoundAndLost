@@ -4,10 +4,10 @@
 [ext_resource type="PackedScene" uid="uid://dkt3pqekjg5wa" path="res://Scenes/block.tscn" id="2_bo1nx"]
 [ext_resource type="PackedScene" uid="uid://dxna1atweh5uw" path="res://Scenes/perspective_base.tscn" id="3_jjvhh"]
 [ext_resource type="Script" uid="uid://g0qsv5l6ic2g" path="res://Scripts/first_perspective.gd" id="4_21xkr"]
-[ext_resource type="Script" uid="uid://drid7vjun0psg" path="res://Scenes/transition_camera.gd" id="4_kry3j"]
+[ext_resource type="Script" uid="uid://drid7vjun0psg" path="res://Scripts/transition_camera.gd" id="4_kry3j"]
 [ext_resource type="Script" uid="uid://b8lgq3bk1bk3c" path="res://Scripts/second_perspective.gd" id="5_344ge"]
-[ext_resource type="Script" uid="uid://bhhsbb7kympkc" path="res://Scenes/third_perspective.gd" id="6_ynf5e"]
-[ext_resource type="Script" uid="uid://co0t8nlwjqo28" path="res://Scenes/fourth_perspective.gd" id="7_hptm8"]
+[ext_resource type="Script" uid="uid://bhhsbb7kympkc" path="res://Scripts/third_perspective.gd" id="6_ynf5e"]
+[ext_resource type="Script" uid="uid://co0t8nlwjqo28" path="res://Scripts/fourth_perspective.gd" id="7_hptm8"]
 
 [node name="Main" type="Node2D" unique_id=312324733]
 
