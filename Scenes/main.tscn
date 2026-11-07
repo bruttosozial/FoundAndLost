@@ -2,11 +2,52 @@
 
 [ext_resource type="PackedScene" uid="uid://c5cbhrcednbmc" path="res://Scenes/Skelly.tscn" id="1_jjgbg"]
 [ext_resource type="PackedScene" uid="uid://dkt3pqekjg5wa" path="res://Scenes/block.tscn" id="2_bo1nx"]
+[ext_resource type="PackedScene" uid="uid://dxna1atweh5uw" path="res://Scenes/perspective_base.tscn" id="3_jjvhh"]
+[ext_resource type="Script" uid="uid://g0qsv5l6ic2g" path="res://Scripts/first_perspective.gd" id="4_21xkr"]
+[ext_resource type="Script" uid="uid://drid7vjun0psg" path="res://Scenes/transition_camera.gd" id="4_kry3j"]
+[ext_resource type="Script" uid="uid://b8lgq3bk1bk3c" path="res://Scripts/second_perspective.gd" id="5_344ge"]
+[ext_resource type="Script" uid="uid://bhhsbb7kympkc" path="res://Scenes/third_perspective.gd" id="6_ynf5e"]
+[ext_resource type="Script" uid="uid://co0t8nlwjqo28" path="res://Scenes/fourth_perspective.gd" id="7_hptm8"]
 
 [node name="Main" type="Node2D" unique_id=312324733]
 
 [node name="Skell" parent="." unique_id=1846132312 instance=ExtResource("1_jjgbg")]
 position = Vector2(152, 299)
 
+[node name="transitionCamera" type="Camera2D" parent="Skell" unique_id=59504772]
+position = Vector2(310, -25)
+zoom = Vector2(2, 2)
+script = ExtResource("4_kry3j")
+
 [node name="block" parent="." unique_id=549148434 instance=ExtResource("2_bo1nx")]
-position = Vector2(429, 96)
+position = Vector2(-33, -60)
+
+[node name="block2" parent="." unique_id=598080572 instance=ExtResource("2_bo1nx")]
+position = Vector2(1360, -28)
+
+[node name="block3" parent="." unique_id=309277316 instance=ExtResource("2_bo1nx")]
+position = Vector2(1373, 676)
+
+[node name="block4" parent="." unique_id=698818393 instance=ExtResource("2_bo1nx")]
+position = Vector2(155, 578)
+
+[node name="firstPerspective" parent="." unique_id=1024044903 instance=ExtResource("3_jjvhh")]
+position = Vector2(-6, -7)
+script = ExtResource("4_21xkr")
+
+[node name="secondPerspective" parent="." unique_id=1767435977 instance=ExtResource("3_jjvhh")]
+position = Vector2(946, 543)
+script = ExtResource("5_344ge")
+
+[node name="thirdPerspective" parent="." unique_id=203502483 instance=ExtResource("3_jjvhh")]
+position = Vector2(-15, 541)
+script = ExtResource("6_ynf5e")
+
+[node name="fourthPerspective" parent="." unique_id=1769204779 instance=ExtResource("3_jjvhh")]
+position = Vector2(947, 4)
+script = ExtResource("7_hptm8")
+
+[connection signal="body_entered" from="firstPerspective" to="Skell/transitionCamera" method="_on_first_perspective_body_entered"]
+[connection signal="body_entered" from="secondPerspective" to="Skell/transitionCamera" method="_on_second_perspective_body_entered"]
+[connection signal="body_entered" from="thirdPerspective" to="Skell/transitionCamera" method="_on_third_perspective_body_entered"]
+[connection signal="body_entered" from="fourthPerspective" to="Skell/transitionCamera" method="_on_fourth_perspective_body_entered"]
