@@ -6,10 +6,6 @@
 [ext_resource type="Texture2D" uid="uid://dl8qmlfs6c2wi" path="res://Assets/Character/sk_elleton-Sheet.png" id="5_4u5wa"]
 [ext_resource type="Texture2D" uid="uid://dr6rtk70wrrp2" path="res://Assets/Character/sk_elleton_idle-Sheet.png" id="5_tlx6r"]
 
-[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_3mm3k"]
-radius = 20.0
-height = 72.0
-
 [sub_resource type="AtlasTexture" id="AtlasTexture_otwt0"]
 atlas = ExtResource("5_tlx6r")
 region = Rect2(0, 0, 32, 50)
@@ -66,12 +62,13 @@ animations = [{
 }]
 
 [node name="Skell" type="CharacterBody2D" unique_id=1846132312]
+scale = Vector2(3, 3)
 motion_mode = 1
 script = ExtResource("1_ltsch")
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=899463909]
+[node name="CollisionShape2D" type="CollisionPolygon2D" parent="." unique_id=1462013392]
 position = Vector2(-4, -7)
-shape = SubResource("CapsuleShape2D_3mm3k")
+polygon = PackedVector2Array(8.333334, 26.666668, -9.666667, 27.333334, 7.3333335, 28.666668, 8.333334, 16)
 
 [node name="ItemSprite2D" type="Sprite2D" parent="." unique_id=1224661117]
 visible = false
