@@ -69,7 +69,7 @@ script = ExtResource("1_ltsch")
 
 [node name="CollisionShape2D" type="CollisionPolygon2D" parent="." unique_id=1462013392]
 position = Vector2(-4, -7)
-polygon = PackedVector2Array(8.333334, 26.666668, -9.666667, 27.333334, 7.3333335, 28.666668, 8.333334, 16)
+polygon = PackedVector2Array(8.333334, 26.666668, -9.666667, 27.333334, 7.3333335, 28.666668, -11, 27.333334)
 
 [node name="ItemSprite2D" type="Sprite2D" parent="." unique_id=1224661117]
 visible = false

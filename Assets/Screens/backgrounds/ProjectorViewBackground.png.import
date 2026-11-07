@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://bq2c64kuek34o"
-path="res://.godot/imported/playerBlock.png-5c0c9741a37b10c119fab8803ed96937.ctex"
+uid="uid://bhrqryukoduwv"
+path="res://.godot/imported/ProjectorViewBackground.png-7e23bb3ab2f15e3823c296658f25bcf7.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Assets/playerBlock.png"
-dest_files=["res://.godot/imported/playerBlock.png-5c0c9741a37b10c119fab8803ed96937.ctex"]
+source_file="res://Assets/Screens/backgrounds/ProjectorViewBackground.png"
+dest_files=["res://.godot/imported/ProjectorViewBackground.png-7e23bb3ab2f15e3823c296658f25bcf7.ctex"]
 
 [params]
 

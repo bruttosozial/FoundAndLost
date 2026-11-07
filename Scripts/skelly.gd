@@ -16,21 +16,29 @@ func _physics_process(delta: float) -> void:
 	if direction != Vector2.ZERO:
 		velocity = direction * speed
 		if direction == Vector2.UP:
-			animated_sprite.play("run")
+			playAnimation("")
 		if direction == Vector2.DOWN:
-			animated_sprite.play("run")
+			playAnimation("")
 		if direction == Vector2.LEFT:
-			animated_sprite.flip_h = false
-			animated_sprite.play("run")
+			playAnimation("left")
 		if direction == Vector2.RIGHT:
-			animated_sprite.flip_h = true
-			animated_sprite.play("run")
+			playAnimation("right")
 	else:
 		velocity = Vector2.ZERO
 		animated_sprite.play("idle")
 		
 	move_and_slide() 
 
+func playAnimation(flip: String):
+	if flip == "right":
+		animated_sprite.flip_h = true
+		animated_sprite.play("run")
+	elif  flip == "left":
+		animated_sprite.flip_h = false
+		animated_sprite.play("run")
+	else:
+		animated_sprite.play("run")
+	
 func pickup_item(item: ItemResource):
 	current_item = item
 	item_sprite.texture = item.texture
