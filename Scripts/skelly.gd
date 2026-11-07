@@ -57,8 +57,8 @@ func remove_item():
 	current_item = null
 	item_sprite.texture = null
 	item_sprite.visible = false
-	broken_item_sprite = null
-	broken_item_sprite = false
+	broken_item_sprite.texture = null
+	broken_item_sprite.visible = false
 
 func show_interaction_help(text: String):
 	interaction_label.text = "[E] to " + text
