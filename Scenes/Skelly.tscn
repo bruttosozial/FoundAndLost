@@ -5,11 +5,28 @@
 [ext_resource type="Theme" uid="uid://bo45umqon0p4n" path="res://Resources/footage_deleted.tres" id="4_smh3g"]
 [ext_resource type="Theme" uid="uid://c06160pbjipuy" path="res://Resources/ui_feedback_theme.tres" id="4_tlx6r"]
 [ext_resource type="Texture2D" uid="uid://dl8qmlfs6c2wi" path="res://Assets/Character/sk_elleton-Sheet.png" id="5_4u5wa"]
+[ext_resource type="Texture2D" uid="uid://5a86opo780eq" path="res://Assets/Character/sk_elleton_throw-Sheet.png" id="5_g0km7"]
 [ext_resource type="Texture2D" uid="uid://dr6rtk70wrrp2" path="res://Assets/Character/sk_elleton_idle-Sheet.png" id="5_tlx6r"]
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_3mm3k"]
 radius = 20.0
 height = 72.0
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_hhh4n"]
+atlas = ExtResource("5_g0km7")
+region = Rect2(0, 0, 32, 50)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_qu1li"]
+atlas = ExtResource("5_g0km7")
+region = Rect2(32, 0, 32, 50)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_xd5bp"]
+atlas = ExtResource("5_g0km7")
+region = Rect2(64, 0, 32, 50)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_68jnm"]
+atlas = ExtResource("5_g0km7")
+region = Rect2(96, 0, 32, 50)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_otwt0"]
 atlas = ExtResource("5_tlx6r")
@@ -37,6 +54,23 @@ region = Rect2(96, 0, 32, 50)
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_r5iys"]
 animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_hhh4n")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_qu1li")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_xd5bp")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_68jnm")
+}],
+"loop": 1,
+"name": &"destroy",
+"speed": 5.0
+}, {
 "frames": [{
 "duration": 1.0,
 "texture": SubResource("AtlasTexture_otwt0")
@@ -142,5 +176,5 @@ texture_filter = 1
 position = Vector2(-2, -7)
 scale = Vector2(1.96875, 1.96875)
 sprite_frames = SubResource("SpriteFrames_r5iys")
-animation = &"idle"
-frame_progress = 0.37554845
+animation = &"destroy"
+frame_progress = 0.21531177

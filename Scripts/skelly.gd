@@ -11,6 +11,7 @@ class_name PlayerController
 
 var speed = 300
 var current_item : ItemResource
+var paused = false
 
 func _physics_process(delta: float) -> void:
 	var direction := Input.get_vector("left", "right", "up", "down")
@@ -26,7 +27,7 @@ func _physics_process(delta: float) -> void:
 		if direction == Vector2.RIGHT:
 			animated_sprite.flip_h = true
 			animated_sprite.play("run")
-	else:
+	elif !paused:
 		velocity = Vector2.ZERO
 		animated_sprite.play("idle")
 		
@@ -65,11 +66,13 @@ func hide_feedback_help():
 
 func pause_player():
 	set_physics_process(false)
+	animated_sprite.stop()
 
 func resume_player():
 	set_physics_process(true)
 
 func destroy_item():
+	paused = true
 	play_destroy_animation()
 	
 	broken_item_sprite.visible = true
@@ -78,7 +81,9 @@ func destroy_item():
 	
 	broken_item_sprite.visible = false
 	broken_item_sprite.texture = null
+	paused = false
 
 func play_destroy_animation():
-	#TODO add animation
-	print("imagine animation here")
+	
+	animated_sprite.play("destroy")
+	print("destroy")
