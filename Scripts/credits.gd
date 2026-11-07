@@ -3,17 +3,22 @@ extends MarginContainer
 @onready var footageDeleted = $CenterContainer/VBoxContainer/FootageDeleted
 @onready var timer = $Timer
 
+# quake "FLUORESCENT FLICKER" pattern
+var flicker_pattern = "mmamammmmammamamaaamammma"
+var flicker_index = 0
+var delta_passed = 0.0
 
-func _on_timer_timeout() -> void:
-	if footageDeleted.offset_transform_scale == Vector2(1.0, 1.0):
+func _process(delta: float) -> void:
+	delta_passed += delta
+	if delta_passed >= 0.1:
+		flicker()
+		delta_passed = 0.0
+
+func flicker() -> void:
+	if flicker_index >= len(flicker_pattern):
+		flicker_index = 0
+	if flicker_pattern[flicker_index] == "a":
 		footageDeleted.offset_transform_scale = Vector2.ZERO
-		timer.stop()
-		timer.wait_time = 0.2
-		timer.start()
-	else:
-		timer.stop()
-		timer.wait_time = 0.5
-		timer.start()
+	elif flicker_pattern[flicker_index] == "m":
 		footageDeleted.offset_transform_scale = Vector2(1.0, 1.0)
-		
-	pass # Replace with function body.
+	flicker_index += 1
