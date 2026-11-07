@@ -7,6 +7,18 @@
 [ext_resource type="PackedScene" uid="uid://bt8utwxauv83n" path="res://Scenes/subtitle_player.tscn" id="5_g203u"]
 [ext_resource type="Texture2D" uid="uid://d1dfkl65dh5o3" path="res://Assets/Screens/boombox_screen_full.png" id="5_ruqcr"]
 
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_6spfm"]
+content_margin_left = 0.0
+content_margin_top = 0.0
+content_margin_right = 0.0
+content_margin_bottom = 0.0
+bg_color = Color(0.22352941, 0.17254902, 0.19215687, 1)
+corner_radius_top_left = 3
+corner_radius_top_right = 3
+corner_radius_bottom_right = 3
+corner_radius_bottom_left = 3
+corner_detail = 5
+
 [sub_resource type="AtlasTexture" id="AtlasTexture_ruqcr"]
 atlas = ExtResource("5_50a30")
 region = Rect2(0, 0, 350, 220)
@@ -53,6 +65,7 @@ custom_minimum_size = Vector2(1920, 1080)
 layout_mode = 0
 offset_right = 500.0
 offset_bottom = 70.0
+theme_override_styles/panel = SubResource("StyleBoxFlat_6spfm")
 
 [node name="MarginContainer" type="MarginContainer" parent="PanelContainer" unique_id=1682636191]
 layout_mode = 2
@@ -89,6 +102,7 @@ horizontal_alignment = 1
 vertical_alignment = 1
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=296770916]
+texture_filter = 1
 position = Vector2(950.27264, 486.00003)
 scale = Vector2(4.1818175, 4.181818)
 sprite_frames = SubResource("SpriteFrames_r5iys")
@@ -98,6 +112,7 @@ frame_progress = 0.708834
 
 [node name="TextureRect" type="TextureRect" parent="." unique_id=1473521426]
 visible = false
+texture_filter = 1
 layout_mode = 0
 offset_left = 221.0
 offset_top = 24.0
