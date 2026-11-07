@@ -1,6 +1,8 @@
 extends IInteractable
 class_name InteractStation
 
+@onready var audio_player = $AudioStreamPlayer2D
+
 @export var station_res : StationResource
 @export var player : PlayerController
 
@@ -36,6 +38,8 @@ func open_detail_window():
 	
 	#TODO add SFX
 	# use: station_res.slot_in_sfx
+	audio_player.stream = station_res.slot_in_sfx
+	audio_player.play()
 	
 	var instance = station_res.scene.instantiate()
 	get_tree().root.add_child(instance)
