@@ -4,6 +4,7 @@ class_name PlayerController
 @onready var item_sprite = $ItemSprite2D
 @onready var broken_item_sprite = $BrokenItemSprite2D
 @onready var animated_sprite = $AnimatedSprite2D
+@onready var animated_sprite_arm = $AnimatedSprite2D/AnimatedSprite2DArm
 @onready var interaction_help = $InteractionHelp
 @onready var interaction_label : RichTextLabel = $InteractionHelp/MarginContainer/RichTextLabel
 @onready var feedback_help = $FeedbackHelp
@@ -27,10 +28,14 @@ func _physics_process(delta: float) -> void:
 				animated_sprite.play("run")
 			if direction == Vector2.LEFT:
 				animated_sprite.flip_h = false
+				animated_sprite_arm.flip_h = false
 				animated_sprite.play("run")
+				item_sprite.position.x = -25
 			if direction == Vector2.RIGHT:
 				animated_sprite.flip_h = true
+				animated_sprite_arm.flip_h = true
 				animated_sprite.play("run")
+				item_sprite.position.x = 20
 		else:
 			velocity = Vector2.ZERO
 			animated_sprite.play("idle")
@@ -42,9 +47,11 @@ func pickup_item(item: ItemResource):
 	item_sprite.texture = item.texture
 	broken_item_sprite.texture = item.broken_texture
 	item_sprite.visible = true
+	animated_sprite_arm.show()
 
 func hide_item():
 	item_sprite.visible = false
+	animated_sprite_arm.hide()
 	
 func remove_item():
 	current_item = null

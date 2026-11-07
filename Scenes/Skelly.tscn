@@ -7,10 +7,7 @@
 [ext_resource type="Texture2D" uid="uid://dl8qmlfs6c2wi" path="res://Assets/Character/sk_elleton-Sheet.png" id="5_4u5wa"]
 [ext_resource type="Texture2D" uid="uid://5a86opo780eq" path="res://Assets/Character/sk_elleton_throw-Sheet.png" id="5_g0km7"]
 [ext_resource type="Texture2D" uid="uid://dr6rtk70wrrp2" path="res://Assets/Character/sk_elleton_idle-Sheet.png" id="5_tlx6r"]
-
-[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_3mm3k"]
-radius = 20.0
-height = 72.0
+[ext_resource type="Texture2D" uid="uid://cuca2ubkcehwe" path="res://Assets/Character/sk_elleton_holding.png" id="8_137ib"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_hhh4n"]
 atlas = ExtResource("5_g0km7")
@@ -115,6 +112,21 @@ animations = [{
 "speed": 8.0
 }]
 
+[sub_resource type="AtlasTexture" id="AtlasTexture_jeuxe"]
+atlas = ExtResource("8_137ib")
+region = Rect2(0, 0, 32, 50)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_ojbw0"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_jeuxe")
+}],
+"loop": 1,
+"name": &"default",
+"speed": 5.0
+}]
+
 [node name="Skell" type="CharacterBody2D" unique_id=1846132312]
 scale = Vector2(3, 3)
 motion_mode = 1
@@ -126,8 +138,8 @@ polygon = PackedVector2Array(8.333334, 26.666668, -9.666667, 27.333334, 7.333333
 
 [node name="ItemSprite2D" type="Sprite2D" parent="." unique_id=1224661117]
 visible = false
-position = Vector2(32, -24)
-scale = Vector2(0.2, 0.2)
+position = Vector2(20, -16.666668)
+scale = Vector2(0.8, 0.8)
 texture = ExtResource("3_yf50s")
 
 [node name="BrokenItemSprite2D" type="Sprite2D" parent="." unique_id=680579474]
@@ -195,3 +207,7 @@ sprite_frames = SubResource("SpriteFrames_r5iys")
 animation = &"destroy"
 frame = 8
 frame_progress = 1.0
+
+[node name="AnimatedSprite2DArm" type="AnimatedSprite2D" parent="AnimatedSprite2D" unique_id=19763518]
+visible = false
+sprite_frames = SubResource("SpriteFrames_ojbw0")
