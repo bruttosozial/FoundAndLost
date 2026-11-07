@@ -5,10 +5,19 @@
 [ext_resource type="Texture2D" uid="uid://cbssrmergedy8" path="res://Assets/icon.svg" id="3_yf50s"]
 [ext_resource type="Theme" uid="uid://bo45umqon0p4n" path="res://Resources/footage_deleted.tres" id="4_smh3g"]
 [ext_resource type="Texture2D" uid="uid://dl8qmlfs6c2wi" path="res://Assets/Character/sk_elleton-Sheet.png" id="5_4u5wa"]
+[ext_resource type="Texture2D" uid="uid://dr6rtk70wrrp2" path="res://Assets/Character/sk_elleton_idle-Sheet.png" id="5_tlx6r"]
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_3mm3k"]
 radius = 20.0
 height = 72.0
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_otwt0"]
+atlas = ExtResource("5_tlx6r")
+region = Rect2(0, 0, 32, 50)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_1uow1"]
+atlas = ExtResource("5_tlx6r")
+region = Rect2(32, 0, 32, 50)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_tlx6r"]
 atlas = ExtResource("5_4u5wa")
@@ -28,6 +37,17 @@ region = Rect2(96, 0, 32, 50)
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_r5iys"]
 animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_otwt0")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_1uow1")
+}],
+"loop": 1,
+"name": &"idle",
+"speed": 2.0
+}, {
 "frames": [{
 "duration": 1.0,
 "texture": SubResource("AtlasTexture_tlx6r")
@@ -91,6 +111,5 @@ vertical_alignment = 1
 position = Vector2(-2, -7)
 scale = Vector2(1.96875, 1.96875)
 sprite_frames = SubResource("SpriteFrames_r5iys")
-animation = &"run"
-frame = 3
-frame_progress = 0.82736385
+animation = &"idle"
+frame_progress = 0.37554845

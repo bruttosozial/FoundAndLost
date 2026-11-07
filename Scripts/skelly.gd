@@ -23,7 +23,7 @@ func _physics_process(delta: float) -> void:
 			animated_sprite.play("run")
 	else:
 		velocity = Vector2.ZERO
-		animated_sprite.stop()
+		animated_sprite.play("idle")
 		
 	move_and_slide() 
 
