@@ -15,8 +15,15 @@ run/main_scene="uid://cqb7314h1gu1l"
 config/features=PackedStringArray("4.7", "Forward Plus")
 config/icon="res://Assets/icon.svg"
 
+[autoload]
+
+Constants="*uid://blkfuclau25gf"
+
 [display]
 
+window/size/viewport_width=1920
+window/size/viewport_height=1080
+window/size/mode=3
 window/stretch/mode="canvas_items"
 window/stretch/aspect="expand"
 

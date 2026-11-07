@@ -2,6 +2,7 @@ extends Area2D
 class_name IInteractable
 
 var in_range = false
+var interaction_text : String
 
 signal range_entered
 signal range_exited

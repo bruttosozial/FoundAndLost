@@ -1,0 +1,10 @@
+[gd_scene format=3 uid="uid://ga62wh6tp1sf"]
+
+[sub_resource type="SegmentShape2D" id="SegmentShape2D_7dnx0"]
+a = Vector2(1994, -2)
+b = Vector2(-14, 1)
+
+[node name="Boundary" type="StaticBody2D" unique_id=235025924]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=512888318]
+shape = SubResource("SegmentShape2D_7dnx0")

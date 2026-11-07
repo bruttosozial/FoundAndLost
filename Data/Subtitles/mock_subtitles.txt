@@ -1,0 +1,4 @@
+This is a trial;1000
+Multiple$BR$Lines;1000
+Im making subtitles;1200
+For people;1000
