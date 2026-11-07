@@ -1,7 +1,6 @@
 [gd_scene format=3 uid="uid://c5cbhrcednbmc"]
 
 [ext_resource type="Script" uid="uid://dvk6qbqbyp5s3" path="res://Scripts/skelly.gd" id="1_ltsch"]
-[ext_resource type="Texture2D" uid="uid://bq2c64kuek34o" path="res://Assets/playerBlock.png" id="2_ltsch"]
 [ext_resource type="Texture2D" uid="uid://cbssrmergedy8" path="res://Assets/icon.svg" id="3_yf50s"]
 [ext_resource type="Theme" uid="uid://bo45umqon0p4n" path="res://Resources/footage_deleted.tres" id="4_smh3g"]
 [ext_resource type="Texture2D" uid="uid://dl8qmlfs6c2wi" path="res://Assets/Character/sk_elleton-Sheet.png" id="5_4u5wa"]
@@ -70,11 +69,6 @@ animations = [{
 motion_mode = 1
 script = ExtResource("1_ltsch")
 
-[node name="PlayerBlock" type="Sprite2D" parent="." unique_id=1986204866]
-position = Vector2(-2.5000024, -7.9999995)
-scale = Vector2(0.52222216, 0.5375)
-texture = ExtResource("2_ltsch")
-
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=899463909]
 position = Vector2(-4, -7)
 shape = SubResource("CapsuleShape2D_3mm3k")
@@ -108,6 +102,7 @@ horizontal_alignment = 1
 vertical_alignment = 1
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=1289205680]
+texture_filter = 1
 position = Vector2(-2, -7)
 scale = Vector2(1.96875, 1.96875)
 sprite_frames = SubResource("SpriteFrames_r5iys")
