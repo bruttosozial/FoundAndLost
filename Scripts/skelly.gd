@@ -15,6 +15,16 @@ var paused = false
 
 func _physics_process(delta: float) -> void:
 	var direction := Input.get_vector("left", "right", "up", "down")
+	if direction != Vector2.ZERO:
+		velocity = direction * speed
+		if direction == Vector2.UP:
+			playAnimation("")
+		if direction == Vector2.DOWN:
+			playAnimation("")
+		if direction == Vector2.LEFT:
+			playAnimation("left")
+		if direction == Vector2.RIGHT:
+			playAnimation("right")
 	if paused:
 		if Input.is_action_just_released("interact"):
 			destroy_item()
@@ -37,6 +47,16 @@ func _physics_process(delta: float) -> void:
 	
 	move_and_slide() 
 
+func playAnimation(flip: String):
+	if flip == "right":
+		animated_sprite.flip_h = true
+		animated_sprite.play("run")
+	elif  flip == "left":
+		animated_sprite.flip_h = false
+		animated_sprite.play("run")
+	else:
+		animated_sprite.play("run")
+	
 func pickup_item(item: ItemResource):
 	current_item = item
 	item_sprite.texture = item.texture
