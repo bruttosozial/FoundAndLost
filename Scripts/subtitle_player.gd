@@ -29,7 +29,10 @@ func play_subtitles():
 		text_container.offset_transform_scale = Vector2.ZERO
 		return
 	var title_parts = current_subtitles[subtitle_index].split(";")
-	text_container.text = title_parts[0]
+	var text: String = title_parts[0]
+	if text.contains("$BR$"):
+		text = text.replace("$BR$", "\n")
+	text_container.text = text
 	print(title_parts[1])
 	timer.wait_time = int(title_parts[1]) / 1000.0
 	timer.start()
