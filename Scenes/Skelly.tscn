@@ -42,8 +42,8 @@ animations = [{
 "texture": SubResource("AtlasTexture_jpvyd")
 }],
 "loop": 1,
-"name": &"default",
-"speed": 5.0
+"name": &"run",
+"speed": 8.0
 }]
 
 [node name="Skell" type="CharacterBody2D" unique_id=1846132312]
@@ -91,4 +91,6 @@ vertical_alignment = 1
 position = Vector2(-2, -7)
 scale = Vector2(1.96875, 1.96875)
 sprite_frames = SubResource("SpriteFrames_r5iys")
-frame_progress = 0.59218395
+animation = &"run"
+frame = 3
+frame_progress = 0.82736385
