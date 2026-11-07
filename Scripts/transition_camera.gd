@@ -19,16 +19,21 @@ func _update_screen( new_screen : Vector2 ):
 	global_position = cur_screen * SCREEN_SIZE + SCREEN_SIZE * 0.5
 
 func _on_first_perspective_body_entered(body: Node2D) -> void:
-	print("print 1")
+	pass
 
 
 func _on_second_perspective_body_entered(body: Node2D) -> void:
-	print("print 2")
+	pass
 
 
 func _on_third_perspective_body_entered(body: Node2D) -> void:
-	print("print 3")
+	pass
 
 
 func _on_fourth_perspective_body_entered(body: Node2D) -> void:
-	print("print 4")
+	pass
+
+
+func _on_perspective_change_body_entered(body: Node2D) -> void:
+	print("entered perspective")
+	
