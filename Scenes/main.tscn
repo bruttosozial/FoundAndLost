@@ -33,34 +33,33 @@ position = Vector2(1373, 676)
 position = Vector2(155, 578)
 
 [node name="firstPerspective" parent="." unique_id=1024044903 instance=ExtResource("3_jjvhh")]
-position = Vector2(-6, -7)
+position = Vector2(-16, -8)
 script = ExtResource("4_21xkr")
 
 [node name="secondPerspective" parent="." unique_id=1767435977 instance=ExtResource("3_jjvhh")]
-position = Vector2(946, 543)
+position = Vector2(944, 536)
 script = ExtResource("5_344ge")
 
 [node name="thirdPerspective" parent="." unique_id=203502483 instance=ExtResource("3_jjvhh")]
-position = Vector2(-15, 541)
+position = Vector2(-16, 536)
 script = ExtResource("6_ynf5e")
 
 [node name="fourthPerspective" parent="." unique_id=1769204779 instance=ExtResource("3_jjvhh")]
-position = Vector2(947, 4)
+position = Vector2(944, -8)
 script = ExtResource("7_hptm8")
 
 [node name="Boundary" parent="." unique_id=235025924 instance=ExtResource("9_ynf5e")]
-position = Vector2(-8, -3)
 
 [node name="Boundary3" parent="." unique_id=87306768 instance=ExtResource("9_ynf5e")]
-position = Vector2(11, -161)
+position = Vector2(5, -161)
 rotation = 1.5707964
 
 [node name="Boundary4" parent="." unique_id=392623354 instance=ExtResource("9_ynf5e")]
-position = Vector2(1908, -103)
+position = Vector2(1900, -100)
 rotation = 1.5707964
 
 [node name="Boundary2" parent="." unique_id=453792594 instance=ExtResource("9_ynf5e")]
-position = Vector2(-78, 1096)
+position = Vector2(-78, 1078)
 
 [connection signal="body_entered" from="firstPerspective" to="Skell/transitionCamera" method="_on_first_perspective_body_entered"]
 [connection signal="body_entered" from="secondPerspective" to="Skell/transitionCamera" method="_on_second_perspective_body_entered"]
