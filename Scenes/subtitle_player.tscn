@@ -1,0 +1,28 @@
+[gd_scene format=3 uid="uid://bt8utwxauv83n"]
+
+[ext_resource type="Script" uid="uid://dgo5p6n0bbctn" path="res://Scripts/subtitle_player.gd" id="1_vq8i6"]
+[ext_resource type="Theme" uid="uid://bo45umqon0p4n" path="res://Resources/footage_deleted.tres" id="2_urcm3"]
+[ext_resource type="FontFile" uid="uid://cpgcxsfye7i8t" path="res://Assets/Fonts/home-video.regular.otf" id="3_u8cdv"]
+
+[node name="SubtitlePlayer" type="Control" unique_id=373058500]
+custom_minimum_size = Vector2(500, 50)
+layout_mode = 3
+anchors_preset = 0
+script = ExtResource("1_vq8i6")
+
+[node name="MarginContainer" type="MarginContainer" parent="." unique_id=424794090]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="TextContainer" type="RichTextLabel" parent="MarginContainer" unique_id=1611728202]
+layout_mode = 2
+theme = ExtResource("2_urcm3")
+theme_override_fonts/normal_font = ExtResource("3_u8cdv")
+theme_override_font_sizes/normal_font_size = 17
+text = "Consequatur enim rerum et. Quam consequatur ut molestias officiis doloribus repellat aut. "
+horizontal_alignment = 1
+vertical_alignment = 1
