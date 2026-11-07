@@ -3,6 +3,7 @@
 [ext_resource type="Script" uid="uid://dvk6qbqbyp5s3" path="res://Scripts/skelly.gd" id="1_ltsch"]
 [ext_resource type="Texture2D" uid="uid://cbssrmergedy8" path="res://Assets/icon.svg" id="3_yf50s"]
 [ext_resource type="Theme" uid="uid://bo45umqon0p4n" path="res://Resources/footage_deleted.tres" id="4_smh3g"]
+[ext_resource type="Theme" uid="uid://c06160pbjipuy" path="res://Resources/ui_feedback_theme.tres" id="4_tlx6r"]
 [ext_resource type="Texture2D" uid="uid://dl8qmlfs6c2wi" path="res://Assets/Character/sk_elleton-Sheet.png" id="5_4u5wa"]
 [ext_resource type="Texture2D" uid="uid://dr6rtk70wrrp2" path="res://Assets/Character/sk_elleton_idle-Sheet.png" id="5_tlx6r"]
 
@@ -77,10 +78,15 @@ scale = Vector2(0.2, 0.2)
 texture = ExtResource("3_yf50s")
 
 [node name="InteractionHelp" type="PanelContainer" parent="." unique_id=1894509603]
-offset_left = -108.0
+visible = false
+anchors_preset = 2
+anchor_top = 1.0
+anchor_bottom = 1.0
+offset_left = -112.0
 offset_top = -88.0
-offset_right = 110.0
+offset_right = 106.0
 offset_bottom = -55.0
+grow_vertical = 0
 theme = ExtResource("4_smh3g")
 
 [node name="MarginContainer" type="MarginContainer" parent="InteractionHelp" unique_id=1817398628]
@@ -95,6 +101,30 @@ layout_mode = 2
 theme = ExtResource("4_smh3g")
 theme_override_font_sizes/normal_font_size = 25
 text = "[E] INTERACT"
+fit_content = true
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="FeedbackHelp" type="PanelContainer" parent="." unique_id=1846521798]
+visible = false
+offset_left = -112.0
+offset_top = 40.0
+offset_right = 106.0
+offset_bottom = 73.0
+theme = ExtResource("4_tlx6r")
+
+[node name="MarginContainer" type="MarginContainer" parent="FeedbackHelp" unique_id=4581559]
+layout_mode = 2
+theme_override_constants/margin_left = 5
+theme_override_constants/margin_top = 4
+theme_override_constants/margin_right = 5
+theme_override_constants/margin_bottom = 4
+
+[node name="RichTextLabel" type="RichTextLabel" parent="FeedbackHelp/MarginContainer" unique_id=1463493344]
+layout_mode = 2
+theme_override_font_sizes/normal_font_size = 25
+text = "something happened"
+fit_content = true
 horizontal_alignment = 1
 vertical_alignment = 1
 

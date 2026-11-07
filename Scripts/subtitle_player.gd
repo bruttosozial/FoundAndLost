@@ -3,12 +3,14 @@ extends Control
 @onready var text_container = $MarginContainer/TextContainer
 @onready var timer = $Timer
 
+@export var subtitles_filename = "mock_subtitles"
+
 var current_subtitles = []
 var subtitle_index = 0
 
 func _ready() -> void:
 	text_container.offset_transform_scale = Vector2.ZERO
-	load_subtitles("mock_subtitles")
+	load_subtitles(subtitles_filename)
 
 func load_subtitles(file_name):
 	var file = FileAccess.open(

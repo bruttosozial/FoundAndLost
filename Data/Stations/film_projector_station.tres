@@ -1,9 +1,11 @@
 [gd_resource type="Resource" script_class="StationResource" format=3 uid="uid://bxu1vnm2ub1yv"]
 
+[ext_resource type="PackedScene" uid="uid://ve74pp5vrdiv" path="res://Scenes/MediaDetailScenes/media_detail_video.tscn" id="1_1yse4"]
 [ext_resource type="Script" uid="uid://8x8i3immu4w4" path="res://Scripts/Interaction System/station_resource.gd" id="1_5mppm"]
 
 [resource]
 script = ExtResource("1_5mppm")
 name = "Film Projector"
 type = 3
+scene = ExtResource("1_1yse4")
 metadata/_custom_type_script = "uid://8x8i3immu4w4"

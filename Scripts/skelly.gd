@@ -12,7 +12,7 @@ var speed = 300
 var current_item : ItemResource
 
 func _physics_process(delta: float) -> void:
-	var direction := Input.get_vector("ui_left", "ui_right", "ui_up", "ui_down")
+	var direction := Input.get_vector("left", "right", "up", "down")
 	if direction != Vector2.ZERO:
 		velocity = direction * speed
 		if direction == Vector2.UP:
@@ -60,3 +60,9 @@ func show_feedback_help(text: String):
 func hide_feedback_help():
 	feedback_label.text = ""
 	feedback_help.visible = false
+
+func pause_player():
+	set_physics_process(false)
+
+func resume_player():
+	set_physics_process(true)
