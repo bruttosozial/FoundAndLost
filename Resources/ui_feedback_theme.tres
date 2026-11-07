@@ -18,4 +18,5 @@ corner_detail = 5
 [resource]
 PanelContainer/styles/panel = SubResource("StyleBoxFlat_cq3c8")
 RichTextLabel/colors/default_color = Color(0.6901961, 0.84705883, 0, 1)
+RichTextLabel/font_sizes/normal_font_size = 20
 RichTextLabel/fonts/normal_font = ExtResource("1_d42ek")

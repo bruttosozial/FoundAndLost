@@ -4,6 +4,7 @@ class_name PlayerController
 @onready var item_sprite = $ItemSprite2D
 @onready var interaction_help = $InteractionHelp
 @onready var feedback_help = $FeedbackHelp
+@onready var feedback_label = $FeedbackHelp/MarginContainer/RichTextLabel
 
 var speed = 300
 var current_item : ItemResource
@@ -34,9 +35,13 @@ func hide_interaction_help():
 	interaction_help.visible = false
 
 func show_feedback_help(text: String):
-	$FeedbackHelp/MarginContainer/RichTextLabel.text = text
+	feedback_label.text = text
 	feedback_help.visible = true
+	
+	await get_tree().create_timer(1.0).timeout
+	
+	hide_feedback_help()
 
 func hide_feedback_help():
-	$FeedbackHelp/MarginContainer/RichTextLabel.text = ""
+	feedback_label.text = ""
 	feedback_help.visible = false
