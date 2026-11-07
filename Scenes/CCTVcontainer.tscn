@@ -4,7 +4,9 @@
 [ext_resource type="Script" uid="uid://chd53nuyycjbw" path="res://Scripts/GameManager.gd" id="1_yxhk7"]
 [ext_resource type="Shader" uid="uid://ddus3ugkyr6os" path="res://Shaders/vhs.gdshader" id="3_8gbba"]
 [ext_resource type="PackedScene" uid="uid://j3epusq8cqm4" path="res://Scenes/title.tscn" id="3_qxmvl"]
+[ext_resource type="PackedScene" uid="uid://bt8utwxauv83n" path="res://Scenes/subtitle_player.tscn" id="4_0evam"]
 [ext_resource type="AudioStream" uid="uid://bt106qqo4skhh" path="res://Assets/Sound/Background.wav" id="5_eq5en"]
+[ext_resource type="AudioStream" uid="uid://bp08m2qbndas" path="res://Assets/Sound/memory_of_me.wav" id="7_bfgyj"]
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_jjvhh"]
 shader = ExtResource("3_8gbba")
@@ -40,7 +42,7 @@ grow_vertical = 2
 script = ExtResource("1_yxhk7")
 
 [node name="CanvasLayer" type="CanvasLayer" parent="." unique_id=1951401189]
-layer = 0
+layer = 2
 
 [node name="VHSshader" type="ColorRect" parent="CanvasLayer" unique_id=643406163]
 material = SubResource("ShaderMaterial_jjvhh")
@@ -52,6 +54,7 @@ grow_vertical = 2
 metadata/_edit_use_anchors_ = true
 
 [node name="CanvasLayer2" type="CanvasLayer" parent="." unique_id=2033478352]
+layer = 2
 
 [node name="CenterContainer" type="CenterContainer" parent="CanvasLayer2" unique_id=598790855]
 z_index = 1
@@ -62,6 +65,12 @@ offset_bottom = 40.0
 position = Vector2(960, 548)
 texture = ExtResource("1_bogj3")
 
+[node name="SubtitleContainer" type="CanvasLayer" parent="." unique_id=283810875]
+layer = 0
+
+[node name="SubtitlePlayer" parent="SubtitleContainer" unique_id=373058500 instance=ExtResource("4_0evam")]
+subtitles_filename = "memory_of_me_subtitles"
+
 [node name="SceneContainer" type="CanvasLayer" parent="." unique_id=1162974607]
 layer = -1
 follow_viewport_enabled = true
@@ -71,3 +80,7 @@ follow_viewport_enabled = true
 [node name="BGMPlayer" type="AudioStreamPlayer2D" parent="." unique_id=678360526]
 stream = ExtResource("5_eq5en")
 volume_db = 10.0
+
+[node name="MemoryOfMePlayer" type="AudioStreamPlayer2D" parent="." unique_id=1264895895]
+stream = ExtResource("7_bfgyj")
+volume_db = 20.0

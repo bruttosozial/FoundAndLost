@@ -23,7 +23,6 @@ func load_subtitles(file_name):
 		line = file.get_line()
 	subtitle_index = 0
 	text_container.offset_transform_scale = Vector2(1.0, 1.0)
-	play_subtitles()
 
 func play_subtitles():
 	timer.stop()
