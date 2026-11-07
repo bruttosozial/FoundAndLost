@@ -2,6 +2,7 @@ extends CharacterBody2D
 class_name PlayerController
 
 @onready var item_sprite = $ItemSprite2D
+@onready var broken_item_sprite = $BrokenItemSprite2D
 @onready var animated_sprite = $AnimatedSprite2D
 @onready var interaction_help = $InteractionHelp
 @onready var interaction_label : RichTextLabel = $InteractionHelp/MarginContainer/RichTextLabel
@@ -34,6 +35,7 @@ func _physics_process(delta: float) -> void:
 func pickup_item(item: ItemResource):
 	current_item = item
 	item_sprite.texture = item.texture
+	broken_item_sprite.texture = item.broken_texture
 	item_sprite.visible = true
 
 func remove_item():
@@ -66,3 +68,17 @@ func pause_player():
 
 func resume_player():
 	set_physics_process(true)
+
+func destroy_item():
+	play_destroy_animation()
+	
+	broken_item_sprite.visible = true
+	
+	await get_tree().create_timer(1.0).timeout
+	
+	broken_item_sprite.visible = false
+	broken_item_sprite.texture = null
+
+func play_destroy_animation():
+	#TODO add animation
+	print("imagine animation here")

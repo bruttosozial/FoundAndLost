@@ -42,6 +42,7 @@ func open_detail_window():
 
 func close_detail_window():
 	#TODO add destroying of media
+	player.destroy_item()
 	
 	interacting = false
 	player.resume_player()

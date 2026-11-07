@@ -7,5 +7,6 @@
 script = ExtResource("1_o3bs7")
 name = "Film Reel"
 texture = ExtResource("2_y0l4b")
+broken_texture = ExtResource("2_y0l4b")
 type = 3
 metadata/_custom_type_script = "uid://gag8l24f5upt"
