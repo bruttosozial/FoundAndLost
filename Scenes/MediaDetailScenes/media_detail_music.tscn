@@ -6,7 +6,13 @@
 [ext_resource type="Theme" uid="uid://bo45umqon0p4n" path="res://Resources/footage_deleted.tres" id="5_6spfm"]
 [ext_resource type="PackedScene" uid="uid://bt8utwxauv83n" path="res://Scenes/subtitle_player.tscn" id="5_g203u"]
 
-[node name="MediaDetailMusic" type="Node2D" unique_id=375801884]
+[node name="MediaDetailMusic" type="Control" unique_id=99052789]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
 script = ExtResource("1_2jkmk")
 
 [node name="Placeholder2" type="Sprite2D" parent="." unique_id=1685235754]
@@ -19,16 +25,13 @@ stream = ExtResource("4_g203u")
 
 [node name="PanelContainer" type="PanelContainer" parent="." unique_id=1900144908]
 custom_minimum_size = Vector2(1920, 1080)
+layout_mode = 0
 offset_right = 500.0
 offset_bottom = 70.0
 
 [node name="MarginContainer" type="MarginContainer" parent="PanelContainer" unique_id=1682636191]
 layout_mode = 2
 theme_override_constants/margin_bottom = 20
-
-[node name="SubtitlePlayer" parent="PanelContainer/MarginContainer" unique_id=373058500 instance=ExtResource("5_g203u")]
-layout_mode = 2
-size_flags_vertical = 8
 
 [node name="CloseHelp" type="MarginContainer" parent="PanelContainer" unique_id=775352720]
 layout_mode = 2
@@ -59,3 +62,8 @@ text = "[E] TO CLOSE"
 fit_content = true
 horizontal_alignment = 1
 vertical_alignment = 1
+
+[node name="SubtitlePlayer" parent="." unique_id=373058500 instance=ExtResource("5_g203u")]
+layout_mode = 1
+size_flags_vertical = 8
+subtitles_filename = "divorce_song_subtitles"

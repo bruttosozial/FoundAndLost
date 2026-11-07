@@ -1,4 +1,4 @@
-extends Node2D
+extends Control
 
 @onready var streamPlayer : AudioStreamPlayer2D = $AudioStreamPlayer2D
 
