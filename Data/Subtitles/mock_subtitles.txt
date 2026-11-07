@@ -1,3 +1,3 @@
-This is a trial;100
-Im making subtitles;200
-For people;50
+This is a trial;1000
+Im making subtitles;1200
+For people;1000

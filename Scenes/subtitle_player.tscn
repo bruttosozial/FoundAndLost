@@ -20,9 +20,15 @@ grow_vertical = 2
 
 [node name="TextContainer" type="RichTextLabel" parent="MarginContainer" unique_id=1611728202]
 layout_mode = 2
+offset_transform_enabled = true
 theme = ExtResource("2_urcm3")
+theme_override_colors/default_color = Color(1, 1, 1, 1)
 theme_override_fonts/normal_font = ExtResource("3_u8cdv")
 theme_override_font_sizes/normal_font_size = 17
 text = "Consequatur enim rerum et. Quam consequatur ut molestias officiis doloribus repellat aut. "
 horizontal_alignment = 1
 vertical_alignment = 1
+
+[node name="Timer" type="Timer" parent="." unique_id=430255902]
+
+[connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]
