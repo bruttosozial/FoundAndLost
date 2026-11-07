@@ -35,12 +35,16 @@ func open_detail_window():
 	interacting = true
 	
 	#TODO add SFX
+	# use: station_res.slot_in_sfx
 	
 	var instance = station_res.scene.instantiate()
 	get_tree().root.add_child(instance)
 	instance.closed.connect(close_detail_window)
 
 func close_detail_window():
+	#TODO add SFX
+	# use: station_res.slot_out_sfx
+	
 	#TODO add destroying of media
 	
 	interacting = false

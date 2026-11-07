@@ -32,6 +32,7 @@ func _physics_process(delta: float) -> void:
 	move_and_slide() 
 
 func pickup_item(item: ItemResource):
+	#TODO add SFX
 	current_item = item
 	item_sprite.texture = item.texture
 	item_sprite.visible = true
