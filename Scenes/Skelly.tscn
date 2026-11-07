@@ -66,8 +66,23 @@ animations = [{
 }, {
 "duration": 1.0,
 "texture": SubResource("AtlasTexture_68jnm")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_hhh4n")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_qu1li")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_xd5bp")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_68jnm")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_hhh4n")
 }],
-"loop": 1,
+"loop": 0,
 "name": &"destroy",
 "speed": 5.0
 }, {
@@ -177,4 +192,5 @@ position = Vector2(-2, -7)
 scale = Vector2(1.96875, 1.96875)
 sprite_frames = SubResource("SpriteFrames_r5iys")
 animation = &"destroy"
-frame_progress = 0.21531177
+frame = 8
+frame_progress = 1.0

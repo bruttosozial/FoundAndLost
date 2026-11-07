@@ -1,12 +1,12 @@
 [gd_resource type="Resource" script_class="ItemResource" format=3 uid="uid://dd83h02c8trhs"]
 
+[ext_resource type="Texture2D" uid="uid://cwdie4xchlk2" path="res://Assets/Items/ComputerViewCassete.png" id="1_6q6iy"]
 [ext_resource type="Script" uid="uid://gag8l24f5upt" path="res://Scripts/Interaction System/item_resource.gd" id="1_aai0n"]
-[ext_resource type="Texture2D" uid="uid://cbssrmergedy8" path="res://Assets/icon.svg" id="2_6q6iy"]
 
 [resource]
 script = ExtResource("1_aai0n")
 name = "Cassette"
-texture = ExtResource("2_6q6iy")
-broken_texture = ExtResource("2_6q6iy")
+texture = ExtResource("1_6q6iy")
+broken_texture = ExtResource("1_6q6iy")
 type = 0
 metadata/_custom_type_script = "uid://gag8l24f5upt"
