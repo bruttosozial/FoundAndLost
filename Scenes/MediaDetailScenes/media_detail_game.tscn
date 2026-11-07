@@ -1,7 +1,8 @@
 [gd_scene format=3 uid="uid://mcctsegh8tsv"]
 
 [ext_resource type="Script" uid="uid://b67wdaeyofmy3" path="res://Scripts/Detail views/media_detail_game.gd" id="1_7h30u"]
-[ext_resource type="VideoStream" uid="uid://bo1mc8sdeulv6" path="res://Assets/media_details/video_placeholder_format_OK.ogv" id="1_86q6t"]
+[ext_resource type="Texture2D" uid="uid://bt31aqbiqu4e7" path="res://Assets/console.png" id="2_0i1c0"]
+[ext_resource type="VideoStream" uid="uid://7ulg14rsm2f7" path="res://Assets/media_details/output-1by1.ogv" id="3_0i1c0"]
 [ext_resource type="Theme" uid="uid://bo45umqon0p4n" path="res://Resources/footage_deleted.tres" id="3_bgejd"]
 
 [node name="MediaDetailGame" type="Node2D" unique_id=1174348725]
@@ -9,13 +10,35 @@ script = ExtResource("1_7h30u")
 
 [node name="PanelContainer" type="PanelContainer" parent="." unique_id=1647190410]
 custom_minimum_size = Vector2(1920, 1080)
-offset_right = 40.0
-offset_bottom = 40.0
+offset_right = 1920.0
+offset_bottom = 1080.0
 
-[node name="VideoStreamPlayer" type="VideoStreamPlayer" parent="PanelContainer" unique_id=2043760188]
+[node name="MarginContainer" type="MarginContainer" parent="PanelContainer" unique_id=548585390]
 layout_mode = 2
-stream = ExtResource("1_86q6t")
+offset_transform_enabled = true
+theme_override_constants/margin_left = 350
+theme_override_constants/margin_top = 0
+theme_override_constants/margin_right = 400
+theme_override_constants/margin_bottom = 200
+
+[node name="VideoStreamPlayer" type="VideoStreamPlayer" parent="PanelContainer/MarginContainer" unique_id=2043760188]
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+stream = ExtResource("3_0i1c0")
 autoplay = true
+
+[node name="Console" type="Sprite2D" parent="PanelContainer" unique_id=303621838]
+texture_filter = 1
+position = Vector2(960.72217, 541.75)
+scale = Vector2(5.989236, 6.013889)
+texture = ExtResource("2_0i1c0")
+
+[node name="AspectRatioContainer" type="AspectRatioContainer" parent="PanelContainer" unique_id=957383324]
+visible = false
+texture_filter = 1
+layout_mode = 2
+stretch_mode = 1
 
 [node name="CloseHelp" type="MarginContainer" parent="PanelContainer" unique_id=1808358193]
 layout_mode = 2
