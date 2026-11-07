@@ -89,6 +89,7 @@ horizontal_alignment = 1
 vertical_alignment = 1
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=296770916]
+texture_filter = 1
 position = Vector2(950.27264, 486.00003)
 scale = Vector2(4.1818175, 4.181818)
 sprite_frames = SubResource("SpriteFrames_r5iys")
@@ -98,6 +99,7 @@ frame_progress = 0.708834
 
 [node name="TextureRect" type="TextureRect" parent="." unique_id=1473521426]
 visible = false
+texture_filter = 1
 layout_mode = 0
 offset_left = 221.0
 offset_top = 24.0
