@@ -14,3 +14,8 @@ func _process(delta: float) -> void:
 	if Input.is_action_just_released("interact"):
 		closed.emit()
 		queue_free()
+
+
+func show_static_boombox() -> void:
+	animated_sprite.hide()
+	$TextureRect.show()
