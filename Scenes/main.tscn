@@ -8,7 +8,19 @@
 [ext_resource type="Texture2D" uid="uid://bhrqryukoduwv" path="res://Assets/Screens/backgrounds/ProjectorViewBackground.png" id="8_ynf5e"]
 [ext_resource type="Texture2D" uid="uid://cg7lugcoj6iv5" path="res://Assets/Screens/backgrounds/ProjectorViewForeground.png" id="9_hptm8"]
 [ext_resource type="PackedScene" uid="uid://ga62wh6tp1sf" path="res://Scenes/boundary.tscn" id="9_ynf5e"]
+[ext_resource type="Script" uid="uid://cqwkfip48jcms" path="res://Scripts/Interaction System/interaction_controller.gd" id="10_fdnlq"]
 [ext_resource type="Texture2D" uid="uid://c4vkgasqugxcb" path="res://Assets/Screens/backgrounds/ComputerViewbackground.png" id="11_d1ilt"]
+[ext_resource type="PackedScene" uid="uid://bgfal12hurkah" path="res://Scenes/item.tscn" id="11_jkdf5"]
+[ext_resource type="Resource" uid="uid://dd83h02c8trhs" path="res://Data/Items/cassette_item.tres" id="12_wsu2k"]
+[ext_resource type="Texture2D" uid="uid://cwdie4xchlk2" path="res://Assets/Items/ComputerViewCassete.png" id="13_k12tt"]
+[ext_resource type="Resource" uid="uid://dn4osqfp0ctc7" path="res://Data/Items/floppy_disk_item.tres" id="14_h1bgf"]
+[ext_resource type="PackedScene" uid="uid://lmwovq6lfo6m" path="res://Scenes/station.tscn" id="14_jkdf5"]
+[ext_resource type="Texture2D" uid="uid://cbkyyro8ogj4w" path="res://Assets/Items/BoomBoxViewFloppyDisc.png" id="15_b3802"]
+[ext_resource type="Resource" uid="uid://cdvqvftetn8f0" path="res://Data/Stations/cassette_player_station.tres" id="15_wsu2k"]
+[ext_resource type="Texture2D" uid="uid://63qs8kcex1wr" path="res://Assets/Items/ConsoleViewFilmRoll.png" id="16_fevyy"]
+[ext_resource type="Resource" uid="uid://dyvrvxreyy4mp" path="res://Data/Items/film_reel_item.tres" id="16_hibaj"]
+[ext_resource type="Resource" uid="uid://cm5fs8hcpjvyt" path="res://Data/Stations/old_pc_station.tres" id="18_b3802"]
+[ext_resource type="Resource" uid="uid://bxu1vnm2ub1yv" path="res://Data/Stations/film_projector_station.tres" id="21_pdsj5"]
 
 [sub_resource type="GDScript" id="GDScript_hptm8"]
 script/source = "extends Area2D
@@ -26,6 +38,21 @@ script/source = "extends Area2D
 script/source = "extends Area2D
 "
 
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_wsu2k"]
+size = Vector2(95, 72)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_fevyy"]
+size = Vector2(104, 98)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_k12tt"]
+size = Vector2(148.85715, 143.9375)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_h1bgf"]
+size = Vector2(436, 352.5)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_hibaj"]
+size = Vector2(402, 209)
+
 [node name="Main" type="Node2D" unique_id=312324733]
 script = ExtResource("1_d1ilt")
 
@@ -38,7 +65,6 @@ texture = ExtResource("1_hptm8")
 [node name="tvWallBoundary" type="StaticBody2D" parent="ConsoleView" unique_id=1847157749]
 
 [node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="ConsoleView/tvWallBoundary" unique_id=54515065]
-visible = false
 polygon = PackedVector2Array(-157.33333, -5.3333282, -127.99999, -5.3333282, -122.66666, 8, -63.999992, 2.6666718, -63.999992, -10.666664, -23.999985, -16, -29.333328, -77.333336, -160, -80)
 
 [node name="perspectiveChange" type="Area2D" parent="ConsoleView" unique_id=1950825462]
@@ -60,6 +86,7 @@ polygon = PackedVector2Array(39.62567, -7.6323013, 42.809998, 93.68609, 36.96344
 polygon = PackedVector2Array(-23.999985, 13.333336, -21.333328, 29.333336, -13.333328, 29.333336, -15.999985, 48, -5.3333282, 48, -7.9999847, 29.333336, 8.000015, 24, 2.6666718, 8)
 
 [node name="ProjectorViewBackground" type="Sprite2D" parent="." unique_id=1249924910]
+texture_filter = 1
 position = Vector2(1424, 272.00006)
 scale = Vector2(3, 2.988889)
 texture = ExtResource("8_ynf5e")
@@ -93,6 +120,7 @@ polygon = PackedVector2Array(-10.666687, -82.97397, -10.666687, -72.267654, -69.
 polygon = PackedVector2Array(-77.33331, -26.765816, -122.66666, -37.472137, -117.33331, -2.2888184e-05)
 
 [node name="ComputerViewbackground" type="Sprite2D" parent="." unique_id=734123802]
+texture_filter = 1
 position = Vector2(1428, 811)
 scale = Vector2(3.025, 2.988889)
 texture = ExtResource("11_d1ilt")
@@ -118,6 +146,7 @@ position = Vector2(-3.966942, 23.085503)
 polygon = PackedVector2Array(-23.801636, -85.65057, 153.38846, -64.23793, 55.5372, -88.32715, -15.867767, -96.35689)
 
 [node name="BoomBoxViewBackground" type="Sprite2D" parent="." unique_id=2053195635]
+texture_filter = 1
 position = Vector2(464, 799.99994)
 scale = Vector2(2.95, 2.9444444)
 texture = ExtResource("7_344ge")
@@ -135,6 +164,12 @@ polygon = PackedVector2Array(39.62567, -7.6323013, 40.73355, 144.03587, 36.96344
 
 [node name="CollisionShape2D" type="CollisionPolygon2D" parent="BoomBoxViewBackground/StaticBody2D" unique_id=1884293793]
 polygon = PackedVector2Array(157.28813, 2.7170105, 27.118637, -10.867889, 16.27118, 5.4339905, -16.271194, 3.0517578e-05, -21.694916, -19.01883, -81.355934, -27.16977, -81.355934, 24.45285, -116.61017, 54.33966, -157.28813, 81.50946, -157.28813, -92.37732, 159.99998, -86.94336)
+
+[node name="ProjectorViewForeground" type="Sprite2D" parent="." unique_id=1095207937]
+texture_filter = 1
+position = Vector2(1528.0001, 280.00003)
+scale = Vector2(1.6874994, 1.761111)
+texture = ExtResource("9_hptm8")
 
 [node name="Skell" parent="." unique_id=1846132312 instance=ExtResource("1_jjgbg")]
 position = Vector2(192, 360)
@@ -175,7 +210,6 @@ rotation = 1.5707964
 position = Vector2(-78, 1078)
 
 [node name="transitionCamera" type="Camera2D" parent="." unique_id=59504772]
-visible = false
 position = Vector2(472, 272)
 scale = Vector2(3, 3)
 zoom = Vector2(2, 2)
@@ -211,7 +245,7 @@ position = Vector2(1424, 648)
 position = Vector2(1368, 792)
 
 [node name="camera2SpawnPos6" type="Node2D" parent="." unique_id=1795080976]
-position = Vector2(1168, 288)
+position = Vector2(1221, 288)
 
 [node name="camera2SpawnPos7" type="Node2D" parent="." unique_id=1878576443]
 position = Vector2(344, 952)
@@ -225,10 +259,71 @@ position = Vector2(160, 416)
 [node name="camera2SpawnPos10" type="Node2D" parent="." unique_id=192063440]
 position = Vector2(256, 408)
 
-[node name="ProjectorViewForeground" type="Sprite2D" parent="." unique_id=1095207937]
-position = Vector2(1528.0001, 280.00003)
-scale = Vector2(1.6874994, 1.761111)
-texture = ExtResource("9_hptm8")
+[node name="InteractionController" type="Node2D" parent="." unique_id=1800761327 node_paths=PackedStringArray("player")]
+script = ExtResource("10_fdnlq")
+player = NodePath("../Skell")
+
+[node name="ItemCassette" parent="InteractionController" unique_id=2104666413 node_paths=PackedStringArray("player") instance=ExtResource("11_jkdf5")]
+position = Vector2(1834, 355)
+item_res = ExtResource("12_wsu2k")
+player = NodePath("../../Skell")
+
+[node name="Sprite2D" parent="InteractionController/ItemCassette" index="0" unique_id=1042199959]
+scale = Vector2(3, 3)
+texture = ExtResource("13_k12tt")
+
+[node name="CollisionShape2D" parent="InteractionController/ItemCassette" index="1" unique_id=1290531663]
+position = Vector2(2.5, 3)
+shape = SubResource("RectangleShape2D_wsu2k")
+
+[node name="ItemFloppyDisk" parent="InteractionController" unique_id=754705030 node_paths=PackedStringArray("player") instance=ExtResource("11_jkdf5")]
+position = Vector2(710, 934)
+item_res = ExtResource("14_h1bgf")
+player = NodePath("../../Skell")
+
+[node name="Sprite2D" parent="InteractionController/ItemFloppyDisk" index="0" unique_id=1042199959]
+scale = Vector2(3, 3)
+texture = ExtResource("15_b3802")
+
+[node name="CollisionShape2D" parent="InteractionController/ItemFloppyDisk" index="1" unique_id=1290531663]
+position = Vector2(3, 1)
+shape = SubResource("RectangleShape2D_fevyy")
+
+[node name="ItemFilmRoll" parent="InteractionController" unique_id=1322681370 node_paths=PackedStringArray("player") instance=ExtResource("11_jkdf5")]
+position = Vector2(343, 442)
+item_res = ExtResource("16_hibaj")
+player = NodePath("../../Skell")
+
+[node name="Sprite2D" parent="InteractionController/ItemFilmRoll" index="0" unique_id=1042199959]
+scale = Vector2(3, 3)
+texture = ExtResource("16_fevyy")
+
+[node name="StationCassettePlayer" parent="InteractionController" unique_id=282472610 node_paths=PackedStringArray("player") instance=ExtResource("14_jkdf5")]
+position = Vector2(458, 768)
+station_res = ExtResource("15_wsu2k")
+player = NodePath("../../Skell")
+
+[node name="CollisionShape2D" parent="InteractionController/StationCassettePlayer" index="1" unique_id=795924382]
+position = Vector2(16.200012, -9.119995)
+scale = Vector2(1.4, 1.28)
+shape = SubResource("RectangleShape2D_k12tt")
+
+[node name="StationOldPC" parent="InteractionController" unique_id=1902235249 node_paths=PackedStringArray("player") instance=ExtResource("14_jkdf5")]
+station_res = ExtResource("18_b3802")
+player = NodePath("../../Skell")
+
+[node name="CollisionShape2D" parent="InteractionController/StationOldPC" index="1" unique_id=795924382]
+position = Vector2(1662, 867.75)
+shape = SubResource("RectangleShape2D_h1bgf")
+
+[node name="StationFilmProjector" parent="InteractionController" unique_id=1376998300 node_paths=PackedStringArray("player") instance=ExtResource("14_jkdf5")]
+position = Vector2(1472, 356)
+station_res = ExtResource("21_pdsj5")
+player = NodePath("../../Skell")
+
+[node name="CollisionShape2D" parent="InteractionController/StationFilmProjector" index="1" unique_id=795924382]
+position = Vector2(104, -4.5)
+shape = SubResource("RectangleShape2D_hibaj")
 
 [connection signal="body_entered" from="ConsoleView/perspectiveChange" to="." method="_on_perspective_change_body_entered"]
 [connection signal="body_entered" from="ConsoleView/perspectiveChange1_1" to="." method="_on_perspective_change_1_1_body_entered"]
@@ -240,3 +335,10 @@ texture = ExtResource("9_hptm8")
 [connection signal="body_entered" from="secondPerspective" to="transitionCamera" method="_on_second_perspective_body_entered"]
 [connection signal="body_entered" from="thirdPerspective" to="transitionCamera" method="_on_third_perspective_body_entered"]
 [connection signal="body_entered" from="fourthPerspective" to="transitionCamera" method="_on_fourth_perspective_body_entered"]
+
+[editable path="InteractionController/ItemCassette"]
+[editable path="InteractionController/ItemFloppyDisk"]
+[editable path="InteractionController/ItemFilmRoll"]
+[editable path="InteractionController/StationCassettePlayer"]
+[editable path="InteractionController/StationOldPC"]
+[editable path="InteractionController/StationFilmProjector"]

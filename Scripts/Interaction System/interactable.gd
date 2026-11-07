@@ -20,9 +20,11 @@ func interact():
 	pass
 
 func _on_body_entered(body: Node2D) -> void:
-	in_range = true
-	range_entered.emit(self)
+	if body.name == "Skell":
+		in_range = true
+		range_entered.emit(self)
 
 func _on_body_exited(body: Node2D) -> void:
-	in_range = false
-	range_exited.emit()
+	if body.name == "Skell":
+		in_range = false
+		range_exited.emit()
