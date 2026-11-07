@@ -1,0 +1,7 @@
+[gd_resource type="ShaderMaterial" format=3 uid="uid://b5t1tq20v25tk"]
+
+[ext_resource type="Shader" uid="uid://cjdjo64t4i2rp" path="res://Shaders/film-opacity.gdshader" id="1_raico"]
+
+[resource]
+shader = ExtResource("1_raico")
+shader_parameter/video_opacity = 0.790000037525
