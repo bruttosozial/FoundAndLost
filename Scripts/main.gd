@@ -47,7 +47,7 @@ var isEnding = false
 
 var current_perspective: Perspective = Perspective.CONSOLE
 
-var debug = true
+var debug = false
 func debug_print(string):
 	if debug: print(string)
 
