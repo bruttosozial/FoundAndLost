@@ -81,6 +81,7 @@ frame = 2
 frame_progress = 0.708834
 
 [node name="TextureRect" type="TextureRect" parent="." unique_id=1473521426]
+visible = false
 texture_filter = 1
 layout_mode = 0
 offset_left = 221.0
