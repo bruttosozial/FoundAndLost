@@ -27,10 +27,6 @@ var seconds = 1.0
 signal destroyed_item
 var state: State = State.GAMEPLAY
 
-func set_ending_state():
-	state = State.ENDING
-	show_interaction_help("SHOOT")
-
 func _process(_delta: float) -> void:
 	if state == State.ENDING and Input.is_action_just_released("interact"):
 		state = State.NO
@@ -160,7 +156,10 @@ func play_idle_animation():
 func on_detail_view_closed():
 	paused = true
 	show_interaction_help("Destroy")
-	
+
+func set_ending_state():
+	state = State.ENDING
+	show_interaction_help("SHOOT")
 
 func initiate_ending_func():
 	initiate_ending.emit()

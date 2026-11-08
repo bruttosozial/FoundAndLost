@@ -42,19 +42,10 @@ var isEnding = false
 
 var current_perspective: Perspective = Perspective.CONSOLE
 
-func skelly_finish_move():
-	skell.play_idle_animation()
-	if isEnding:
-		skell.set_ending_state()
-
-func play_camera_sound():
-	camera_audio_player.play()
-
 # Enter projector from above
 func _on_perspective_change_body_entered(_body: PlayerController) -> void:
 	play_camera_sound()
 	await get_tree().create_timer(0.1).timeout
-	
 	if not transition_camera_4.is_current():
 		transition_camera_4.make_current()
 		current_perspective = Perspective.PROJECTOR
@@ -147,6 +138,14 @@ func _on_perspective_change_4_body_entered(_body: PlayerController) -> void:
 		skell.resume_player()
 		tween.finished.connect(skelly_finish_move)
 
+func skelly_finish_move():
+	skell.play_idle_animation()
+	if isEnding:
+		skell.set_ending_state()
+
+func play_camera_sound():
+	camera_audio_player.play()
+
 var ending_current_screen = 0
 var ending_counter = 1
 
@@ -157,6 +156,7 @@ func initiate_ending():
 
 func ending_switch_to_next_screen():
 	if ending_counter == 4:
+		play_camera_sound()
 		get_tree().root.get_children()[0].switch_main_credits()
 	
 	ending_current_screen += 1
@@ -174,4 +174,3 @@ func ending_switch_to_next_screen():
 		_on_perspective_change_1_1_body_entered(null)
 
 	ending_counter += 1
-	# Go through every screen and shoot
