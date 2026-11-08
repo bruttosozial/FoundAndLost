@@ -4,7 +4,10 @@ signal closed
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
-	get_tree().root.get_children()[0].pause_bgm()
+	if get_tree().root.get_children()[0] is CCTV:
+		get_tree().root.get_children()[0].pause_bgm()
+	else:
+		pass
 
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
@@ -15,4 +18,7 @@ func _process(delta: float) -> void:
 
 
 func _on_video_stream_player_finished() -> void:
-	get_tree().root.get_children()[0].resume_bgm()
+	if get_tree().root.get_children()[0] is CCTV:
+		get_tree().root.get_children()[0].resume_bgm()
+	else:
+		pass
