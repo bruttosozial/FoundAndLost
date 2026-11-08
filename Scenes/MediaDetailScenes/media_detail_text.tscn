@@ -1,8 +1,8 @@
 [gd_scene format=3 uid="uid://bi752mjou6fep"]
 
 [ext_resource type="Script" uid="uid://ctgg2n0fwb2fk" path="res://Scripts/Detail views/media_detail_text.gd" id="1_im5rv"]
+[ext_resource type="Texture2D" uid="uid://d2tsso112s6pk" path="res://Assets/media_details/floppy_screen.png" id="2_aglhs"]
 [ext_resource type="Theme" uid="uid://bo45umqon0p4n" path="res://Resources/footage_deleted.tres" id="3_13p33"]
-[ext_resource type="Texture2D" uid="uid://cl3ife130etgs" path="res://Assets/media_details/floppy_screen_text_no_x.png" id="3_aglhs"]
 [ext_resource type="Texture2D" uid="uid://rbig5ypnwy2u" path="res://Assets/Screens/DetailedViewComputer.png" id="4_aglhs"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_aglhs"]
@@ -25,7 +25,7 @@ script = ExtResource("1_im5rv")
 [node name="FloppyScreenSprite2D" type="Sprite2D" parent="Node2D" unique_id=2006513879]
 position = Vector2(870.524, 501)
 scale = Vector2(0.5431388, 0.6740741)
-texture = ExtResource("3_aglhs")
+texture = ExtResource("2_aglhs")
 
 [node name="Sprite2D" type="Sprite2D" parent="Node2D" unique_id=1682403122]
 texture_filter = 1
