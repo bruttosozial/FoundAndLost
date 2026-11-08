@@ -80,7 +80,10 @@ follow_viewport_enabled = true
 [node name="BGMPlayer" type="AudioStreamPlayer2D" parent="." unique_id=678360526]
 stream = ExtResource("5_eq5en")
 volume_db = 10.0
+max_distance = 5000.0
+attenuation = 0.0
 
 [node name="MemoryOfMePlayer" type="AudioStreamPlayer2D" parent="." unique_id=1264895895]
 stream = ExtResource("7_bfgyj")
 volume_db = 20.0
+attenuation = 0.0
