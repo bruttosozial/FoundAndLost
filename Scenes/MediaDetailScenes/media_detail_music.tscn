@@ -1,7 +1,7 @@
 [gd_scene format=3 uid="uid://cokcgfar5ysd4"]
 
 [ext_resource type="Script" uid="uid://bsroybcxayjx0" path="res://Scripts/Detail views/media_detail_music.gd" id="1_2jkmk"]
-[ext_resource type="AudioStream" uid="uid://ba7m58vk3jnws" path="res://Assets/Sound/Divorce-music-mixed.wav" id="4_g203u"]
+[ext_resource type="AudioStream" uid="uid://gsc2qu7iu3tq" path="res://Assets/Sound/Divorce-music.wav" id="2_6spfm"]
 [ext_resource type="Theme" uid="uid://bo45umqon0p4n" path="res://Resources/footage_deleted.tres" id="5_6spfm"]
 [ext_resource type="Texture2D" uid="uid://cvfrb3l5417vy" path="res://Assets/Screens/boombox_screen_animation-Sheet.png" id="5_50a30"]
 [ext_resource type="PackedScene" uid="uid://bt8utwxauv83n" path="res://Scenes/subtitle_player.tscn" id="5_g203u"]
@@ -58,7 +58,7 @@ grow_vertical = 2
 script = ExtResource("1_2jkmk")
 
 [node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="." unique_id=98895364]
-stream = ExtResource("4_g203u")
+stream = ExtResource("2_6spfm")
 
 [node name="PanelContainer" type="PanelContainer" parent="." unique_id=1900144908]
 custom_minimum_size = Vector2(1920, 1080)
