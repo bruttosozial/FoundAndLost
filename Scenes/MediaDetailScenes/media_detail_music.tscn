@@ -80,6 +80,15 @@ animation = &"ode_to_joy"
 frame = 2
 frame_progress = 0.708834
 
+[node name="TextureRect" type="TextureRect" parent="." unique_id=1473521426]
+texture_filter = 1
+layout_mode = 0
+offset_left = 221.0
+offset_top = 24.0
+offset_right = 1686.2272
+offset_bottom = 945.0
+texture = ExtResource("5_ruqcr")
+
 [node name="CloseHelp" type="MarginContainer" parent="." unique_id=775352720]
 layout_mode = 0
 offset_left = 1380.0
@@ -113,16 +122,6 @@ text = "[E] TO CLOSE"
 fit_content = true
 horizontal_alignment = 1
 vertical_alignment = 1
-
-[node name="TextureRect" type="TextureRect" parent="." unique_id=1473521426]
-visible = false
-texture_filter = 1
-layout_mode = 0
-offset_left = 221.0
-offset_top = 24.0
-offset_right = 1686.2272
-offset_bottom = 945.0
-texture = ExtResource("5_ruqcr")
 
 [node name="SubtitlePlayer" parent="." unique_id=373058500 instance=ExtResource("5_g203u")]
 layout_mode = 1
