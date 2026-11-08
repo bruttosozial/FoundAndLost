@@ -14,7 +14,7 @@ class_name PlayerController
 @onready var audio_length = 0.5
 var footStepFrames = [1,3]
 
-var walk_sfx : AudioStream = preload("res://Assets/Sound/SFX/WalkTest_4.wav")
+var walk_sfx : AudioStream = preload("res://Assets/Sound/SFX/walk_alt.wav")
 var gun_sfx : AudioStream = preload("res://Assets/Sound/SFX/gunshot.mp3")
 var drop_sfx : AudioStream = preload("res://Assets/Sound/SFX/ObjectDrop.wav")
 
@@ -97,6 +97,7 @@ func _physics_process(_delta: float) -> void:
 func sfx_on_animation():
 	if animated_sprite.animation == "run" and prev_anim == "idle":
 		audio_player.stream = walk_sfx
+		audio_player.volume_db = -15.0
 		audio_player.play()
 	elif animated_sprite.animation == "idle" and prev_anim == "run":
 		audio_player.stop()
@@ -216,7 +217,9 @@ func initiate_ending_func():
 func _on_animated_sprite_2d_sprite_frames_changed() -> void:
 	if animated_sprite.animation == "gun_side" and animated_sprite.frame == 5 or animated_sprite.animation == "gun_front" and animated_sprite.frame == 1:
 		audio_player.stream = gun_sfx
+		audio_player.volume_db = 20
 		audio_player.play()
 	if animated_sprite.animation == "destroy" and animated_sprite.frame == 5:
 		audio_player.stream = drop_sfx
+		audio_player.volume_db = 0
 		audio_player.play()

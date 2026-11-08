@@ -7,7 +7,8 @@ signal closed
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
-	streamPlayer.play()
+	streamPlayer.volume_db = 20
+	streamPlayer.play() 
 	animated_sprite.play("ode_to_joy")	
 	subtitle_player.play_subtitles()
 	if get_tree().root.get_children()[0] is CCTV:

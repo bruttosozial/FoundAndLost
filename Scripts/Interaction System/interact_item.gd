@@ -7,7 +7,7 @@ class_name InteractItem
 @export var player : PlayerController
 
 @export var already_holding_text = "Can't carry more"
-@onready var audio_player = $AudioStreamPlayer2D
+@onready var audio_player : AudioStreamPlayer2D = $AudioStreamPlayer2D
 
 
 # Called when the node enters the scene tree for the first time.
@@ -25,6 +25,7 @@ func interact():
 	else:
 		player.pickup_item(item_res)
 		audio_player.stream = item_res.pickup_sfx
+		audio_player.volume_db = 20
 		audio_player.play()
 		
 		visible = false
