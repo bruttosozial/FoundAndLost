@@ -107,6 +107,7 @@ func destroy_item():
 	play_destroy_animation()
 	await animated_sprite.animation_finished
 	
+	#TODO add sfx
 	item_sprite.visible = false
 	broken_item_sprite.visible = true
 	
@@ -124,5 +125,3 @@ func play_destroy_animation():
 func on_detail_view_closed():
 	paused = true
 	show_interaction_help("Destroy")
-	
-	

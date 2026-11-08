@@ -28,8 +28,10 @@ func interact():
 			player.hide_item()
 			open_detail_window()
 		else:
+			#TODO add sfx
 			player.show_feedback_help(incorrect_item_text)
 	else:
+		#TODO add sfx
 		player.show_feedback_help(no_item_text)
 		
  
@@ -37,8 +39,6 @@ func open_detail_window():
 	player.pause_player()
 	interacting = true
 	
-	#TODO add SFX
-	# use: station_res.slot_in_sfx
 	audio_player.stream = station_res.slot_in_sfx
 	audio_player.play()
 	await get_tree().create_timer(station_res.slot_in_sfx.get_length()).timeout
@@ -49,8 +49,6 @@ func open_detail_window():
 	instance.closed.connect(close_detail_window)
 
 func close_detail_window():
-	#TODO add SFX
-	# use: station_res.slot_out_sfx
 	audio_player.stream = station_res.slot_out_sfx
 	audio_player.play()
 
