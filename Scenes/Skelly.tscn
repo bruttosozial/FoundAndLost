@@ -9,6 +9,7 @@
 [ext_resource type="Texture2D" uid="uid://dr6rtk70wrrp2" path="res://Assets/Character/sk_elleton_idle-Sheet.png" id="5_tlx6r"]
 [ext_resource type="Texture2D" uid="uid://bkbmydnonapbv" path="res://Assets/Character/sk_elleton_gun-Sheet.png" id="6_jpvyd"]
 [ext_resource type="Texture2D" uid="uid://cuca2ubkcehwe" path="res://Assets/Character/sk_elleton_holding.png" id="8_137ib"]
+[ext_resource type="AudioStream" uid="uid://bkcdiag3sknoe" path="res://Assets/Sound/SFX/walk_alt.wav" id="10_otwt0"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_hhh4n"]
 atlas = ExtResource("5_g0km7")
@@ -328,7 +329,8 @@ visible = false
 sprite_frames = SubResource("SpriteFrames_ojbw0")
 
 [node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="." unique_id=995660309]
-volume_db = 24.0
+stream = ExtResource("10_otwt0")
+volume_db = -50.433
 
 [connection signal="animation_changed" from="AnimatedSprite2D" to="." method="sfx_on_animation"]
 [connection signal="frame_changed" from="AnimatedSprite2D" to="." method="_on_animated_sprite_2d_sprite_frames_changed"]
