@@ -9,6 +9,9 @@ class_name PlayerController
 @onready var interaction_label : RichTextLabel = $InteractionHelp/MarginContainer/RichTextLabel
 @onready var feedback_help = $FeedbackHelp
 @onready var feedback_label : RichTextLabel = $FeedbackHelp/MarginContainer/RichTextLabel
+@onready var audio_player = $AudioStreamPlayer2D
+@onready var audio_length = 0.5
+var footStepFrames = [1,3]
 
 var speed = 300
 var current_item : ItemResource
@@ -37,7 +40,9 @@ func _process(_delta: float) -> void:
 		
 
 func _physics_process(_delta: float) -> void:
-	if state == State.ENDING or state == State.NO: return
+	if state == State.ENDING or state == State.NO: 
+		audio_player.stop()
+		return
 	
 	if Input.is_action_just_released("debug_ending"):
 		initiate_ending_func()
@@ -49,7 +54,7 @@ func _physics_process(_delta: float) -> void:
 	else:
 		if direction != Vector2.ZERO:
 			velocity = direction * speed
-			if direction == Vector2.UP:
+			if direction == Vector2.UP:	
 				playAnimation("")
 			if direction == Vector2.DOWN:
 				playAnimation("")
@@ -59,13 +64,22 @@ func _physics_process(_delta: float) -> void:
 			if direction == Vector2.RIGHT:
 				playAnimation("right")
 				item_sprite.position.x = 20
+			print("checking here")
+			print(audio_player.playing)
+			if !audio_player.playing:
+				print("Reaached")
+				audio_player.play()
+				print(audio_player.playing)
 		else:
 			velocity = Vector2.ZERO
 			animated_sprite.play("idle")
+			audio_player.stop()
 		
 		move_and_slide() 
 
+	
 func playAnimation(flip: String):
+	audio_player.play()
 	if flip == "right":
 		animated_sprite.flip_h = true
 		animated_sprite_arm.flip_h = true
