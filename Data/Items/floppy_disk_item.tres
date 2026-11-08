@@ -1,14 +1,15 @@
 [gd_resource type="Resource" script_class="ItemResource" format=3 uid="uid://dn4osqfp0ctc7"]
 
-[ext_resource type="AudioStream" uid="uid://p3cht01st8id" path="res://Assets/Sound/SFX/correct_interaction.wav" id="1_dr134"]
+[ext_resource type="Texture2D" uid="uid://b702rk1b1n6oa" path="res://Assets/Items/BrokenItems/FloppyDiscBroken.png" id="1_2owxy"]
 [ext_resource type="Texture2D" uid="uid://cbkyyro8ogj4w" path="res://Assets/Items/BoomBoxViewFloppyDisc.png" id="1_33jhy"]
+[ext_resource type="AudioStream" uid="uid://p3cht01st8id" path="res://Assets/Sound/SFX/correct_interaction.wav" id="1_dr134"]
 [ext_resource type="Script" uid="uid://gag8l24f5upt" path="res://Scripts/Interaction System/item_resource.gd" id="1_sn3cn"]
 
 [resource]
 script = ExtResource("1_sn3cn")
 name = "Floppy Disk"
 texture = ExtResource("1_33jhy")
-broken_texture = ExtResource("1_33jhy")
+broken_texture = ExtResource("1_2owxy")
 type = 1
 pickup_sfx = ExtResource("1_dr134")
 metadata/_custom_type_script = "uid://gag8l24f5upt"

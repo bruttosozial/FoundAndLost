@@ -26,6 +26,7 @@ func interact():
 		player.pickup_item(item_res)
 		audio_player.stream = item_res.pickup_sfx
 		audio_player.play()
-		await get_tree().create_timer(item_res.pickup_sfx.get_length()).timeout
 		
+		visible = false
+		await get_tree().create_timer(item_res.pickup_sfx.get_length()).timeout
 		queue_free()
