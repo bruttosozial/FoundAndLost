@@ -3,12 +3,14 @@
 [ext_resource type="Texture2D" uid="uid://cwdie4xchlk2" path="res://Assets/Items/ComputerViewCassete.png" id="1_6q6iy"]
 [ext_resource type="Script" uid="uid://gag8l24f5upt" path="res://Scripts/Interaction System/item_resource.gd" id="1_aai0n"]
 [ext_resource type="Texture2D" uid="uid://dqnxenywfcvgx" path="res://Assets/Items/BrokenItems/tapeBroken.png" id="1_i3gfc"]
+[ext_resource type="Texture2D" uid="uid://8kvjy72eetic" path="res://Assets/Items/HighlightedItems/ComputerViewCassete_h.png" id="2_i3gfc"]
 
 [resource]
 script = ExtResource("1_aai0n")
 name = "Cassette"
 texture = ExtResource("1_6q6iy")
 broken_texture = ExtResource("1_i3gfc")
+highlighted_texture = ExtResource("2_i3gfc")
 type = 0
 pickup_sfx = ExtResource("1_6q6iy")
 metadata/_custom_type_script = "uid://gag8l24f5upt"

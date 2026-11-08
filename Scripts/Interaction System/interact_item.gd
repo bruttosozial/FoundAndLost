@@ -30,3 +30,9 @@ func interact():
 		visible = false
 		await get_tree().create_timer(item_res.pickup_sfx.get_length()).timeout
 		queue_free()
+
+func on_range_entered():
+	sprite.texture = item_res.highlighted_texture
+
+func on_range_exited():
+	sprite.texture = item_res.texture

@@ -19,12 +19,20 @@ func _process(delta: float) -> void:
 func interact():
 	pass
 
+func on_range_entered():
+	pass
+
+func on_range_exited():
+	pass
+
 func _on_body_entered(body: Node2D) -> void:
 	if body.name == "Skell":
 		in_range = true
+		on_range_entered()
 		range_entered.emit(self)
 
 func _on_body_exited(body: Node2D) -> void:
 	if body.name == "Skell":
 		in_range = false
+		on_range_exited()
 		range_exited.emit()

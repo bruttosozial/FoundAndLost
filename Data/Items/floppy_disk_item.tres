@@ -4,12 +4,14 @@
 [ext_resource type="Texture2D" uid="uid://cbkyyro8ogj4w" path="res://Assets/Items/BoomBoxViewFloppyDisc.png" id="1_33jhy"]
 [ext_resource type="AudioStream" uid="uid://p3cht01st8id" path="res://Assets/Sound/SFX/correct_interaction.wav" id="1_dr134"]
 [ext_resource type="Script" uid="uid://gag8l24f5upt" path="res://Scripts/Interaction System/item_resource.gd" id="1_sn3cn"]
+[ext_resource type="Texture2D" uid="uid://0hj88jjo4hkj" path="res://Assets/Items/HighlightedItems/BoomBoxViewFloppyDisc_h.png" id="2_e6x3u"]
 
 [resource]
 script = ExtResource("1_sn3cn")
 name = "Floppy Disk"
 texture = ExtResource("1_33jhy")
 broken_texture = ExtResource("1_2owxy")
+highlighted_texture = ExtResource("2_e6x3u")
 type = 1
 pickup_sfx = ExtResource("1_dr134")
 metadata/_custom_type_script = "uid://gag8l24f5upt"

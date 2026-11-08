@@ -4,12 +4,14 @@
 [ext_resource type="Texture2D" uid="uid://cfu15jvc1jyxs" path="res://Assets/Items/BrokenItems/burningRoll.png" id="1_16v20"]
 [ext_resource type="Script" uid="uid://gag8l24f5upt" path="res://Scripts/Interaction System/item_resource.gd" id="1_o3bs7"]
 [ext_resource type="Texture2D" uid="uid://dr3m0s0yh42ny" path="res://Assets/Items/BoomBoxViewFilmRoll.png" id="1_y0l4b"]
+[ext_resource type="Texture2D" uid="uid://bqqob64ycbsf" path="res://Assets/Items/HighlightedItems/BoomBoxViewFilmReel_h.png" id="2_71sb3"]
 
 [resource]
 script = ExtResource("1_o3bs7")
 name = "Film Reel"
 texture = ExtResource("1_y0l4b")
 broken_texture = ExtResource("1_16v20")
+highlighted_texture = ExtResource("2_71sb3")
 type = 3
 pickup_sfx = ExtResource("1_5ased")
 metadata/_custom_type_script = "uid://gag8l24f5upt"

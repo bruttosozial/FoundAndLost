@@ -4,12 +4,14 @@
 [ext_resource type="Script" uid="uid://gag8l24f5upt" path="res://Scripts/Interaction System/item_resource.gd" id="1_m2grb"]
 [ext_resource type="Texture2D" uid="uid://doh5ou60si2a0" path="res://Assets/Items/ProjectorViewCartridge.png" id="1_q8ogj"]
 [ext_resource type="Texture2D" uid="uid://1023wh42x5ic" path="res://Assets/Items/BrokenItems/CartridgeBroken.png" id="1_yrtvb"]
+[ext_resource type="Texture2D" uid="uid://tdsol0qb18lb" path="res://Assets/Items/HighlightedItems/ProjectorViewCartridge_h.png" id="2_jeb43"]
 
 [resource]
 script = ExtResource("1_m2grb")
 name = "Cartridge"
 texture = ExtResource("1_q8ogj")
 broken_texture = ExtResource("1_yrtvb")
+highlighted_texture = ExtResource("2_jeb43")
 type = 2
 pickup_sfx = ExtResource("1_7h3pn")
 metadata/_custom_type_script = "uid://gag8l24f5upt"
