@@ -7,6 +7,7 @@
 [ext_resource type="Texture2D" uid="uid://dl8qmlfs6c2wi" path="res://Assets/Character/sk_elleton-Sheet.png" id="5_4u5wa"]
 [ext_resource type="Texture2D" uid="uid://5a86opo780eq" path="res://Assets/Character/sk_elleton_throw-Sheet.png" id="5_g0km7"]
 [ext_resource type="Texture2D" uid="uid://dr6rtk70wrrp2" path="res://Assets/Character/sk_elleton_idle-Sheet.png" id="5_tlx6r"]
+[ext_resource type="Texture2D" uid="uid://bkbmydnonapbv" path="res://Assets/Character/sk_elleton_gun-Sheet.png" id="6_jpvyd"]
 [ext_resource type="Texture2D" uid="uid://cuca2ubkcehwe" path="res://Assets/Character/sk_elleton_holding.png" id="8_137ib"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_hhh4n"]
@@ -24,6 +25,26 @@ region = Rect2(64, 0, 32, 50)
 [sub_resource type="AtlasTexture" id="AtlasTexture_68jnm"]
 atlas = ExtResource("5_g0km7")
 region = Rect2(96, 0, 32, 50)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_tanm7"]
+atlas = ExtResource("6_jpvyd")
+region = Rect2(0, 0, 32, 50)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_m3uer"]
+atlas = ExtResource("6_jpvyd")
+region = Rect2(32, 0, 32, 50)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_6r5lv"]
+atlas = ExtResource("6_jpvyd")
+region = Rect2(64, 0, 32, 50)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_u2gak"]
+atlas = ExtResource("6_jpvyd")
+region = Rect2(96, 0, 32, 50)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_nvhav"]
+atlas = ExtResource("6_jpvyd")
+region = Rect2(128, 0, 32, 50)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_otwt0"]
 atlas = ExtResource("5_tlx6r")
@@ -81,6 +102,26 @@ animations = [{
 }],
 "loop": 0,
 "name": &"destroy",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_tanm7")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_m3uer")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_6r5lv")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_u2gak")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_nvhav")
+}],
+"loop": 1,
+"name": &"gun_front",
 "speed": 5.0
 }, {
 "frames": [{
@@ -204,9 +245,7 @@ texture_filter = 1
 position = Vector2(-2, -7)
 scale = Vector2(1.96875, 1.96875)
 sprite_frames = SubResource("SpriteFrames_r5iys")
-animation = &"destroy"
-frame = 8
-frame_progress = 1.0
+animation = &"gun_front"
 
 [node name="AnimatedSprite2DArm" type="AnimatedSprite2D" parent="AnimatedSprite2D" unique_id=19763518]
 visible = false
