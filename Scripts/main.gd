@@ -20,6 +20,8 @@ extends Node2D
 @onready var camera_2_spawn_pos_11: Node2D = $camera2SpawnPos11
 @onready var camera_2_spawn_pos_12: Node2D = $camera2SpawnPos12
 @onready var camera_2_spawn_pos_13: Node2D = $camera2SpawnPos13
+@onready var camera_2_spawn_pos_14: Node2D = $camera2SpawnPos14
+@onready var camera_2_spawn_pos_15: Node2D = $camera2SpawnPos15
 @onready var detailed_view_camera: Camera2D = $detailedViewCamera
 
 @onready var perspectiveChangeProjectorPC = $ComputerViewbackground/perspectiveChange3
@@ -120,7 +122,7 @@ func enter_computer_left(_body: PlayerController) -> void:
 		skell.pause_player()
 		skell.position = camera_2_spawn_pos_13.position
 		skell.playAnimation("right")
-		tween.tween_property(skell, "position", camera_2_spawn_pos_5.position, 0.5)
+		tween.tween_property(skell, "position", camera_2_spawn_pos_14.position, 0.5)
 		skell.resume_player()
 		tween.finished.connect(skelly_finish_move)
 
@@ -188,7 +190,7 @@ func enter_cassette_from_left(_body: PlayerController):
 		skell.pause_player()
 		skell.position = camera_2_spawn_pos_11.position
 		skell.playAnimation("right")
-		tween.tween_property(skell, "position", camera_2_spawn_pos_8.position, 0.5)
+		tween.tween_property(skell, "position", camera_2_spawn_pos_15.position, 0.5)
 		skell.resume_player()
 		tween.finished.connect(skelly_finish_move)
 

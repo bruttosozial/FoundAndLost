@@ -6,15 +6,15 @@
 [ext_resource type="AudioStream" uid="uid://lvo2m1n3qiyk" path="res://Assets/Sound/divorce-music-solo.wav" id="4_1bamb"]
 
 [node name="Credits" type="MarginContainer" unique_id=655081398]
+custom_maximum_size = Vector2(1920, 1080)
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
 theme_override_constants/margin_left = 100
-theme_override_constants/margin_top = 100
+theme_override_constants/margin_top = 50
 theme_override_constants/margin_right = 100
-theme_override_constants/margin_bottom = 100
 script = ExtResource("1_ccovl")
 
 [node name="CenterContainer" type="CenterContainer" parent="." unique_id=858860992]
@@ -23,19 +23,28 @@ layout_mode = 2
 [node name="VBoxContainer" type="VBoxContainer" parent="CenterContainer" unique_id=58974287]
 layout_mode = 2
 
-[node name="FootageDeleted" type="PanelContainer" parent="CenterContainer/VBoxContainer" unique_id=464159366]
+[node name="HBoxContainer" type="HBoxContainer" parent="CenterContainer/VBoxContainer" unique_id=1607938412]
+layout_mode = 2
+size_flags_vertical = 3
+offset_transform_enabled = true
+
+[node name="Control" type="Control" parent="CenterContainer/VBoxContainer/HBoxContainer" unique_id=1645224877]
+layout_mode = 2
+size_flags_horizontal = 3
+
+[node name="FootageDeleted" type="PanelContainer" parent="CenterContainer/VBoxContainer/HBoxContainer" unique_id=464159366]
 layout_mode = 2
 offset_transform_enabled = true
 theme = ExtResource("1_gryuy")
 
-[node name="MarginContainer" type="MarginContainer" parent="CenterContainer/VBoxContainer/FootageDeleted" unique_id=1723990131]
+[node name="MarginContainer" type="MarginContainer" parent="CenterContainer/VBoxContainer/HBoxContainer/FootageDeleted" unique_id=1723990131]
 layout_mode = 2
 theme_override_constants/margin_left = 15
 theme_override_constants/margin_top = 15
 theme_override_constants/margin_right = 15
 theme_override_constants/margin_bottom = 15
 
-[node name="RichTextLabel" type="RichTextLabel" parent="CenterContainer/VBoxContainer/FootageDeleted/MarginContainer" unique_id=2078990385]
+[node name="RichTextLabel" type="RichTextLabel" parent="CenterContainer/VBoxContainer/HBoxContainer/FootageDeleted/MarginContainer" unique_id=2078990385]
 layout_mode = 2
 theme_override_colors/default_color = Color(0.7176471, 0, 0, 1)
 theme_override_fonts/normal_font = ExtResource("1_r18jl")
@@ -43,35 +52,223 @@ theme_override_font_sizes/normal_font_size = 100
 text = "FOOTAGE DELETED"
 fit_content = true
 autowrap_mode = 0
+horizontal_alignment = 1
 
-[node name="PanelContainer" type="Control" parent="CenterContainer/VBoxContainer" unique_id=410134692]
-custom_minimum_size = Vector2(30, 30)
+[node name="Control2" type="Control" parent="CenterContainer/VBoxContainer/HBoxContainer" unique_id=2132944092]
 layout_mode = 2
+size_flags_horizontal = 3
 
-[node name="MarginContainer" type="MarginContainer" parent="CenterContainer/VBoxContainer" unique_id=650053296]
+[node name="MarginContainer2" type="MarginContainer" parent="CenterContainer/VBoxContainer" unique_id=1206472047]
+visible = false
 layout_mode = 2
 theme_override_constants/margin_left = 50
 theme_override_constants/margin_right = 50
 
+[node name="HBoxContainer" type="HBoxContainer" parent="CenterContainer/VBoxContainer/MarginContainer2" unique_id=2129870147]
+visible = false
+layout_mode = 2
+offset_transform_enabled = true
+offset_transform_scale = Vector2(0.75, 0.75)
+
+[node name="credit_roles" type="Label" parent="CenterContainer/VBoxContainer/MarginContainer2/HBoxContainer" unique_id=504980294]
+propagate_maximum_size = true
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 1
+theme_override_fonts/font = ExtResource("1_r18jl")
+theme_override_font_sizes/font_size = 32
+text = "Actor - S. K. Elletton:
+Actor - Husband of S.K. Elletton:
+
+Animation:
+
+Music:
+
+
+Pixel Art:
+
+
+
+Project Managment:
+"
+
+[node name="Control" type="Control" parent="CenterContainer/VBoxContainer/MarginContainer2/HBoxContainer" unique_id=1619622589]
+custom_minimum_size = Vector2(100, 30)
+layout_mode = 2
+
+[node name="credit_names" type="Label" parent="CenterContainer/VBoxContainer/MarginContainer2/HBoxContainer" unique_id=836861131]
+propagate_maximum_size = true
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_fonts/font = ExtResource("1_r18jl")
+theme_override_font_sizes/font_size = 32
+text = "Jonathan “Joni” von Werder - bruttosozial
+Christos Ringas - daukos
+
+Sebastian Thörn -  aPaincake
+
+Christos Ringas - daukos
+Kirua - Kiruaxd
+
+Christos Ringas - daukos  
+Rina Jensen - TinyStupidRatay  
+Sebastian Thörn -  aPaincake
+
+Clara Estruch - clardedeu 
+Scary Baby - always watching"
+horizontal_alignment = 2
+
+[node name="MarginContainer" type="MarginContainer" parent="CenterContainer/VBoxContainer" unique_id=650053296]
+layout_mode = 2
+size_flags_vertical = 3
+offset_transform_scale = Vector2(0.6, 0.6)
+theme_override_constants/margin_left = 50
+theme_override_constants/margin_top = 30
+theme_override_constants/margin_right = 50
+
 [node name="HBoxContainer" type="HBoxContainer" parent="CenterContainer/VBoxContainer/MarginContainer" unique_id=2004700471]
 layout_mode = 2
+offset_transform_enabled = true
 
 [node name="credit_roles" type="Label" parent="CenterContainer/VBoxContainer/MarginContainer/HBoxContainer" unique_id=1536717054]
 propagate_maximum_size = true
 layout_mode = 2
 size_flags_horizontal = 3
 theme_override_fonts/font = ExtResource("1_r18jl")
-theme_override_font_sizes/font_size = 32
-text = "CREDITS DESIGNER
-NARRATIVE DESIGNER"
+theme_override_font_sizes/font_size = 22
+text = "Actor - S. K. Elletton:
+Actor - Husband of S.K. Elletton:
+
+Animation:
+
+Music:
+
+
+Pixel Art:
+
+
+
+Programming:
+
+
+
+
+
+Project Managment:
+
+
+Scary Baby:
+
+Sound:
+
+Video Filming and Editing:
+
+
+Writing:
+"
+
+[node name="Control" type="Control" parent="CenterContainer/VBoxContainer/MarginContainer/HBoxContainer" unique_id=440844964]
+custom_minimum_size = Vector2(30, 30)
+layout_mode = 2
+size_flags_horizontal = 3
 
 [node name="credit_names" type="Label" parent="CenterContainer/VBoxContainer/MarginContainer/HBoxContainer" unique_id=46260399]
+propagate_maximum_size = true
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_fonts/font = ExtResource("1_r18jl")
+theme_override_font_sizes/font_size = 22
+text = "Jonathan “Joni” von Werder - bruttosozial
+Christos Ringas - daukos
+
+Sebastian Thörn -  aPaincake
+
+Christos Ringas - daukos
+Kirua - Kiruaxd
+
+Christos Ringas - daukos
+Rina Jensen - TinyStupidRatay
+Sebastian Thörn -  aPaincake
+
+Clara Estruch - clardedeu
+Christos Ringas - daukos
+Jonathan “Joni” von Werder - bruttosozial
+Noel Ali - noelams
+Sebastian Thörn -  aPaincake
+
+Clara Estruch - clardedeu
+Scary Baby - always watching
+
+Scary Baby -  always close
+
+Kirua - Kiruaxd
+
+Christos RIngas - daukos
+Jonathan “Joni” von Werder - bruttosozial
+
+Christos RIngas - daukos
+Jonathan “Joni” von Werder - bruttosozial"
+horizontal_alignment = 2
+
+[node name="MarginContainer3" type="MarginContainer" parent="CenterContainer/VBoxContainer" unique_id=1835183644]
+visible = false
+layout_mode = 2
+theme_override_constants/margin_left = 50
+theme_override_constants/margin_right = 50
+
+[node name="HBoxContainer" type="HBoxContainer" parent="CenterContainer/VBoxContainer/MarginContainer3" unique_id=1701723587]
+layout_mode = 2
+offset_transform_enabled = true
+offset_transform_scale = Vector2(0.75, 0.75)
+
+[node name="credit_roles" type="Label" parent="CenterContainer/VBoxContainer/MarginContainer3/HBoxContainer" unique_id=1807795532]
+propagate_maximum_size = true
 layout_mode = 2
 size_flags_horizontal = 3
 theme_override_fonts/font = ExtResource("1_r18jl")
 theme_override_font_sizes/font_size = 32
-text = "PERSON123
-PERSON123"
+text = "Programming:
+
+
+
+
+
+Scary Baby:
+
+Sound:
+
+Video Filming and Editing:
+
+
+Writing:
+"
+
+[node name="Control" type="Control" parent="CenterContainer/VBoxContainer/MarginContainer3/HBoxContainer" unique_id=506579136]
+custom_minimum_size = Vector2(30, 30)
+layout_mode = 2
+size_flags_horizontal = 3
+
+[node name="credit_names" type="Label" parent="CenterContainer/VBoxContainer/MarginContainer3/HBoxContainer" unique_id=1075980775]
+propagate_maximum_size = true
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_fonts/font = ExtResource("1_r18jl")
+theme_override_font_sizes/font_size = 32
+text = "Clara Estruch - clardedeu
+Christos Ringas - daukos
+Jonathan “Joni” von Werder - bruttosozial
+Noel Ali - noelams
+Sebastian Thörn -  aPaincake
+
+Scary Baby -  always close
+
+Kirua - Kiruaxd
+
+Christos RIngas - daukos
+Jonathan “Joni” von Werder - bruttosozial
+
+Christos RIngas - daukos
+Jonathan “Joni” von Werder - bruttosozial"
 horizontal_alignment = 2
 
 [node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="." unique_id=1768122354]

@@ -1,6 +1,6 @@
 extends MarginContainer
 
-@onready var footageDeleted = $CenterContainer/VBoxContainer/FootageDeleted
+@onready var footageDeleted = $CenterContainer/VBoxContainer/HBoxContainer/FootageDeleted
 @onready var timer = $Timer
 
 # quake "FLUORESCENT FLICKER" pattern

@@ -2,12 +2,14 @@ extends Control
 
 @onready var streamPlayer : AudioStreamPlayer2D = $AudioStreamPlayer2D
 @onready var animated_sprite = $AnimatedSprite2D
+@onready var subtitle_player = $SubtitlePlayer
 signal closed
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
 	streamPlayer.play()
 	animated_sprite.play("ode_to_joy")	
+	subtitle_player.play_subtitles()
 	if get_tree().root.get_children()[0] is CCTV:
 		get_tree().root.get_children()[0].pause_bgm()
 	else: 
