@@ -14,6 +14,7 @@ var interacting = false
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
 	interaction_text = "Use " + station_res.name
+	player.destroyed_item.connect(on_item_destroyed)
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta: float) -> void:
@@ -55,3 +56,5 @@ func close_detail_window():
 
 	player.on_detail_view_closed()
 
+func on_item_destroyed():
+	interacting = false
