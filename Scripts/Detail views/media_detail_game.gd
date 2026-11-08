@@ -9,10 +9,11 @@ func _ready() -> void:
 	else:
 		pass
 
-
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta: float) -> void:
 	if Input.is_action_just_released("interact"):
+		if get_tree().root.get_children()[0] is CCTV:
+			get_tree().root.get_children()[0].resume_bgm()
 		closed.emit()
 		queue_free()
 

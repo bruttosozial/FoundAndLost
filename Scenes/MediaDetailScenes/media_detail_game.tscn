@@ -1,8 +1,8 @@
 [gd_scene format=3 uid="uid://mcctsegh8tsv"]
 
 [ext_resource type="Script" uid="uid://b67wdaeyofmy3" path="res://Scripts/Detail views/media_detail_game.gd" id="1_7h30u"]
-[ext_resource type="Texture2D" uid="uid://bt31aqbiqu4e7" path="res://Assets/console.png" id="2_0i1c0"]
-[ext_resource type="VideoStream" uid="uid://7ulg14rsm2f7" path="res://Assets/media_details/output-1by1.ogv" id="3_0i1c0"]
+[ext_resource type="Texture2D" uid="uid://0lok76bvks4g" path="res://Assets/console.png" id="2_0i1c0"]
+[ext_resource type="VideoStream" uid="uid://dgxinbolntyvf" path="res://Assets/media_details/game_recording_pixel.ogv" id="2_gq3o4"]
 [ext_resource type="Theme" uid="uid://bo45umqon0p4n" path="res://Resources/footage_deleted.tres" id="3_bgejd"]
 
 [node name="MediaDetailGame" type="Node2D" unique_id=1174348725]
@@ -16,17 +16,22 @@ offset_bottom = 1080.0
 [node name="MarginContainer" type="MarginContainer" parent="PanelContainer" unique_id=548585390]
 layout_mode = 2
 offset_transform_enabled = true
-theme_override_constants/margin_left = 350
-theme_override_constants/margin_top = 0
-theme_override_constants/margin_right = 400
-theme_override_constants/margin_bottom = 200
+theme_override_constants/margin_left = 490
+theme_override_constants/margin_top = 90
+theme_override_constants/margin_right = 590
+theme_override_constants/margin_bottom = 330
 
-[node name="VideoStreamPlayer" type="VideoStreamPlayer" parent="PanelContainer/MarginContainer" unique_id=2043760188]
+[node name="AspectRatioContainer" type="AspectRatioContainer" parent="PanelContainer/MarginContainer" unique_id=1606950008]
 layout_mode = 2
-size_flags_horizontal = 4
-size_flags_vertical = 4
-stream = ExtResource("3_0i1c0")
+ratio = 1.25
+
+[node name="VideoStreamPlayer" type="VideoStreamPlayer" parent="PanelContainer/MarginContainer/AspectRatioContainer" unique_id=2043760188]
+propagate_maximum_size = true
+layout_mode = 2
+stream = ExtResource("2_gq3o4")
+volume_db = 7.999999
 autoplay = true
+expand = true
 
 [node name="Console" type="Sprite2D" parent="PanelContainer" unique_id=303621838]
 texture_filter = 1
@@ -67,4 +72,4 @@ fit_content = true
 horizontal_alignment = 1
 vertical_alignment = 1
 
-[connection signal="finished" from="PanelContainer/MarginContainer/VideoStreamPlayer" to="." method="_on_video_stream_player_finished"]
+[connection signal="finished" from="PanelContainer/MarginContainer/AspectRatioContainer/VideoStreamPlayer" to="." method="_on_video_stream_player_finished"]

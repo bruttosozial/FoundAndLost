@@ -361,7 +361,7 @@ shape = SubResource("RectangleShape2D_gt3je")
 [node name="CameraAudioPlayer" type="AudioStreamPlayer2D" parent="." unique_id=103266751]
 position = Vector2(1132, 631)
 stream = ExtResource("25_u50mg")
-volume_db = 24.0
+volume_db = 10.0
 max_distance = 3000.0
 attenuation = 0.0
 
