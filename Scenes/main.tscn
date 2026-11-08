@@ -3,7 +3,6 @@
 [ext_resource type="Script" uid="uid://bocwip3aex8d0" path="res://Scripts/main.gd" id="1_d1ilt"]
 [ext_resource type="Texture2D" uid="uid://dqkm3i0j5556l" path="res://Assets/Screens/backgrounds/ConsoleView.png" id="1_hptm8"]
 [ext_resource type="PackedScene" uid="uid://c5cbhrcednbmc" path="res://Scenes/Skelly.tscn" id="1_jjgbg"]
-[ext_resource type="PackedScene" uid="uid://dxna1atweh5uw" path="res://Scenes/perspective_base.tscn" id="3_jjvhh"]
 [ext_resource type="Texture2D" uid="uid://buwwxd764gs3g" path="res://Assets/Screens/backgrounds/BoomBoxViewBackground.png" id="7_344ge"]
 [ext_resource type="Texture2D" uid="uid://bhrqryukoduwv" path="res://Assets/Screens/backgrounds/ProjectorViewBackground.png" id="8_ynf5e"]
 [ext_resource type="Texture2D" uid="uid://cg7lugcoj6iv5" path="res://Assets/Screens/backgrounds/ProjectorViewForeground.png" id="9_hptm8"]
@@ -25,22 +24,6 @@
 [ext_resource type="Resource" uid="uid://bxu1vnm2ub1yv" path="res://Data/Stations/film_projector_station.tres" id="21_pdsj5"]
 [ext_resource type="Resource" uid="uid://w4mysq2irt6v" path="res://Data/Stations/NES_station.tres" id="24_3pmx8"]
 [ext_resource type="AudioStream" uid="uid://btyt2clapp8ko" path="res://Assets/Sound/SFX/cam_switch.mp3" id="25_u50mg"]
-
-[sub_resource type="GDScript" id="GDScript_hptm8"]
-script/source = "extends Area2D
-"
-
-[sub_resource type="GDScript" id="GDScript_d1ilt"]
-script/source = "extends Area2D
-"
-
-[sub_resource type="GDScript" id="GDScript_6iyac"]
-script/source = "extends Area2D
-"
-
-[sub_resource type="GDScript" id="GDScript_fdnlq"]
-script/source = "extends Area2D
-"
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_wsu2k"]
 size = Vector2(108.5, 176)
@@ -208,28 +191,6 @@ texture = ExtResource("9_hptm8")
 
 [node name="Skell" parent="." unique_id=1846132312 instance=ExtResource("1_jjgbg")]
 position = Vector2(180, 366)
-
-[node name="firstPerspective" parent="." unique_id=1024044903 instance=ExtResource("3_jjvhh")]
-visible = false
-position = Vector2(-16, -8)
-script = SubResource("GDScript_hptm8")
-
-[node name="secondPerspective" parent="." unique_id=1767435977 instance=ExtResource("3_jjvhh")]
-visible = false
-position = Vector2(944, 536)
-script = SubResource("GDScript_d1ilt")
-
-[node name="thirdPerspective" parent="." unique_id=203502483 instance=ExtResource("3_jjvhh")]
-visible = false
-position = Vector2(-16, 536)
-script = SubResource("GDScript_6iyac")
-
-[node name="Area2D" type="Area2D" parent="thirdPerspective" unique_id=1846886983]
-
-[node name="fourthPerspective" parent="." unique_id=1769204779 instance=ExtResource("3_jjvhh")]
-visible = false
-position = Vector2(944, -7)
-script = SubResource("GDScript_fdnlq")
 
 [node name="Boundary" parent="." unique_id=235025924 instance=ExtResource("9_ynf5e")]
 
@@ -401,6 +362,9 @@ shape = SubResource("RectangleShape2D_gt3je")
 stream = ExtResource("25_u50mg")
 volume_db = 24.0
 
+[node name="detailedViewCamera" type="Camera2D" parent="." unique_id=1620473421]
+position = Vector2(952, 544)
+
 [connection signal="body_entered" from="ConsoleView/perspectiveChange" to="." method="_on_perspective_change_body_entered"]
 [connection signal="body_entered" from="ConsoleView/perspectiveChange1_1" to="." method="_on_perspective_change_1_1_body_entered"]
 [connection signal="body_entered" from="ProjectorViewBackground/perspectiveChange2" to="." method="_on_perspective_change_2_body_entered"]
@@ -411,10 +375,14 @@ volume_db = 24.0
 [connection signal="body_entered" from="BoomBoxViewBackground/perspectiveChangeCassettePC" to="." method="enter_computer_left"]
 [connection signal="ending_next_screen" from="Skell" to="." method="ending_switch_to_next_screen"]
 [connection signal="initiate_ending" from="Skell" to="." method="initiate_ending"]
-[connection signal="body_entered" from="firstPerspective" to="transitionCamera" method="_on_first_perspective_body_entered"]
-[connection signal="body_entered" from="secondPerspective" to="transitionCamera" method="_on_second_perspective_body_entered"]
-[connection signal="body_entered" from="thirdPerspective" to="transitionCamera" method="_on_third_perspective_body_entered"]
-[connection signal="body_entered" from="fourthPerspective" to="transitionCamera" method="_on_fourth_perspective_body_entered"]
+[connection signal="change_detail_cam" from="InteractionController/StationCassettePlayer" to="." method="switchDetailedViewCam"]
+[connection signal="change_to_active_cam" from="InteractionController/StationCassettePlayer" to="." method="backToActiveCam"]
+[connection signal="change_detail_cam" from="InteractionController/StationOldPC" to="." method="switchDetailedViewCam"]
+[connection signal="change_to_active_cam" from="InteractionController/StationOldPC" to="." method="backToActiveCam"]
+[connection signal="change_detail_cam" from="InteractionController/StationFilmProjector" to="." method="switchDetailedViewCam"]
+[connection signal="change_to_active_cam" from="InteractionController/StationFilmProjector" to="." method="backToActiveCam"]
+[connection signal="change_detail_cam" from="InteractionController/StationNES" to="." method="switchDetailedViewCam"]
+[connection signal="change_to_active_cam" from="InteractionController/StationNES" to="." method="backToActiveCam"]
 
 [editable path="InteractionController/ItemCassette"]
 [editable path="InteractionController/ItemFloppyDisk"]
