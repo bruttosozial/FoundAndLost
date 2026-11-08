@@ -45,7 +45,7 @@ func open_detail_window():
 	
 	audio_player.stream = station_res.slot_in_sfx
 	audio_player.play()
-	await get_tree().create_timer(station_res.slot_in_sfx.get_length()).timeout
+	#await get_tree().create_timer(station_res.slot_in_sfx.get_length()).timeout
 	
 	var instance = station_res.scene.instantiate()
 	get_tree().root.add_child(instance)
