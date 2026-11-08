@@ -13,8 +13,8 @@ class_name PlayerController
 @onready var audio_length = 0.5
 var footStepFrames = [1,3]
 
-var walk_sfx : AudioStream = preload("res://Assets/Sound/SFX/skelly_walk_2.wav")
-var gun_sfx : AudioStream = preload("res://Assets/Sound/SFX/correct_interaction.wav")
+var walk_sfx : AudioStream = preload("res://Assets/Sound/SFX/WalkTest_4.wav")
+var gun_sfx : AudioStream = preload("res://Assets/Sound/SFX/gunshot.mp3")
 
 var speed = 300
 var current_item : ItemResource
@@ -198,5 +198,10 @@ func set_ending_state():
 func initiate_ending_func():
 	initiate_ending.emit()
 	state = State.ENDING
-	show_interaction_help("SHOOT")
-	
+	show_interaction_help("SHOOT")	
+
+func _on_animated_sprite_2d_sprite_frames_changed() -> void:
+	if animated_sprite.animation == "gun_side" and animated_sprite.frame == 5:
+		print("boom")
+		audio_player.stream = gun_sfx
+		audio_player.play()

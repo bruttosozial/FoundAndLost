@@ -321,7 +321,7 @@ texture_filter = 1
 position = Vector2(-2, -7)
 scale = Vector2(1.96875, 1.96875)
 sprite_frames = SubResource("SpriteFrames_r5iys")
-animation = &"run"
+animation = &"gun_side"
 
 [node name="AnimatedSprite2DArm" type="AnimatedSprite2D" parent="AnimatedSprite2D" unique_id=19763518]
 visible = false
@@ -331,4 +331,4 @@ sprite_frames = SubResource("SpriteFrames_ojbw0")
 volume_db = 24.0
 
 [connection signal="animation_changed" from="AnimatedSprite2D" to="." method="sfx_on_animation"]
-[connection signal="frame_changed" from="AnimatedSprite2D" to="." method="walkAudioImpl"]
+[connection signal="frame_changed" from="AnimatedSprite2D" to="." method="_on_animated_sprite_2d_sprite_frames_changed"]
