@@ -198,6 +198,10 @@ position = Vector2(180, 366)
 position = Vector2(5, -161)
 rotation = 1.5707964
 
+[node name="Boundary5" parent="." unique_id=782592375 instance=ExtResource("9_ynf5e")]
+position = Vector2(937, -174)
+rotation = 1.5707964
+
 [node name="Boundary4" parent="." unique_id=392623354 instance=ExtResource("9_ynf5e")]
 position = Vector2(2266, -133)
 rotation = 1.5707964
