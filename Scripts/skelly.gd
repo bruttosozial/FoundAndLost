@@ -21,6 +21,7 @@ func _ready() -> void:
 	initiate_ending.emit()
 
 var seconds = 1.0
+signal destroyed_item
 
 func _physics_process(delta: float) -> void:
 	seconds += delta
@@ -126,6 +127,7 @@ func destroy_item():
 	broken_item_sprite.texture = null
 	remove_item()
 	paused = false
+	destroyed_item.emit()
 
 func play_destroy_animation():
 	animated_sprite.play("destroy")
