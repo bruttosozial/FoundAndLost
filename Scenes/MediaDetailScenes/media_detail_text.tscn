@@ -3,6 +3,7 @@
 [ext_resource type="Script" uid="uid://ctgg2n0fwb2fk" path="res://Scripts/Detail views/media_detail_text.gd" id="1_im5rv"]
 [ext_resource type="Texture2D" uid="uid://bn8ywgax4kjg8" path="res://Assets/media_details/floppy_screen_text.png" id="1_k2pxm"]
 [ext_resource type="Theme" uid="uid://bo45umqon0p4n" path="res://Resources/footage_deleted.tres" id="3_13p33"]
+[ext_resource type="Texture2D" uid="uid://rbig5ypnwy2u" path="res://Assets/Screens/DetailedViewComputer.png" id="4_aglhs"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_aglhs"]
 content_margin_left = 0.0
@@ -20,7 +21,8 @@ corner_detail = 5
 script = ExtResource("1_im5rv")
 
 [node name="FloppyScreenSprite2D" type="Sprite2D" parent="." unique_id=2006513879]
-position = Vector2(960, 540)
+position = Vector2(871, 504.00003)
+scale = Vector2(0.56, 0.695)
 texture = ExtResource("1_k2pxm")
 
 [node name="PanelContainer" type="PanelContainer" parent="." unique_id=1906134645]
@@ -58,3 +60,11 @@ text = "[E] TO CLOSE"
 fit_content = true
 horizontal_alignment = 1
 vertical_alignment = 1
+
+[node name="Node2D" type="Node2D" parent="." unique_id=1429782760]
+
+[node name="Sprite2D" type="Sprite2D" parent="Node2D" unique_id=1682403122]
+texture_filter = 1
+position = Vector2(961.99994, 536.99994)
+scale = Vector2(6, 6)
+texture = ExtResource("4_aglhs")
