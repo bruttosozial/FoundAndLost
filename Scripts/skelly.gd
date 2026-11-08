@@ -120,12 +120,11 @@ func hide_feedback_help():
 	feedback_help.visible = false
 
 func pause_player():
-	#set_physics_process(false)
+	set_physics_process(false)
 	animated_sprite.stop()
 
 func resume_player():
-	pass
-	#set_physics_process(true)
+	set_physics_process(true)
 
 func destroy_item():
 	state = State.NO
