@@ -81,14 +81,14 @@ polygon = PackedVector2Array(-157.33333, -5.3333282, -127.99999, -5.3333282, -12
 
 [node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="ConsoleView/perspectiveChange" unique_id=1678965887]
 position = Vector2(-0.33332825, 0.33333588)
-polygon = PackedVector2Array(35, -8.333336, 40.000015, 90.66667, 8.3333435, -3, 5.3333435, -29.333332)
+polygon = PackedVector2Array(27.666687, 19.333336, 38.666687, 76.33334, 12.3333435, 26.333336, 5.3333435, -29.333332)
 
 [node name="perspectiveChange1_1" type="Area2D" parent="ConsoleView" unique_id=1102543659]
 
 [node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="ConsoleView/perspectiveChange1_1" unique_id=1796394215]
-position = Vector2(-66.33331, 45.66667)
+position = Vector2(-65.66665, 50.33334)
 rotation = 1.6285248
-polygon = PackedVector2Array(39.62567, -7.6323013, 42.809998, 93.68609, 36.96344, -7.478447, 39.103546, -109.104546)
+polygon = PackedVector2Array(33.305847, -105.43059, 42.911972, 89.67352, 36.000565, 91.40851, 29.056656, -103.84946)
 
 [node name="plaqueBoundary" type="StaticBody2D" parent="ConsoleView" unique_id=712929622]
 
@@ -97,7 +97,7 @@ polygon = PackedVector2Array(-23.999985, 13.333336, -21.333328, 29.333336, -13.3
 
 [node name="ProjectorViewBackground" type="Sprite2D" parent="." unique_id=1249924910]
 texture_filter = 1
-position = Vector2(1424, 272.00006)
+position = Vector2(1787, 261)
 scale = Vector2(3, 2.988889)
 texture = ExtResource("8_ynf5e")
 
@@ -121,24 +121,24 @@ polygon = PackedVector2Array(-149.33334, -48.178436, -149.33334, 16.059475, -160
 [node name="perspectiveChange2" type="Area2D" parent="ProjectorViewBackground" unique_id=1049286145]
 
 [node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="ProjectorViewBackground/perspectiveChange2" unique_id=1299858689]
-position = Vector2(2.6666665, -2.0420683e-05)
-polygon = PackedVector2Array(-10.666687, -82.97397, -10.666687, -72.267654, -69.33334, -82.97397)
+position = Vector2(-0.6666665, 51.189568)
+polygon = PackedVector2Array(-9.6666565, -74.94424, -71.33331, -73.27137, -69.33334, -82.97397, -9.3333435, -83.30855)
 
 [node name="perspectivechange2_1" type="Area2D" parent="ProjectorViewBackground" unique_id=1116379959]
 
 [node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="ProjectorViewBackground/perspectivechange2_1" unique_id=2056899991]
-polygon = PackedVector2Array(-77.33331, -37.472137, -122.66666, -37.472137, -117.33331, -2.2888184e-05)
+polygon = PackedVector2Array(-84.33331, -15.39035, -116.66666, -15.72493, -113.66666, 25.762062)
 
 [node name="StaticBody2D4" type="StaticBody2D" parent="ProjectorViewBackground" unique_id=271068134]
 
 [node name="collpoly" type="CollisionPolygon2D" parent="ProjectorViewBackground/StaticBody2D4" unique_id=426516518]
 position = Vector2(0, 8.0297165)
 scale = Vector2(1, 1.0000002)
-polygon = PackedVector2Array(-160, 85.65053, 160, 85.650536, 157.33331, 91.003685, -159.99997, 91.003685)
+polygon = PackedVector2Array(-158.33331, 75.27879, -34.151184, 75.27879, 130.47876, 75.27879, 161.66669, 75.2788, 159, 80.63195, 1.9958496, 80.63194, -158.33328, 80.63195)
 
 [node name="ComputerViewbackground" type="Sprite2D" parent="." unique_id=734123802]
 texture_filter = 1
-position = Vector2(1428, 811)
+position = Vector2(1768, 1213)
 scale = Vector2(3.025, 2.988889)
 texture = ExtResource("11_d1ilt")
 
@@ -153,18 +153,25 @@ polygon = PackedVector2Array(-25.123962, -59.88846, -23.801697, 8.029724, -66.11
 scale = Vector2(1, 0.99999994)
 
 [node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="ComputerViewbackground/StaticBody2D" unique_id=1406912264]
-polygon = PackedVector2Array(-25.123962, -59.88846, -83.305786, -30.446075, -80.66116, 41.821564, -114.38016, 75.94797, 157.35535, 92.676575, -158.67767, 87.992584, -154.71072, -73.27136)
+polygon = PackedVector2Array(-111.735535, -50.185883, -83.305786, -44.498154, -80.66116, 41.821564, -132.56198, 77.62082, -152.0661, 72.602234, -155.04132, -28.77324)
+
+[node name="perspectiveChangePCCassette" type="Area2D" parent="ComputerViewbackground" unique_id=1364880828]
+scale = Vector2(1, 0.9999998)
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="ComputerViewbackground/perspectiveChangePCCassette" unique_id=151477190]
+position = Vector2(-79.669426, 158.5874)
+polygon = PackedVector2Array(-82.64464, -113.420105, -82.55806, -102.3801, -82.31404, -71.26398, -74.38017, -70.260254, -75.041336, -113.75467)
 
 [node name="perspectiveChange3" type="Area2D" parent="ComputerViewbackground" unique_id=381639278]
 scale = Vector2(1, 0.9999999)
 
 [node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="ComputerViewbackground/perspectiveChange3" unique_id=998334074]
-position = Vector2(-3.966942, 23.085503)
-polygon = PackedVector2Array(-23.801636, -85.65057, 153.38846, -64.23793, 55.5372, -88.32715, -15.867767, -96.35689)
+position = Vector2(-24.13223, 41.821564)
+polygon = PackedVector2Array(-57.190063, -24.758362, 39.669434, -24.423798, 42.97522, -43.15985, -57.190063, -43.82901)
 
 [node name="BoomBoxViewBackground" type="Sprite2D" parent="." unique_id=2053195635]
 texture_filter = 1
-position = Vector2(464, 799.99994)
+position = Vector2(485, 1199)
 scale = Vector2(2.95, 2.9444444)
 texture = ExtResource("7_344ge")
 
@@ -173,23 +180,34 @@ position = Vector2(59.66101, 5.4339805)
 scale = Vector2(1.016949, 1.0188679)
 
 [node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="BoomBoxViewBackground/perspectiveChange4" unique_id=1095822346]
-position = Vector2(-66.33331, 45.66667)
+position = Vector2(-132.66666, -89.00001)
 rotation = 1.5781958
-polygon = PackedVector2Array(39.62567, -7.6323013, 40.73355, 144.03587, 36.96344, -7.478447, 41.091553, -167.97531)
+scale = Vector2(4.252994, 0.7389822)
+polygon = PackedVector2Array(40.423767, 78.56123, 38.114628, 78.66968, 38.081486, -312.86914, 39.54184, -302.56656)
 
 [node name="StaticBody2D" type="StaticBody2D" parent="BoomBoxViewBackground" unique_id=2131335441]
 
 [node name="CollisionShape2D" type="CollisionPolygon2D" parent="BoomBoxViewBackground/StaticBody2D" unique_id=1884293793]
 polygon = PackedVector2Array(157.28813, 2.7170105, 27.118637, -10.867889, 16.27118, 5.4339905, -16.271194, 3.0517578e-05, -21.694916, -19.01883, -81.355934, -27.16977, -81.355934, 24.45285, -116.61017, 54.33966, -157.28813, 81.50946, -157.28813, -92.37732, 159.99998, -86.94336)
 
+[node name="perspectiveChangeCassettePC" type="Area2D" parent="BoomBoxViewBackground" unique_id=1905262139]
+position = Vector2(59.66101, 5.4339805)
+scale = Vector2(1.016949, 1.0188679)
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="BoomBoxViewBackground/perspectiveChangeCassettePC" unique_id=430771476]
+position = Vector2(-132.66666, -89.00001)
+rotation = 1.5781958
+scale = Vector2(4.252994, 0.7389822)
+polygon = PackedVector2Array(20.073032, 6.3625183, 13.329388, 3.9432068, 14.379646, -32.63925, 24.77489, 5.7112045)
+
 [node name="ProjectorViewForeground" type="Sprite2D" parent="." unique_id=1095207937]
 texture_filter = 1
-position = Vector2(1528.0001, 280.00003)
+position = Vector2(1891.0001, 268.99997)
 scale = Vector2(1.6874994, 1.761111)
 texture = ExtResource("9_hptm8")
 
 [node name="Skell" parent="." unique_id=1846132312 instance=ExtResource("1_jjgbg")]
-position = Vector2(192, 360)
+position = Vector2(180, 366)
 
 [node name="firstPerspective" parent="." unique_id=1024044903 instance=ExtResource("3_jjvhh")]
 visible = false
@@ -220,11 +238,11 @@ position = Vector2(5, -161)
 rotation = 1.5707964
 
 [node name="Boundary4" parent="." unique_id=392623354 instance=ExtResource("9_ynf5e")]
-position = Vector2(1900, -100)
+position = Vector2(2266, -133)
 rotation = 1.5707964
 
 [node name="Boundary2" parent="." unique_id=453792594 instance=ExtResource("9_ynf5e")]
-position = Vector2(-78, 1078)
+position = Vector2(-57, 1477)
 
 [node name="transitionCamera" type="Camera2D" parent="." unique_id=59504772]
 position = Vector2(472, 272)
@@ -232,25 +250,25 @@ scale = Vector2(3, 3)
 zoom = Vector2(2, 2)
 
 [node name="transitionCamera2" type="Camera2D" parent="." unique_id=1151010872]
-position = Vector2(1424, 808)
+position = Vector2(1764, 1210)
 scale = Vector2(3, 3)
 zoom = Vector2(2, 2)
 
 [node name="transitionCamera3" type="Camera2D" parent="." unique_id=1547625394]
-position = Vector2(464.00003, 808)
+position = Vector2(485.00003, 1207)
 scale = Vector2(3, 3)
 zoom = Vector2(2, 2)
 
 [node name="transitionCamera4" type="Camera2D" parent="." unique_id=1925143280]
-position = Vector2(1424, 272)
+position = Vector2(1787, 260.99994)
 scale = Vector2(3, 3)
 zoom = Vector2(2, 2)
 
 [node name="camera2SpawnPos" type="Node2D" parent="." unique_id=624754445]
-position = Vector2(1312, 96)
+position = Vector2(1655, 215.99994)
 
 [node name="camera2SpawnPos1_1" type="Node2D" parent="." unique_id=2004171482]
-position = Vector2(1313, 248)
+position = Vector2(1691, 289.99994)
 
 [node name="camera2SpawnPos2" type="Node2D" parent="." unique_id=625734494]
 position = Vector2(528, 416)
@@ -258,36 +276,45 @@ position = Vector2(528, 416)
 [node name="camera2SpawnPos3" type="Node2D" parent="." unique_id=1512511112]
 position = Vector2(456, 416)
 
+[node name="camera2SpawnPos11" type="Node2D" parent="." unique_id=1933058151]
+position = Vector2(346, 1260)
+
 [node name="camera2SpawnPos4" type="Node2D" parent="." unique_id=721975230]
-position = Vector2(1424, 648)
+position = Vector2(1697, 1302)
 
 [node name="camera2SpawnPos5" type="Node2D" parent="." unique_id=562585331]
-position = Vector2(1368, 792)
+position = Vector2(1647, 1367)
 
 [node name="camera2SpawnPos6" type="Node2D" parent="." unique_id=1795080976]
-position = Vector2(1221, 288)
+position = Vector2(1575, 303.99994)
 
 [node name="camera2SpawnPos6_6" type="Node2D" parent="." unique_id=280377481]
-position = Vector2(1248, 320)
+position = Vector2(1649, 337.99994)
 
 [node name="camera2SpawnPos7" type="Node2D" parent="." unique_id=1878576443]
-position = Vector2(344, 952)
+position = Vector2(472, 1348)
 
 [node name="camera2SpawnPos8" type="Node2D" parent="." unique_id=694644431]
-position = Vector2(344, 848)
+position = Vector2(437, 1279)
 
 [node name="camera2SpawnPos9" type="Node2D" parent="." unique_id=925390033]
 position = Vector2(160, 416)
 
 [node name="camera2SpawnPos10" type="Node2D" parent="." unique_id=192063440]
-position = Vector2(256, 408)
+position = Vector2(246, 346)
+
+[node name="camera2SpawnPos12" type="Node2D" parent="." unique_id=434987779]
+position = Vector2(277, 382)
+
+[node name="camera2SpawnPos13" type="Node2D" parent="." unique_id=1164005409]
+position = Vector2(1451, 1449)
 
 [node name="InteractionController" type="Node2D" parent="." unique_id=1800761327 node_paths=PackedStringArray("player")]
 script = ExtResource("10_fdnlq")
 player = NodePath("../Skell")
 
 [node name="ItemCassette" parent="InteractionController" unique_id=2104666413 node_paths=PackedStringArray("player") instance=ExtResource("11_jkdf5")]
-position = Vector2(1124, 870)
+position = Vector2(1464, 1272)
 item_res = ExtResource("12_wsu2k")
 player = NodePath("../../Skell")
 
@@ -296,7 +323,7 @@ scale = Vector2(3, 3)
 texture = ExtResource("13_k12tt")
 
 [node name="CollisionShape2D" parent="InteractionController/ItemCassette" index="1" unique_id=1290531663]
-position = Vector2(4.75, 52)
+position = Vector2(4, 45)
 shape = SubResource("RectangleShape2D_wsu2k")
 
 [node name="ItemFloppyDisk" parent="InteractionController" unique_id=754705030 node_paths=PackedStringArray("player") instance=ExtResource("11_jkdf5")]
@@ -313,7 +340,7 @@ position = Vector2(3, 1)
 shape = SubResource("RectangleShape2D_fevyy")
 
 [node name="ItemFilmRoll" parent="InteractionController" unique_id=1322681370 node_paths=PackedStringArray("player") instance=ExtResource("11_jkdf5")]
-position = Vector2(164, 898)
+position = Vector2(185, 1297)
 item_res = ExtResource("16_hibaj")
 player = NodePath("../../Skell")
 
@@ -322,7 +349,7 @@ scale = Vector2(3, 3)
 texture = ExtResource("16_fevyy")
 
 [node name="ItemCartridge" parent="InteractionController" unique_id=830812499 node_paths=PackedStringArray("player") instance=ExtResource("11_jkdf5")]
-position = Vector2(1713, 347)
+position = Vector2(2076, 335.99994)
 item_res = ExtResource("18_gt3je")
 player = NodePath("../../Skell")
 
@@ -335,7 +362,7 @@ position = Vector2(1.5, 0.5)
 shape = SubResource("RectangleShape2D_u50mg")
 
 [node name="StationCassettePlayer" parent="InteractionController" unique_id=282472610 node_paths=PackedStringArray("player") instance=ExtResource("14_jkdf5")]
-position = Vector2(458, 768)
+position = Vector2(479, 1167)
 station_res = ExtResource("15_wsu2k")
 player = NodePath("../../Skell")
 
@@ -349,11 +376,11 @@ station_res = ExtResource("18_b3802")
 player = NodePath("../../Skell")
 
 [node name="CollisionShape2D" parent="InteractionController/StationOldPC" index="1" unique_id=795924382]
-position = Vector2(1694, 867.75)
+position = Vector2(2034, 1269.75)
 shape = SubResource("RectangleShape2D_h1bgf")
 
 [node name="StationFilmProjector" parent="InteractionController" unique_id=1376998300 node_paths=PackedStringArray("player") instance=ExtResource("14_jkdf5")]
-position = Vector2(1472, 356)
+position = Vector2(1835, 344.99994)
 station_res = ExtResource("21_pdsj5")
 player = NodePath("../../Skell")
 
@@ -378,8 +405,10 @@ volume_db = 24.0
 [connection signal="body_entered" from="ConsoleView/perspectiveChange1_1" to="." method="_on_perspective_change_1_1_body_entered"]
 [connection signal="body_entered" from="ProjectorViewBackground/perspectiveChange2" to="." method="_on_perspective_change_2_body_entered"]
 [connection signal="body_entered" from="ProjectorViewBackground/perspectivechange2_1" to="." method="_on_perspectivechange_2_1_body_entered"]
+[connection signal="body_entered" from="ComputerViewbackground/perspectiveChangePCCassette" to="." method="enter_cassette_from_left"]
 [connection signal="body_entered" from="ComputerViewbackground/perspectiveChange3" to="." method="_on_perspective_change_3_body_entered"]
 [connection signal="body_entered" from="BoomBoxViewBackground/perspectiveChange4" to="." method="_on_perspective_change_4_body_entered"]
+[connection signal="body_entered" from="BoomBoxViewBackground/perspectiveChangeCassettePC" to="." method="enter_computer_left"]
 [connection signal="ending_next_screen" from="Skell" to="." method="ending_switch_to_next_screen"]
 [connection signal="initiate_ending" from="Skell" to="." method="initiate_ending"]
 [connection signal="body_entered" from="firstPerspective" to="transitionCamera" method="_on_first_perspective_body_entered"]
