@@ -56,9 +56,11 @@ func _physics_process(_delta: float) -> void:
 			if direction == Vector2.LEFT:
 				playAnimation("left")
 				item_sprite.position.x = -25
+				broken_item_sprite.position.x = -32
 			if direction == Vector2.RIGHT:
 				playAnimation("right")
 				item_sprite.position.x = 20
+				broken_item_sprite.position.x = 32
 		else:
 			velocity = Vector2.ZERO
 			animated_sprite.play("idle")
@@ -129,15 +131,16 @@ func destroy_item():
 	hide_interaction_help()
 	
 	item_sprite.visible = true
-	
+	#animated_sprite.flip_h = true
 	play_destroy_animation()
 	await animated_sprite.animation_finished
-	
+	play_shoot_destroyed_item()
+	#animated_sprite.flip_h = false
 	#TODO add sfx
 	item_sprite.visible = false
 	broken_item_sprite.visible = true
 	
-	await get_tree().create_timer(1.0).timeout
+	await get_tree().create_timer(3.0).timeout
 	
 	broken_item_sprite.visible = false
 	broken_item_sprite.texture = null
@@ -147,6 +150,9 @@ func destroy_item():
 
 func play_destroy_animation():
 	animated_sprite.play("destroy")
+	
+func play_shoot_destroyed_item():
+	animated_sprite.play("gun_side")
 	
 func play_shoot_animation():
 	animated_sprite.play("gun_front")
