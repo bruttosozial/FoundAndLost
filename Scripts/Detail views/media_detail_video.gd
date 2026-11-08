@@ -3,7 +3,7 @@ extends Control
 signal closed
 
 @onready var videoMC : MarginContainer = $PanelContainer/MarginContainer
-@onready var streamp : VideoStreamPlayer = $PanelContainer/VideoStreamMC/VideoStreamPlayer
+@onready var container = $PanelContainer/VideoStreamMC
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
@@ -23,10 +23,9 @@ func _process(delta: float) -> void:
 		
 
 func _on_video_stream_player_finished() -> void:
-	if streamp.finished:
-		streamp.visible = false;
-		if get_tree().root.get_children()[0] is CCTV:
-			get_tree().root.get_children()[0].resume_bgm()
-		else:
-			pass
+	container.offset_transform_scale = Vector2.ZERO
+	if get_tree().root.get_children()[0] is CCTV:
+		get_tree().root.get_children()[0].resume_bgm()
+	else:
+		pass
 		

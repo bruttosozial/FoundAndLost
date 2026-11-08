@@ -5,8 +5,30 @@
 [ext_resource type="VideoStream" uid="uid://dgxinbolntyvf" path="res://Assets/media_details/game_recording_pixel.ogv" id="2_gq3o4"]
 [ext_resource type="Theme" uid="uid://bo45umqon0p4n" path="res://Resources/footage_deleted.tres" id="3_bgejd"]
 
+[sub_resource type="Theme" id="Theme_g4v7s"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_0i1c0"]
+content_margin_left = 0.0
+content_margin_top = 0.0
+content_margin_right = 0.0
+content_margin_bottom = 0.0
+bg_color = Color(0.101960786, 0.101960786, 0.101960786, 1)
+corner_radius_top_left = 3
+corner_radius_top_right = 3
+corner_radius_bottom_right = 3
+corner_radius_bottom_left = 3
+corner_detail = 5
+
 [node name="MediaDetailGame" type="Node2D" unique_id=1174348725]
 script = ExtResource("1_7h30u")
+
+[node name="Panel" type="Panel" parent="." unique_id=1556134155]
+offset_left = 497.5
+offset_top = 90.0
+offset_right = 1368.0
+offset_bottom = 765.0
+theme = SubResource("Theme_g4v7s")
+theme_override_styles/panel = SubResource("StyleBoxFlat_0i1c0")
 
 [node name="PanelContainer" type="PanelContainer" parent="." unique_id=1647190410]
 custom_minimum_size = Vector2(1920, 1080)

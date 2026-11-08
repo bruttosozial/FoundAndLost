@@ -57,6 +57,7 @@ func switch_title_main(no = false):
 	for child in scene_container.get_children():
 		child.queue_free()
 	scene_container.add_child(main_scene.instantiate())
+	playing = true
 	bgm_player.play()
 	state = GameState.MAIN
 	if(no): return

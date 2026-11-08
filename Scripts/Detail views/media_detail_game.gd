@@ -1,6 +1,7 @@
 extends Node2D
 
 signal closed
+@onready var video_stream = $PanelContainer/MarginContainer/AspectRatioContainer/VideoStreamPlayer
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
@@ -19,7 +20,6 @@ func _process(delta: float) -> void:
 
 
 func _on_video_stream_player_finished() -> void:
+	video_stream.visible = false
 	if get_tree().root.get_children()[0] is CCTV:
 		get_tree().root.get_children()[0].resume_bgm()
-	else:
-		pass
