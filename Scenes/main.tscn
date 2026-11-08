@@ -54,7 +54,7 @@ size = Vector2(113, 93)
 size = Vector2(148.85715, 143.9375)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_h1bgf"]
-size = Vector2(436, 352.5)
+size = Vector2(372, 352.5)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_hibaj"]
 size = Vector2(402, 209)
@@ -348,7 +348,7 @@ station_res = ExtResource("18_b3802")
 player = NodePath("../../Skell")
 
 [node name="CollisionShape2D" parent="InteractionController/StationOldPC" index="1" unique_id=795924382]
-position = Vector2(1662, 867.75)
+position = Vector2(1694, 867.75)
 shape = SubResource("RectangleShape2D_h1bgf")
 
 [node name="StationFilmProjector" parent="InteractionController" unique_id=1376998300 node_paths=PackedStringArray("player") instance=ExtResource("14_jkdf5")]

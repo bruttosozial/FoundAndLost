@@ -26,7 +26,7 @@ func _ready() -> void:
 
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
-func _process(delta: float) -> void:
+func _process(_delta: float) -> void:
 	pass
 
 
@@ -39,20 +39,27 @@ enum Perspective {
 
 var current_perspective: Perspective = Perspective.CONSOLE
 
+func play_skelly_idle():
+	skell.play_idle_animation()
+
 # Enter projector from above
-func _on_perspective_change_body_entered() -> void:
-		if not transition_camera_4.is_current():
-			transition_camera_4.make_current()
-			current_perspective = Perspective.PROJECTOR
-			var tween = get_tree().create_tween()
-			skell.pause_player()
-			skell.position = spawnPos.position
-			skell.playAnimation("right")
-			tween.tween_property(skell, "position", camera_2_spawn_pos_1_1.position, 0.5)
-			skell.resume_player()
+func _on_perspective_change_body_entered(_body: PlayerController) -> void:
+	print("proshektor")
+	if not transition_camera_4.is_current():
+		transition_camera_4.make_current()
+		current_perspective = Perspective.PROJECTOR
+		var tween = get_tree().create_tween()
+		skell.pause_player()
+		skell.position = spawnPos.position
+		skell.playAnimation("right")
+		tween.tween_property(skell, "position", camera_2_spawn_pos_1_1.position, 0.5)
+		skell.resume_player()
+		tween.finished.connect(play_skelly_idle)
+		
 
 # Enter console from the right
-func _on_perspective_change_2_body_entered(body: PlayerController) -> void:
+func _on_perspective_change_2_body_entered(_body: PlayerController) -> void:
+	print("console")
 	if not transition_camera.is_current():
 		transition_camera.make_current()
 		current_perspective = Perspective.CONSOLE
@@ -62,9 +69,12 @@ func _on_perspective_change_2_body_entered(body: PlayerController) -> void:
 		skell.playAnimation("right")
 		tween.tween_property(skell, "position", camera_2_spawn_pos_end.position, 0.5)
 		skell.resume_player()
+		skell.play_idle_animation()
+		tween.finished.connect(play_skelly_idle)
 
 # Enter computer
-func _on_perspectivechange_2_1_body_entered() -> void:
+func _on_perspectivechange_2_1_body_entered(_body: PlayerController) -> void:
+	print("dator")
 	if not transition_camera_2.is_current():
 		transition_camera_2.make_current()
 		current_perspective = Perspective.COMPUTER
@@ -74,21 +84,25 @@ func _on_perspectivechange_2_1_body_entered() -> void:
 		skell.playAnimation("right")
 		tween.tween_property(skell, "position", camera_2_spawn_pos_5.position, 0.5)
 		skell.resume_player()
+		tween.finished.connect(play_skelly_idle)
 
 # Enter projector
-func _on_perspective_change_3_body_entered(body: PlayerController) -> void:
+func _on_perspective_change_3_body_entered(_body: PlayerController) -> void:
+	print("proshektor2")
 	if not transition_camera_4.is_current():
-			transition_camera_4.make_current()
-			current_perspective = Perspective.PROJECTOR
-			var tween = get_tree().create_tween()
-			skell.pause_player()
-			skell.position = camera_2_spawn_pos_6.position
-			skell.playAnimation("right")
-			tween.tween_property(skell, "position", camera_2_spawn_pos_6_6.position, 0.5)
-			skell.resume_player()
+		transition_camera_4.make_current()
+		current_perspective = Perspective.PROJECTOR
+		var tween = get_tree().create_tween()
+		skell.pause_player()
+		skell.position = camera_2_spawn_pos_6.position
+		skell.playAnimation("right")
+		tween.tween_property(skell, "position", camera_2_spawn_pos_6_6.position, 0.5)
+		skell.resume_player()
+		tween.finished.connect(play_skelly_idle)
 
 # Enter cassette
-func _on_perspective_change_1_1_body_entered() -> void:
+func _on_perspective_change_1_1_body_entered(_body: PlayerController) -> void:
+	print("KASSETTE")
 	if not transition_camera_3.is_current():
 		transition_camera_3.make_current()
 		current_perspective = Perspective.CASSETTE
@@ -98,14 +112,16 @@ func _on_perspective_change_1_1_body_entered() -> void:
 		skell.playAnimation("right")
 		tween.tween_property(skell, "position", camera_2_spawn_pos_8.position, 0.5)
 		skell.resume_player()
+		tween.finished.connect(play_skelly_idle)
 
 
 
 
 # Enter console from below(?)
-func _on_perspective_change_4_body_entered() -> void:
-		if not transition_camera.is_current():
-			transition_camera.make_current()
+func _on_perspective_change_4_body_entered(_body: PlayerController) -> void:
+	print("KONSOLE")
+	if not transition_camera.is_current():
+		transition_camera.make_current()
 		current_perspective = Perspective.CONSOLE
 		var tween = get_tree().create_tween()
 		skell.pause_player()
@@ -113,31 +129,32 @@ func _on_perspective_change_4_body_entered() -> void:
 		skell.playAnimation("right")
 		tween.tween_property(skell, "position", camera_2_spawn_pos_10.position, 0.5)
 		skell.resume_player()
+		tween.finished.connect(play_skelly_idle)
 
 var ending_current_screen = 0
 var ending_counter = 1
 
 func initiate_ending():
-	ending_current_screen = 4 - current_perspective
+	ending_current_screen = 0 + current_perspective
 	ending_counter = 1
 
 func ending_switch_to_next_screen():
-	if ending_counter == 5:
+	if ending_counter == 4:
 		get_tree().root.get_children()[0].switch_main_credits()
 	
 	ending_current_screen += 1
 	
-	if ending_current_screen > 4:
+	if ending_current_screen > 3:
 		ending_current_screen = 0
 	
 	if ending_current_screen == Perspective.CONSOLE:
-		_on_perspective_change_4_body_entered()
+		_on_perspective_change_4_body_entered(null)
 	elif ending_current_screen == Perspective.PROJECTOR:
-		_on_perspective_change_body_entered()
+		_on_perspective_change_body_entered(null)
 	elif ending_current_screen == Perspective.COMPUTER:
-		_on_perspectivechange_2_1_body_entered()
+		_on_perspectivechange_2_1_body_entered(null)
 	elif ending_current_screen == Perspective.CASSETTE:
-		_on_perspective_change_1_1_body_entered()
-	
+		_on_perspective_change_1_1_body_entered(null)
+
 	ending_counter += 1
 	# Go through every screen and shoot

@@ -25,6 +25,7 @@ func _on_body_entered(body: Node2D) -> void:
 		range_entered.emit(self)
 
 func _on_body_exited(body: Node2D) -> void:
+	print(body)
 	if body.name == "Skell":
 		in_range = false
 		range_exited.emit()
