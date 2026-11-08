@@ -15,6 +15,7 @@ var footStepFrames = [1,3]
 
 var walk_sfx : AudioStream = preload("res://Assets/Sound/SFX/WalkTest_4.wav")
 var gun_sfx : AudioStream = preload("res://Assets/Sound/SFX/gunshot.mp3")
+var drop_sfx : AudioStream = preload("res://Assets/Sound/SFX/ObjectDrop.wav")
 
 var speed = 300
 var current_item : ItemResource
@@ -45,11 +46,9 @@ func _process(_delta: float) -> void:
 		play_shoot_animation()
 		await get_tree().create_timer(0.5).timeout
 		ending_next_screen.emit()
-		
 
 func _physics_process(_delta: float) -> void:
 	if state == State.ENDING or state == State.NO: 
-		audio_player.stop()
 		return
 	
 	if Input.is_action_just_released("debug_ending"):
@@ -85,7 +84,7 @@ func sfx_on_animation():
 	if animated_sprite.animation == "run" and prev_anim == "idle":
 		audio_player.stream = walk_sfx
 		audio_player.play()
-	elif animated_sprite.animation == "idle" and prev_anim != "idle":
+	elif animated_sprite.animation == "idle" and prev_anim == "run":
 		audio_player.stop()
 	
 func playAnimation(flip: String):
@@ -201,7 +200,9 @@ func initiate_ending_func():
 	show_interaction_help("SHOOT")	
 
 func _on_animated_sprite_2d_sprite_frames_changed() -> void:
-	if animated_sprite.animation == "gun_side" and animated_sprite.frame == 5:
-		print("boom")
+	if animated_sprite.animation == "gun_side" and animated_sprite.frame == 5 or animated_sprite.animation == "gun_front" and animated_sprite.frame == 1:
 		audio_player.stream = gun_sfx
+		audio_player.play()
+	if animated_sprite.animation == "destroy" and animated_sprite.frame == 5:
+		audio_player.stream = drop_sfx
 		audio_player.play()

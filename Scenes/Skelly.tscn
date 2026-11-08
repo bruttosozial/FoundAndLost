@@ -321,7 +321,7 @@ texture_filter = 1
 position = Vector2(-2, -7)
 scale = Vector2(1.96875, 1.96875)
 sprite_frames = SubResource("SpriteFrames_r5iys")
-animation = &"gun_side"
+animation = &"destroy"
 
 [node name="AnimatedSprite2DArm" type="AnimatedSprite2D" parent="AnimatedSprite2D" unique_id=19763518]
 visible = false
