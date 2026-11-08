@@ -13,6 +13,8 @@ class_name PlayerController
 var speed = 300
 var current_item : ItemResource
 var paused = false
+var destroyed_count = 0
+
 
 signal initiate_ending
 signal ending_next_screen
@@ -44,7 +46,7 @@ func _physics_process(_delta: float) -> void:
 	
 	var direction := Input.get_vector("left", "right", "up", "down")	
 	if paused:
-		if Input.is_action_just_released("interact"):
+		if Input.is_action_just_released("interact") && state == State.GAMEPLAY:
 			destroy_item()
 	else:
 		if direction != Vector2.ZERO:
@@ -126,6 +128,7 @@ func resume_player():
 	#set_physics_process(true)
 
 func destroy_item():
+	state = State.NO
 	hide_interaction_help()
 	
 	item_sprite.visible = true
@@ -144,6 +147,11 @@ func destroy_item():
 	remove_item()
 	paused = false
 	destroyed_item.emit()
+	state = State.GAMEPLAY
+	destroyed_count += 1
+	if(destroyed_count == 4):
+		initiate_ending_func()
+	
 
 func play_destroy_animation():
 	animated_sprite.play("destroy")

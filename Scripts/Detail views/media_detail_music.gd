@@ -7,8 +7,11 @@ signal closed
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
 	streamPlayer.play()
-	get_tree().root.get_children()[0].pause_bgm()
-	animated_sprite.play("ode_to_joy")
+	animated_sprite.play("ode_to_joy")	
+	if get_tree().root.get_children()[0] is CCTV:
+		get_tree().root.get_children()[0].pause_bgm()
+	else: 
+		pass
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta: float) -> void:
@@ -19,4 +22,7 @@ func _process(delta: float) -> void:
 func show_static_boombox() -> void:
 	animated_sprite.hide()
 	$TextureRect.show()
-	get_tree().root.get_children()[0].resume_bgm()
+	if get_tree().root.get_children()[0] is CCTV:
+		get_tree().root.get_children()[0].resume_bgm()
+	else:
+		pass

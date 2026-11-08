@@ -22,6 +22,7 @@ extends Node2D
 @onready var camera_2_spawn_pos_13: Node2D = $camera2SpawnPos13
 @onready var camera_2_spawn_pos_14: Node2D = $camera2SpawnPos14
 @onready var camera_2_spawn_pos_15: Node2D = $camera2SpawnPos15
+@onready var detailed_view_camera: Camera2D = $detailedViewCamera
 
 @onready var perspectiveChangeProjectorPC = $ComputerViewbackground/perspectiveChange3
 
@@ -30,6 +31,7 @@ extends Node2D
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
 	transition_camera.make_current()
+	activeCamera = transition_camera
 	pass # Replace with function body.
 
 
@@ -48,6 +50,7 @@ enum Perspective {
 var isEnding = false
 
 var current_perspective: Perspective = Perspective.CONSOLE
+var activeCamera : Camera2D
 
 var debug = false
 func debug_print(string):
@@ -60,6 +63,7 @@ func _on_perspective_change_body_entered(_body: PlayerController) -> void:
 	await get_tree().create_timer(0.1).timeout
 	if not transition_camera_4.is_current():
 		transition_camera_4.make_current()
+		activeCamera = transition_camera_4
 		current_perspective = Perspective.PROJECTOR
 		var tween = get_tree().create_tween()
 		skell.pause_player()
@@ -78,6 +82,7 @@ func _on_perspective_change_2_body_entered(_body: PlayerController) -> void:
 	await get_tree().create_timer(0.1).timeout
 	if not transition_camera.is_current():
 		transition_camera.make_current()
+		activeCamera = transition_camera
 		current_perspective = Perspective.CONSOLE
 		var tween = get_tree().create_tween()
 		skell.pause_player()
@@ -95,6 +100,7 @@ func _on_perspectivechange_2_1_body_entered(_body: PlayerController) -> void:
 	await get_tree().create_timer(0.1).timeout
 	if not transition_camera_2.is_current():
 		transition_camera_2.make_current()
+		activeCamera = transition_camera_2
 		current_perspective = Perspective.COMPUTER
 		var tween = get_tree().create_tween()
 		skell.pause_player()
@@ -110,6 +116,7 @@ func enter_computer_left(_body: PlayerController) -> void:
 	await get_tree().create_timer(0.1).timeout
 	if not transition_camera_2.is_current():
 		transition_camera_2.make_current()
+		activeCamera = transition_camera_2
 		current_perspective = Perspective.COMPUTER
 		var tween = get_tree().create_tween()
 		skell.pause_player()
@@ -126,6 +133,7 @@ func _on_perspective_change_3_body_entered(_body: PlayerController) -> void:
 	await get_tree().create_timer(0.1).timeout
 	if not transition_camera_4.is_current():
 		transition_camera_4.make_current()
+		activeCamera = transition_camera_4
 		current_perspective = Perspective.PROJECTOR
 		var tween = get_tree().create_tween()
 		skell.pause_player()
@@ -142,6 +150,7 @@ func _on_perspective_change_1_1_body_entered(_body: PlayerController) -> void:
 	await get_tree().create_timer(0.1).timeout
 	if not transition_camera_3.is_current():
 		transition_camera_3.make_current()
+		activeCamera = transition_camera_3
 		current_perspective = Perspective.CASSETTE
 		var tween = get_tree().create_tween()
 		skell.pause_player()
@@ -158,6 +167,7 @@ func _on_perspective_change_4_body_entered(_body: PlayerController) -> void:
 	await get_tree().create_timer(0.1).timeout
 	if not transition_camera.is_current():
 		transition_camera.make_current()
+		activeCamera = transition_camera
 		current_perspective = Perspective.CONSOLE
 		var tween = get_tree().create_tween()
 		skell.pause_player()
@@ -174,6 +184,7 @@ func enter_cassette_from_left(_body: PlayerController):
 	if not transition_camera_3.is_current():
 		skell.paused = true
 		transition_camera_3.make_current()
+		activeCamera = transition_camera_3
 		current_perspective = Perspective.CASSETTE
 		var tween = get_tree().create_tween()
 		skell.pause_player()
@@ -220,3 +231,14 @@ func ending_switch_to_next_screen():
 		_on_perspective_change_1_1_body_entered(null)
 
 	ending_counter += 1
+	
+	
+func switchDetailedViewCam ():
+	if not detailed_view_camera.is_current():
+		detailed_view_camera.make_current()
+		 
+		
+func backToActiveCam ():
+	activeCamera.make_current() 
+	
+	

@@ -1,7 +1,7 @@
 [gd_scene format=3 uid="uid://cokcgfar5ysd4"]
 
 [ext_resource type="Script" uid="uid://bsroybcxayjx0" path="res://Scripts/Detail views/media_detail_music.gd" id="1_2jkmk"]
-[ext_resource type="AudioStream" uid="uid://ba7m58vk3jnws" path="res://Assets/Sound/Divorce-music-mixed.wav" id="4_g203u"]
+[ext_resource type="AudioStream" uid="uid://gsc2qu7iu3tq" path="res://Assets/Sound/Divorce-music.wav" id="2_6spfm"]
 [ext_resource type="Theme" uid="uid://bo45umqon0p4n" path="res://Resources/footage_deleted.tres" id="5_6spfm"]
 [ext_resource type="Texture2D" uid="uid://cvfrb3l5417vy" path="res://Assets/Screens/boombox_screen_animation-Sheet.png" id="5_50a30"]
 [ext_resource type="PackedScene" uid="uid://bt8utwxauv83n" path="res://Scenes/subtitle_player.tscn" id="5_g203u"]
@@ -58,7 +58,7 @@ grow_vertical = 2
 script = ExtResource("1_2jkmk")
 
 [node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="." unique_id=98895364]
-stream = ExtResource("4_g203u")
+stream = ExtResource("2_6spfm")
 
 [node name="PanelContainer" type="PanelContainer" parent="." unique_id=1900144908]
 custom_minimum_size = Vector2(1920, 1080)
@@ -71,36 +71,6 @@ theme_override_styles/panel = SubResource("StyleBoxFlat_6spfm")
 layout_mode = 2
 theme_override_constants/margin_bottom = 20
 
-[node name="CloseHelp" type="MarginContainer" parent="PanelContainer" unique_id=775352720]
-layout_mode = 2
-size_flags_horizontal = 8
-size_flags_vertical = 0
-theme_override_constants/margin_top = 20
-theme_override_constants/margin_right = 20
-
-[node name="PanelContainer" type="PanelContainer" parent="PanelContainer/CloseHelp" unique_id=612797185]
-custom_minimum_size = Vector2(250, 0)
-layout_mode = 2
-size_flags_horizontal = 8
-size_flags_vertical = 0
-theme = ExtResource("5_6spfm")
-
-[node name="MarginContainer" type="MarginContainer" parent="PanelContainer/CloseHelp/PanelContainer" unique_id=536324112]
-layout_mode = 2
-theme_override_constants/margin_left = 5
-theme_override_constants/margin_top = 4
-theme_override_constants/margin_right = 5
-theme_override_constants/margin_bottom = 4
-
-[node name="RichTextLabel" type="RichTextLabel" parent="PanelContainer/CloseHelp/PanelContainer/MarginContainer" unique_id=1780150762]
-layout_mode = 2
-theme = ExtResource("5_6spfm")
-theme_override_font_sizes/normal_font_size = 25
-text = "[E] TO CLOSE"
-fit_content = true
-horizontal_alignment = 1
-vertical_alignment = 1
-
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=296770916]
 texture_filter = 1
 position = Vector2(950.27264, 486.00003)
@@ -109,6 +79,40 @@ sprite_frames = SubResource("SpriteFrames_r5iys")
 animation = &"ode_to_joy"
 frame = 2
 frame_progress = 0.708834
+
+[node name="CloseHelp" type="MarginContainer" parent="." unique_id=775352720]
+layout_mode = 0
+offset_left = 1380.0
+offset_top = 80.0
+offset_right = 1650.0
+offset_bottom = 174.0
+size_flags_horizontal = 8
+size_flags_vertical = 0
+theme_override_constants/margin_top = 20
+theme_override_constants/margin_right = 20
+
+[node name="PanelContainer" type="PanelContainer" parent="CloseHelp" unique_id=612797185]
+custom_minimum_size = Vector2(250, 0)
+layout_mode = 2
+size_flags_horizontal = 8
+size_flags_vertical = 0
+theme = ExtResource("5_6spfm")
+
+[node name="MarginContainer" type="MarginContainer" parent="CloseHelp/PanelContainer" unique_id=536324112]
+layout_mode = 2
+theme_override_constants/margin_left = 5
+theme_override_constants/margin_top = 4
+theme_override_constants/margin_right = 5
+theme_override_constants/margin_bottom = 4
+
+[node name="RichTextLabel" type="RichTextLabel" parent="CloseHelp/PanelContainer/MarginContainer" unique_id=1780150762]
+layout_mode = 2
+theme = ExtResource("5_6spfm")
+theme_override_font_sizes/normal_font_size = 36
+text = "[E] TO CLOSE"
+fit_content = true
+horizontal_alignment = 1
+vertical_alignment = 1
 
 [node name="TextureRect" type="TextureRect" parent="." unique_id=1473521426]
 visible = false
