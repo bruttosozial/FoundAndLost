@@ -20,7 +20,10 @@
 [ext_resource type="Texture2D" uid="uid://63qs8kcex1wr" path="res://Assets/Items/ConsoleViewFilmRoll.png" id="16_fevyy"]
 [ext_resource type="Resource" uid="uid://dyvrvxreyy4mp" path="res://Data/Items/film_reel_item.tres" id="16_hibaj"]
 [ext_resource type="Resource" uid="uid://cm5fs8hcpjvyt" path="res://Data/Stations/old_pc_station.tres" id="18_b3802"]
+[ext_resource type="Resource" uid="uid://t5d7bud32jbp" path="res://Data/Items/cartridge_item.tres" id="18_gt3je"]
+[ext_resource type="Texture2D" uid="uid://doh5ou60si2a0" path="res://Assets/Items/ProjectorViewCartridge.png" id="19_3pmx8"]
 [ext_resource type="Resource" uid="uid://bxu1vnm2ub1yv" path="res://Data/Stations/film_projector_station.tres" id="21_pdsj5"]
+[ext_resource type="Resource" uid="uid://w4mysq2irt6v" path="res://Data/Stations/NES_station.tres" id="24_3pmx8"]
 
 [sub_resource type="GDScript" id="GDScript_hptm8"]
 script/source = "extends Area2D
@@ -39,10 +42,13 @@ script/source = "extends Area2D
 "
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_wsu2k"]
-size = Vector2(95, 72)
+size = Vector2(108.5, 176)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_fevyy"]
 size = Vector2(104, 98)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_u50mg"]
+size = Vector2(113, 93)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_k12tt"]
 size = Vector2(148.85715, 143.9375)
@@ -52,6 +58,9 @@ size = Vector2(436, 352.5)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_hibaj"]
 size = Vector2(402, 209)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_gt3je"]
+size = Vector2(223, 206.5)
 
 [node name="Main" type="Node2D" unique_id=312324733]
 script = ExtResource("1_d1ilt")
@@ -136,7 +145,7 @@ polygon = PackedVector2Array(-25.123962, -59.88846, -23.801697, 8.029724, -66.11
 scale = Vector2(1, 0.99999994)
 
 [node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="ComputerViewbackground/StaticBody2D" unique_id=1406912264]
-polygon = PackedVector2Array(-25.123962, -59.88846, -83.305786, -30.446075, -80.66116, 41.821564, -154.71072, 87.323425, 157.35535, 92.676575, -157.35538, 87.323425, -154.71072, -73.27136)
+polygon = PackedVector2Array(-25.123962, -59.88846, -83.305786, -30.446075, -80.66116, 41.821564, -114.38016, 75.94797, 157.35535, 92.676575, -158.67767, 87.992584, -154.71072, -73.27136)
 
 [node name="perspectiveChange3" type="Area2D" parent="ComputerViewbackground" unique_id=381639278]
 scale = Vector2(1, 0.9999999)
@@ -264,7 +273,7 @@ script = ExtResource("10_fdnlq")
 player = NodePath("../Skell")
 
 [node name="ItemCassette" parent="InteractionController" unique_id=2104666413 node_paths=PackedStringArray("player") instance=ExtResource("11_jkdf5")]
-position = Vector2(1834, 355)
+position = Vector2(1124, 870)
 item_res = ExtResource("12_wsu2k")
 player = NodePath("../../Skell")
 
@@ -273,11 +282,11 @@ scale = Vector2(3, 3)
 texture = ExtResource("13_k12tt")
 
 [node name="CollisionShape2D" parent="InteractionController/ItemCassette" index="1" unique_id=1290531663]
-position = Vector2(2.5, 3)
+position = Vector2(4.75, 52)
 shape = SubResource("RectangleShape2D_wsu2k")
 
 [node name="ItemFloppyDisk" parent="InteractionController" unique_id=754705030 node_paths=PackedStringArray("player") instance=ExtResource("11_jkdf5")]
-position = Vector2(710, 934)
+position = Vector2(350, 334)
 item_res = ExtResource("14_h1bgf")
 player = NodePath("../../Skell")
 
@@ -290,13 +299,26 @@ position = Vector2(3, 1)
 shape = SubResource("RectangleShape2D_fevyy")
 
 [node name="ItemFilmRoll" parent="InteractionController" unique_id=1322681370 node_paths=PackedStringArray("player") instance=ExtResource("11_jkdf5")]
-position = Vector2(343, 442)
+position = Vector2(164, 898)
 item_res = ExtResource("16_hibaj")
 player = NodePath("../../Skell")
 
 [node name="Sprite2D" parent="InteractionController/ItemFilmRoll" index="0" unique_id=1042199959]
 scale = Vector2(3, 3)
 texture = ExtResource("16_fevyy")
+
+[node name="ItemCartridge" parent="InteractionController" unique_id=830812499 node_paths=PackedStringArray("player") instance=ExtResource("11_jkdf5")]
+position = Vector2(1713, 347)
+item_res = ExtResource("18_gt3je")
+player = NodePath("../../Skell")
+
+[node name="Sprite2D" parent="InteractionController/ItemCartridge" index="0" unique_id=1042199959]
+scale = Vector2(3, 3)
+texture = ExtResource("19_3pmx8")
+
+[node name="CollisionShape2D" parent="InteractionController/ItemCartridge" index="1" unique_id=1290531663]
+position = Vector2(1.5, 0.5)
+shape = SubResource("RectangleShape2D_u50mg")
 
 [node name="StationCassettePlayer" parent="InteractionController" unique_id=282472610 node_paths=PackedStringArray("player") instance=ExtResource("14_jkdf5")]
 position = Vector2(458, 768)
@@ -325,6 +347,15 @@ player = NodePath("../../Skell")
 position = Vector2(104, -4.5)
 shape = SubResource("RectangleShape2D_hibaj")
 
+[node name="StationNES" parent="InteractionController" unique_id=56476665 node_paths=PackedStringArray("player") instance=ExtResource("14_jkdf5")]
+position = Vector2(151, 179)
+station_res = ExtResource("24_3pmx8")
+player = NodePath("../../Skell")
+
+[node name="CollisionShape2D" parent="InteractionController/StationNES" index="1" unique_id=795924382]
+position = Vector2(35.5, 29.75)
+shape = SubResource("RectangleShape2D_gt3je")
+
 [connection signal="body_entered" from="ConsoleView/perspectiveChange" to="." method="_on_perspective_change_body_entered"]
 [connection signal="body_entered" from="ConsoleView/perspectiveChange1_1" to="." method="_on_perspective_change_1_1_body_entered"]
 [connection signal="body_entered" from="ProjectorViewBackground/perspectiveChange2" to="." method="_on_perspective_change_2_body_entered"]
@@ -339,6 +370,8 @@ shape = SubResource("RectangleShape2D_hibaj")
 [editable path="InteractionController/ItemCassette"]
 [editable path="InteractionController/ItemFloppyDisk"]
 [editable path="InteractionController/ItemFilmRoll"]
+[editable path="InteractionController/ItemCartridge"]
 [editable path="InteractionController/StationCassettePlayer"]
 [editable path="InteractionController/StationOldPC"]
 [editable path="InteractionController/StationFilmProjector"]
+[editable path="InteractionController/StationNES"]
