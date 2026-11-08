@@ -14,9 +14,34 @@ var speed = 300
 var current_item : ItemResource
 var paused = false
 
-signal destroyed_item
+signal initiate_ending
+signal ending_next_screen
 
-func _physics_process(delta: float) -> void:
+enum State {
+	GAMEPLAY,
+	ENDING,
+	NO
+}
+
+var seconds = 1.0
+signal destroyed_item
+var state: State = State.GAMEPLAY
+
+func _process(_delta: float) -> void:
+	if state == State.ENDING and Input.is_action_just_released("interact"):
+		state = State.NO
+		hide_interaction_help()
+		play_shoot_animation()
+		await get_tree().create_timer(0.5).timeout
+		ending_next_screen.emit()
+		
+
+func _physics_process(_delta: float) -> void:
+	if state == State.ENDING or state == State.NO: return
+	
+	if Input.is_action_just_released("debug_ending"):
+		initiate_ending_func()
+	
 	var direction := Input.get_vector("left", "right", "up", "down")	
 	if paused:
 		if Input.is_action_just_released("interact"):
@@ -72,6 +97,7 @@ func remove_item():
 	broken_item_sprite.visible = false
 
 func show_interaction_help(text: String):
+	print("actual show function")
 	interaction_label.text = "[E] to " + text
 	interaction_help.visible = true
 
@@ -121,7 +147,23 @@ func destroy_item():
 
 func play_destroy_animation():
 	animated_sprite.play("destroy")
+	
+func play_shoot_animation():
+	animated_sprite.play("gun_front")
+
+func play_idle_animation():
+	animated_sprite.play("idle")
 
 func on_detail_view_closed():
 	paused = true
 	show_interaction_help("Destroy")
+
+func set_ending_state():
+	state = State.ENDING
+	show_interaction_help("SHOOT")
+
+func initiate_ending_func():
+	initiate_ending.emit()
+	state = State.ENDING
+	show_interaction_help("SHOOT")
+	
