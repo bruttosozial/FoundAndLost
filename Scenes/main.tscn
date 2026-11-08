@@ -25,6 +25,9 @@
 [ext_resource type="Resource" uid="uid://w4mysq2irt6v" path="res://Data/Stations/NES_station.tres" id="24_3pmx8"]
 [ext_resource type="AudioStream" uid="uid://btyt2clapp8ko" path="res://Assets/Sound/SFX/cam_switch.mp3" id="25_u50mg"]
 
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_7dnx0"]
+size = Vector2(194.37048, 11.356474)
+
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_wsu2k"]
 size = Vector2(108.5, 176)
 
@@ -32,7 +35,7 @@ size = Vector2(108.5, 176)
 size = Vector2(104, 98)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_u50mg"]
-size = Vector2(113, 93)
+size = Vector2(131, 184)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_k12tt"]
 size = Vector2(148.85715, 143.9375)
@@ -189,6 +192,13 @@ position = Vector2(1891.0001, 268.99997)
 scale = Vector2(1.6874994, 1.761111)
 texture = ExtResource("9_hptm8")
 
+[node name="StaticBody2D" type="StaticBody2D" parent="ProjectorViewForeground" unique_id=988022728]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="ProjectorViewForeground/StaticBody2D" unique_id=1107663453]
+position = Vector2(33.777588, 84.6057)
+scale = Vector2(0.99999976, 0.9999997)
+shape = SubResource("RectangleShape2D_7dnx0")
+
 [node name="Skell" parent="." unique_id=1846132312 instance=ExtResource("1_jjgbg")]
 position = Vector2(180, 366)
 
@@ -320,6 +330,7 @@ scale = Vector2(3, 3)
 texture = ExtResource("16_fevyy")
 
 [node name="ItemCartridge" parent="InteractionController" unique_id=830812499 node_paths=PackedStringArray("player") instance=ExtResource("11_jkdf5")]
+z_index = 1
 position = Vector2(2076, 335.99994)
 item_res = ExtResource("18_gt3je")
 player = NodePath("../../Skell")
@@ -329,7 +340,7 @@ scale = Vector2(3, 3)
 texture = ExtResource("19_3pmx8")
 
 [node name="CollisionShape2D" parent="InteractionController/ItemCartridge" index="1" unique_id=1290531663]
-position = Vector2(1.5, 0.5)
+position = Vector2(10.5, 28.000061)
 shape = SubResource("RectangleShape2D_u50mg")
 
 [node name="StationCassettePlayer" parent="InteractionController" unique_id=282472610 node_paths=PackedStringArray("player") instance=ExtResource("14_jkdf5")]

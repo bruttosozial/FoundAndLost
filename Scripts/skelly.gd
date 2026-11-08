@@ -9,6 +9,9 @@ class_name PlayerController
 @onready var interaction_label : RichTextLabel = $InteractionHelp/MarginContainer/RichTextLabel
 @onready var feedback_help = $FeedbackHelp
 @onready var feedback_label : RichTextLabel = $FeedbackHelp/MarginContainer/RichTextLabel
+@onready var projector_view_foreground: Sprite2D = $"../ProjectorViewForeground"
+@onready var skell: PlayerController = $"."
+
 
 var speed = 300
 var current_item : ItemResource
@@ -30,6 +33,8 @@ signal destroyed_item
 var state: State = State.GAMEPLAY
 
 func _process(_delta: float) -> void:
+	
+		
 	if state == State.ENDING and Input.is_action_just_released("interact"):
 		state = State.NO
 		hide_interaction_help()
@@ -39,6 +44,11 @@ func _process(_delta: float) -> void:
 		
 
 func _physics_process(_delta: float) -> void:
+	if (skell.position.y - 366) <= (projector_view_foreground.position.y - 269):
+		projector_view_foreground.set_z_index(1)
+	elif (skell.position.y - 366) >= (projector_view_foreground.position.y - 269):
+		projector_view_foreground.set_z_index(0)
+		
 	if state == State.ENDING or state == State.NO: return
 	
 	if Input.is_action_just_released("debug_ending"):
