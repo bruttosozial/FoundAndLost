@@ -32,6 +32,8 @@ func process_main():
 		switch_main_credits()
 
 func process_title():
+	if Input.is_action_just_pressed("debug_mainnodialogue"):
+		switch_title_main(true)
 	if Input.is_action_just_pressed("interact") || Input.is_action_just_pressed("debug_switchscene"):
 		switch_title_main()
 
@@ -50,12 +52,13 @@ func switch_main_credits():
 	state = GameState.CREDITS
 	bgm_player.stop()
 	
-func switch_title_main():
+func switch_title_main(no = false):
 	for child in scene_container.get_children():
-			child.queue_free()
+		child.queue_free()
 	scene_container.add_child(main_scene.instantiate())
 	bgm_player.play()
 	state = GameState.MAIN
+	if(no): return
 	memory_player.play()
 	subtitle_player.play_subtitles()
 
