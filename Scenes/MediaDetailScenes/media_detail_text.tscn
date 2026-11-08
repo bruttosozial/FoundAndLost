@@ -22,16 +22,16 @@ script = ExtResource("1_im5rv")
 
 [node name="Node2D" type="Node2D" parent="." unique_id=1429782760]
 
+[node name="FloppyScreenSprite2D" type="Sprite2D" parent="Node2D" unique_id=2006513879]
+position = Vector2(870.524, 501)
+scale = Vector2(0.5431388, 0.6740741)
+texture = ExtResource("3_aglhs")
+
 [node name="Sprite2D" type="Sprite2D" parent="Node2D" unique_id=1682403122]
 texture_filter = 1
 position = Vector2(961.99994, 536.99994)
 scale = Vector2(6, 6)
 texture = ExtResource("4_aglhs")
-
-[node name="FloppyScreenSprite2D" type="Sprite2D" parent="." unique_id=2006513879]
-position = Vector2(871, 504.00003)
-scale = Vector2(0.56, 0.695)
-texture = ExtResource("3_aglhs")
 
 [node name="PanelContainer" type="PanelContainer" parent="." unique_id=1906134645]
 custom_minimum_size = Vector2(1920, 1080)
