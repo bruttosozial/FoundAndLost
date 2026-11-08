@@ -21,7 +21,7 @@ func _process(delta: float) -> void:
 	pass
 
 func interact():
-	if(interacting):
+	if(interacting or player.state == player.State.ENDING or player.state == player.State.NO):
 		return
 	if(player.current_item):
 		if(player.current_item.type == station_res.type):
