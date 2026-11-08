@@ -44,7 +44,7 @@ size = Vector2(372, 352.5)
 size = Vector2(402, 209)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_gt3je"]
-size = Vector2(223, 206.5)
+size = Vector2(393, 247)
 
 [node name="Main" type="Node2D" unique_id=312324733]
 script = ExtResource("1_d1ilt")
@@ -207,7 +207,7 @@ position = Vector2(2266, -133)
 rotation = 1.5707964
 
 [node name="Boundary2" parent="." unique_id=453792594 instance=ExtResource("9_ynf5e")]
-position = Vector2(-57, 1477)
+position = Vector2(278, 1533)
 
 [node name="transitionCamera" type="Camera2D" parent="." unique_id=59504772]
 position = Vector2(472, 272)
@@ -365,7 +365,7 @@ station_res = ExtResource("24_3pmx8")
 player = NodePath("../../Skell")
 
 [node name="CollisionShape2D" parent="InteractionController/StationNES" index="1" unique_id=795924382]
-position = Vector2(35.5, 29.75)
+position = Vector2(57.5, 9.5)
 shape = SubResource("RectangleShape2D_gt3je")
 
 [node name="CameraAudioPlayer" type="AudioStreamPlayer2D" parent="." unique_id=103266751]

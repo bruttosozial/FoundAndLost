@@ -4,9 +4,11 @@ signal closed
 
 @onready var videoMC : MarginContainer = $PanelContainer/MarginContainer
 @onready var streamp : VideoStreamPlayer = $PanelContainer/VideoStreamMC/VideoStreamPlayer
+@onready var subtitle_player = $SubtitlePlayer
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
+	subtitle_player.play_subtitles()
 	if get_tree().root.get_children()[0] is CCTV:
 		get_tree().root.get_children()[0].pause_bgm()
 	else:
