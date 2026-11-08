@@ -8,6 +8,10 @@ class_name InteractStation
 
 @export var incorrect_item_text = "This doesn't go here..."
 @export var no_item_text = "I have nothing to put here..."
+@onready var detailed_view_camera: Camera2D = $"../../detailedViewCamera"
+
+signal change_detail_cam
+signal change_to_active_cam
 
 var interacting = false
 
@@ -45,12 +49,14 @@ func open_detail_window():
 	
 	var instance = station_res.scene.instantiate()
 	get_tree().root.add_child(instance)
+	change_detail_cam.emit()
 	
 	instance.closed.connect(close_detail_window)
 
 func close_detail_window():
 	audio_player.stream = station_res.slot_out_sfx
 	audio_player.play()
+	change_to_active_cam.emit()
 
 	player.on_detail_view_closed()
 
