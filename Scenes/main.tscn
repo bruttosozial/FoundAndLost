@@ -249,6 +249,8 @@ texture = ExtResource("9_hptm8")
 [connection signal="body_entered" from="ProjectorViewBackground/perspectivechange2_1" to="." method="_on_perspectivechange_2_1_body_entered"]
 [connection signal="body_entered" from="ComputerViewbackground/perspectiveChange3" to="." method="_on_perspective_change_3_body_entered"]
 [connection signal="body_entered" from="BoomBoxViewBackground/perspectiveChange4" to="." method="_on_perspective_change_4_body_entered"]
+[connection signal="ending_next_screen" from="Skell" to="." method="ending_switch_to_next_screen"]
+[connection signal="initiate_ending" from="Skell" to="." method="initiate_ending"]
 [connection signal="body_entered" from="firstPerspective" to="transitionCamera" method="_on_first_perspective_body_entered"]
 [connection signal="body_entered" from="secondPerspective" to="transitionCamera" method="_on_second_perspective_body_entered"]
 [connection signal="body_entered" from="thirdPerspective" to="transitionCamera" method="_on_third_perspective_body_entered"]

@@ -14,7 +14,19 @@ var speed = 300
 var current_item : ItemResource
 var paused = false
 
+signal initiate_ending
+signal ending_next_screen
+
+func _ready() -> void:
+	initiate_ending.emit()
+
+var seconds = 1.0
+
 func _physics_process(delta: float) -> void:
+	seconds += delta
+	if seconds > 1.0:
+		ending_next_screen.emit()
+		seconds = 0.0
 	var direction := Input.get_vector("left", "right", "up", "down")	
 	if paused:
 		if Input.is_action_just_released("interact"):
