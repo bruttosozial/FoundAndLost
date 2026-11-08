@@ -1,7 +1,6 @@
 [gd_scene format=3 uid="uid://c5cbhrcednbmc"]
 
 [ext_resource type="Script" uid="uid://dvk6qbqbyp5s3" path="res://Scripts/skelly.gd" id="1_ltsch"]
-[ext_resource type="Texture2D" uid="uid://cbssrmergedy8" path="res://Assets/icon.svg" id="3_yf50s"]
 [ext_resource type="Theme" uid="uid://bo45umqon0p4n" path="res://Resources/footage_deleted.tres" id="4_smh3g"]
 [ext_resource type="Theme" uid="uid://c06160pbjipuy" path="res://Resources/ui_feedback_theme.tres" id="4_tlx6r"]
 [ext_resource type="Texture2D" uid="uid://dl8qmlfs6c2wi" path="res://Assets/Character/sk_elleton-Sheet.png" id="5_4u5wa"]
@@ -180,15 +179,14 @@ polygon = PackedVector2Array(12, 27.021889, 12, 29.887562, 1.3333333, 29.887562,
 
 [node name="ItemSprite2D" type="Sprite2D" parent="." unique_id=1224661117]
 visible = false
+texture_filter = 1
 position = Vector2(20, -16.666668)
-scale = Vector2(0.8, 0.8)
-texture = ExtResource("3_yf50s")
 
-[node name="BrokenItemSprite2D" type="Sprite2D" parent="." unique_id=680579474]
+[node name="BrokenItemSprite2D" type="Sprite2D" parent="." unique_id=2119440207]
 visible = false
-position = Vector2(32, 7.9999995)
+texture_filter = 1
+position = Vector2(21.333334, 18.666666)
 scale = Vector2(0.2, 0.2)
-texture = ExtResource("3_yf50s")
 
 [node name="InteractionHelp" type="PanelContainer" parent="." unique_id=1894509603]
 visible = false
