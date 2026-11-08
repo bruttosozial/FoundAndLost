@@ -57,7 +57,8 @@ func close_detail_window():
 	audio_player.stream = station_res.slot_out_sfx
 	audio_player.play()
 	change_to_active_cam.emit()
-
+	
+	player.resume_player()
 	player.on_detail_view_closed()
 
 func on_item_destroyed():
