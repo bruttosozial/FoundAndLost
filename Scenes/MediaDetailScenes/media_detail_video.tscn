@@ -33,24 +33,24 @@ texture = ExtResource("2_xam08")
 modulate = Color(1, 1, 1, 0.3647059)
 self_modulate = Color(1, 1, 1, 0.4509804)
 layout_mode = 2
-size_flags_horizontal = 4
-size_flags_vertical = 4
 offset_transform_enabled = true
-theme_override_constants/margin_left = 100
-theme_override_constants/margin_top = 100
-theme_override_constants/margin_right = 100
-theme_override_constants/margin_bottom = 200
+theme_override_constants/margin_left = 300
+theme_override_constants/margin_top = 170
+theme_override_constants/margin_right = 300
+theme_override_constants/margin_bottom = 320
 
-[node name="VideoStreamPlayer" type="VideoStreamPlayer" parent="PanelContainer/VideoStreamMC" unique_id=998938241]
+[node name="AspectRatioContainer" type="AspectRatioContainer" parent="PanelContainer/VideoStreamMC" unique_id=68646850]
+layout_mode = 2
+
+[node name="VideoStreamPlayer" type="VideoStreamPlayer" parent="PanelContainer/VideoStreamMC/AspectRatioContainer" unique_id=998938241]
 modulate = Color(1, 1, 1, 0.4509804)
 self_modulate = Color(0.29954746, 0.29954746, 0.29954743, 1)
 material = ExtResource("3_jsyho")
 propagate_maximum_size = true
 layout_mode = 2
-size_flags_horizontal = 4
-size_flags_vertical = 4
 stream = ExtResource("4_jsyho")
 autoplay = true
+expand = true
 
 [node name="MarginContainer" type="MarginContainer" parent="PanelContainer" unique_id=2674879]
 visible = false
@@ -96,4 +96,4 @@ layout_mode = 1
 size_flags_vertical = 8
 subtitles_filename = "abandonment_film"
 
-[connection signal="finished" from="PanelContainer/VideoStreamMC/VideoStreamPlayer" to="." method="_on_video_stream_player_finished"]
+[connection signal="finished" from="PanelContainer/VideoStreamMC/AspectRatioContainer/VideoStreamPlayer" to="." method="_on_video_stream_player_finished"]
