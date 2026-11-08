@@ -57,16 +57,23 @@ func switch_title_main(no = false):
 	for child in scene_container.get_children():
 		child.queue_free()
 	scene_container.add_child(main_scene.instantiate())
+	playing = true
 	bgm_player.play()
 	state = GameState.MAIN
 	if(no): return
 	memory_player.play()
 	subtitle_player.play_subtitles()
 
+var playing = false
+
 var current_stream_pos = 0.0
 func pause_bgm():
+	if !playing: return
+	playing = false
 	current_stream_pos = bgm_player.get_playback_position()
 	bgm_player.stop()
 
 func resume_bgm():
+	if playing: return
+	playing = true
 	bgm_player.play(current_stream_pos)

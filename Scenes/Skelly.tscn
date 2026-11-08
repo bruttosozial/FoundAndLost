@@ -321,8 +321,14 @@ texture_filter = 1
 position = Vector2(-2, -7)
 scale = Vector2(1.96875, 1.96875)
 sprite_frames = SubResource("SpriteFrames_r5iys")
-animation = &"gun_side"
+animation = &"destroy"
 
 [node name="AnimatedSprite2DArm" type="AnimatedSprite2D" parent="AnimatedSprite2D" unique_id=19763518]
 visible = false
 sprite_frames = SubResource("SpriteFrames_ojbw0")
+
+[node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="." unique_id=995660309]
+volume_db = 24.0
+
+[connection signal="animation_changed" from="AnimatedSprite2D" to="." method="sfx_on_animation"]
+[connection signal="frame_changed" from="AnimatedSprite2D" to="." method="_on_animated_sprite_2d_sprite_frames_changed"]
