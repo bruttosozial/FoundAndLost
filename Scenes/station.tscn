@@ -17,5 +17,7 @@ texture = ExtResource("3_ovdsu")
 position = Vector2(0, -3)
 shape = SubResource("RectangleShape2D_p30wa")
 
+[node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="." unique_id=209286117]
+
 [connection signal="body_entered" from="." to="." method="_on_body_entered"]
 [connection signal="body_exited" from="." to="." method="_on_body_exited"]

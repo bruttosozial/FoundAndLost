@@ -2,10 +2,14 @@
 
 [ext_resource type="Script" uid="uid://8x8i3immu4w4" path="res://Scripts/Interaction System/station_resource.gd" id="1_kpu7m"]
 [ext_resource type="PackedScene" uid="uid://bi752mjou6fep" path="res://Scenes/MediaDetailScenes/media_detail_text.tscn" id="1_ufx0b"]
+[ext_resource type="AudioStream" uid="uid://ba0h3q8ijaod8" path="res://Assets/Sound/SFX/insert_floppy_disk.wav" id="3_gc3um"]
+[ext_resource type="AudioStream" uid="uid://d0c8f6o4xta3" path="res://Assets/Sound/SFX/eject_floppy_disk.wav" id="4_ku7g3"]
 
 [resource]
 script = ExtResource("1_kpu7m")
 name = "Old PC"
 type = 1
 scene = ExtResource("1_ufx0b")
+slot_in_sfx = ExtResource("3_gc3um")
+slot_out_sfx = ExtResource("4_ku7g3")
 metadata/_custom_type_script = "uid://8x8i3immu4w4"

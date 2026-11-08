@@ -15,6 +15,9 @@ var state: GameState = GameState.TITLE
 @onready var scene_container = $SceneContainer
 @onready var bgm_player: AudioStreamPlayer2D = $BGMPlayer
 
+@onready var subtitle_player = $SubtitleContainer/SubtitlePlayer
+@onready var memory_player = $MemoryOfMePlayer
+
 func _process(delta) -> void:
 	if state == GameState.TITLE:
 		process_title()
@@ -53,6 +56,8 @@ func switch_title_main():
 	scene_container.add_child(main_scene.instantiate())
 	bgm_player.play()
 	state = GameState.MAIN
+	memory_player.play()
+	subtitle_player.play_subtitles()
 
 var current_stream_pos = 0.0
 func pause_bgm():

@@ -126,7 +126,14 @@ polygon = PackedVector2Array(-10.666687, -82.97397, -10.666687, -72.267654, -69.
 [node name="perspectivechange2_1" type="Area2D" parent="ProjectorViewBackground" unique_id=1116379959]
 
 [node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="ProjectorViewBackground/perspectivechange2_1" unique_id=2056899991]
-polygon = PackedVector2Array(-77.33331, -26.765816, -122.66666, -37.472137, -117.33331, -2.2888184e-05)
+polygon = PackedVector2Array(-77.33331, -37.472137, -122.66666, -37.472137, -117.33331, -2.2888184e-05)
+
+[node name="StaticBody2D4" type="StaticBody2D" parent="ProjectorViewBackground" unique_id=271068134]
+
+[node name="collpoly" type="CollisionPolygon2D" parent="ProjectorViewBackground/StaticBody2D4" unique_id=426516518]
+position = Vector2(0, 8.0297165)
+scale = Vector2(1, 1.0000002)
+polygon = PackedVector2Array(-160, 85.65053, 160, 85.650536, 157.33331, 91.003685, -159.99997, 91.003685)
 
 [node name="ComputerViewbackground" type="Sprite2D" parent="." unique_id=734123802]
 texture_filter = 1
@@ -241,6 +248,9 @@ zoom = Vector2(2, 2)
 [node name="camera2SpawnPos" type="Node2D" parent="." unique_id=624754445]
 position = Vector2(1312, 96)
 
+[node name="camera2SpawnPos1_1" type="Node2D" parent="." unique_id=2004171482]
+position = Vector2(1320, 184)
+
 [node name="camera2SpawnPos2" type="Node2D" parent="." unique_id=625734494]
 position = Vector2(528, 416)
 
@@ -255,6 +265,9 @@ position = Vector2(1368, 792)
 
 [node name="camera2SpawnPos6" type="Node2D" parent="." unique_id=1795080976]
 position = Vector2(1221, 288)
+
+[node name="camera2SpawnPos6_6" type="Node2D" parent="." unique_id=280377481]
+position = Vector2(1248, 320)
 
 [node name="camera2SpawnPos7" type="Node2D" parent="." unique_id=1878576443]
 position = Vector2(344, 952)

@@ -53,6 +53,7 @@ func playAnimation(flip: String):
 		animated_sprite.play("run")
 	
 func pickup_item(item: ItemResource):
+	#TODO add SFX
 	current_item = item
 	item_sprite.texture = item.texture
 	broken_item_sprite.texture = item.broken_texture
