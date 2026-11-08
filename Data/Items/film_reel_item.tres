@@ -1,5 +1,6 @@
 [gd_resource type="Resource" script_class="ItemResource" format=3 uid="uid://dyvrvxreyy4mp"]
 
+[ext_resource type="AudioStream" uid="uid://p3cht01st8id" path="res://Assets/Sound/SFX/correct_interaction.wav" id="1_5ased"]
 [ext_resource type="Script" uid="uid://gag8l24f5upt" path="res://Scripts/Interaction System/item_resource.gd" id="1_o3bs7"]
 [ext_resource type="Texture2D" uid="uid://cbssrmergedy8" path="res://Assets/icon.svg" id="2_y0l4b"]
 
@@ -8,4 +9,5 @@ script = ExtResource("1_o3bs7")
 name = "Film Reel"
 texture = ExtResource("2_y0l4b")
 type = 3
+pickup_sfx = ExtResource("1_5ased")
 metadata/_custom_type_script = "uid://gag8l24f5upt"

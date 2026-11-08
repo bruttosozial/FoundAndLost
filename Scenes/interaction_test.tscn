@@ -2,9 +2,9 @@
 
 [ext_resource type="Script" uid="uid://cqwkfip48jcms" path="res://Scripts/Interaction System/interaction_controller.gd" id="1_tudu8"]
 [ext_resource type="PackedScene" uid="uid://bgfal12hurkah" path="res://Scenes/item.tscn" id="2_0wg47"]
-[ext_resource type="Resource" uid="uid://dd83h02c8trhs" path="res://Data/Items/cassette_item.tres" id="3_auvmn"]
+[ext_resource type="Resource" uid="uid://dyvrvxreyy4mp" path="res://Data/Items/film_reel_item.tres" id="3_auvmn"]
 [ext_resource type="PackedScene" uid="uid://lmwovq6lfo6m" path="res://Scenes/station.tscn" id="3_tudu8"]
-[ext_resource type="Resource" uid="uid://cdvqvftetn8f0" path="res://Data/Stations/cassette_player_station.tres" id="6_auvmn"]
+[ext_resource type="Resource" uid="uid://bxu1vnm2ub1yv" path="res://Data/Stations/film_projector_station.tres" id="6_k5lts"]
 [ext_resource type="Resource" uid="uid://dn4osqfp0ctc7" path="res://Data/Items/floppy_disk_item.tres" id="6_p30wa"]
 [ext_resource type="PackedScene" uid="uid://c5cbhrcednbmc" path="res://Scenes/Skelly.tscn" id="7_auvmn"]
 
@@ -26,7 +26,7 @@ player = NodePath("../../Skell")
 
 [node name="Station" parent="InteractionController" unique_id=282472610 node_paths=PackedStringArray("player") instance=ExtResource("3_tudu8")]
 position = Vector2(98, 85)
-station_res = ExtResource("6_auvmn")
+station_res = ExtResource("6_k5lts")
 player = NodePath("../../Skell")
 
 [node name="Skell" parent="." unique_id=1846132312 instance=ExtResource("7_auvmn")]

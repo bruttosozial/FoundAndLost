@@ -2,10 +2,14 @@
 
 [ext_resource type="PackedScene" uid="uid://ve74pp5vrdiv" path="res://Scenes/MediaDetailScenes/media_detail_video.tscn" id="1_1yse4"]
 [ext_resource type="Script" uid="uid://8x8i3immu4w4" path="res://Scripts/Interaction System/station_resource.gd" id="1_5mppm"]
+[ext_resource type="AudioStream" uid="uid://dhn6shld4sx0e" path="res://Assets/Sound/SFX/insert_film.wav" id="3_pd23q"]
+[ext_resource type="AudioStream" uid="uid://c6ap4ws7solj3" path="res://Assets/Sound/SFX/eject_film.wav" id="4_1cf8h"]
 
 [resource]
 script = ExtResource("1_5mppm")
 name = "Film Projector"
 type = 3
 scene = ExtResource("1_1yse4")
+slot_in_sfx = ExtResource("3_pd23q")
+slot_out_sfx = ExtResource("4_1cf8h")
 metadata/_custom_type_script = "uid://8x8i3immu4w4"
