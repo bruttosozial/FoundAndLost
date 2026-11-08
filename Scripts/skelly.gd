@@ -27,6 +27,10 @@ var seconds = 1.0
 signal destroyed_item
 var state: State = State.GAMEPLAY
 
+func set_ending_state():
+	state = State.ENDING
+	show_interaction_help("SHOOT")
+
 func _process(_delta: float) -> void:
 	if state == State.ENDING and Input.is_action_just_released("interact"):
 		state = State.NO
@@ -34,9 +38,7 @@ func _process(_delta: float) -> void:
 		play_shoot_animation()
 		await get_tree().create_timer(0.5).timeout
 		ending_next_screen.emit()
-		state = State.ENDING
-		print("help")
-		show_interaction_help("SHOOT")
+		
 
 func _physics_process(_delta: float) -> void:
 	if state == State.ENDING or state == State.NO: return
@@ -104,8 +106,6 @@ func show_interaction_help(text: String):
 	interaction_help.visible = true
 
 func hide_interaction_help():
-	print(get_stack())
-	print("hide function")
 	interaction_help.visible = false
 	interaction_label.text = ""
 
