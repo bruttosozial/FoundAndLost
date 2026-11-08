@@ -13,9 +13,13 @@ class_name PlayerController
 @onready var audio_length = 0.5
 var footStepFrames = [1,3]
 
+var walk_sfx : AudioStream = preload("res://Assets/Sound/SFX/skelly_walk_2.wav")
+var gun_sfx : AudioStream = preload("res://Assets/Sound/SFX/correct_interaction.wav")
+
 var speed = 300
 var current_item : ItemResource
 var paused = false
+var prev_anim = "idle"
 
 signal initiate_ending
 signal ending_next_screen
@@ -64,22 +68,21 @@ func _physics_process(_delta: float) -> void:
 			if direction == Vector2.RIGHT:
 				playAnimation("right")
 				item_sprite.position.x = 20
-			print("checking here")
-			print(audio_player.playing)
-			if !audio_player.playing:
-				print("Reaached")
-				audio_player.play()
-				print(audio_player.playing)
 		else:
 			velocity = Vector2.ZERO
 			animated_sprite.play("idle")
-			audio_player.stop()
+			prev_anim = "idle"
 		
 		move_and_slide() 
 
+func sfx_on_animation():
+	if animated_sprite.animation == "run" and prev_anim == "idle":
+		audio_player.stream = walk_sfx
+		audio_player.play()
+	elif animated_sprite.animation == "idle" and prev_anim != "idle":
+		audio_player.stop()
 	
 func playAnimation(flip: String):
-	audio_player.play()
 	if flip == "right":
 		animated_sprite.flip_h = true
 		animated_sprite_arm.flip_h = true
@@ -90,6 +93,7 @@ func playAnimation(flip: String):
 		animated_sprite.play("run")
 	else:
 		animated_sprite.play("run")
+	prev_anim = "run"
 	
 func pickup_item(item: ItemResource):
 	#TODO add SFX
