@@ -5,7 +5,46 @@
 [ext_resource type="Theme" uid="uid://bo45umqon0p4n" path="res://Resources/footage_deleted.tres" id="4_smh3g"]
 [ext_resource type="Theme" uid="uid://c06160pbjipuy" path="res://Resources/ui_feedback_theme.tres" id="4_tlx6r"]
 [ext_resource type="Texture2D" uid="uid://dl8qmlfs6c2wi" path="res://Assets/Character/sk_elleton-Sheet.png" id="5_4u5wa"]
+[ext_resource type="Texture2D" uid="uid://5a86opo780eq" path="res://Assets/Character/sk_elleton_throw-Sheet.png" id="5_g0km7"]
 [ext_resource type="Texture2D" uid="uid://dr6rtk70wrrp2" path="res://Assets/Character/sk_elleton_idle-Sheet.png" id="5_tlx6r"]
+[ext_resource type="Texture2D" uid="uid://bkbmydnonapbv" path="res://Assets/Character/sk_elleton_gun-Sheet.png" id="6_jpvyd"]
+[ext_resource type="Texture2D" uid="uid://cuca2ubkcehwe" path="res://Assets/Character/sk_elleton_holding.png" id="8_137ib"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_hhh4n"]
+atlas = ExtResource("5_g0km7")
+region = Rect2(0, 0, 32, 50)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_qu1li"]
+atlas = ExtResource("5_g0km7")
+region = Rect2(32, 0, 32, 50)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_xd5bp"]
+atlas = ExtResource("5_g0km7")
+region = Rect2(64, 0, 32, 50)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_68jnm"]
+atlas = ExtResource("5_g0km7")
+region = Rect2(96, 0, 32, 50)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_tanm7"]
+atlas = ExtResource("6_jpvyd")
+region = Rect2(0, 0, 32, 50)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_m3uer"]
+atlas = ExtResource("6_jpvyd")
+region = Rect2(32, 0, 32, 50)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_6r5lv"]
+atlas = ExtResource("6_jpvyd")
+region = Rect2(64, 0, 32, 50)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_u2gak"]
+atlas = ExtResource("6_jpvyd")
+region = Rect2(96, 0, 32, 50)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_nvhav"]
+atlas = ExtResource("6_jpvyd")
+region = Rect2(128, 0, 32, 50)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_otwt0"]
 atlas = ExtResource("5_tlx6r")
@@ -35,6 +74,58 @@ region = Rect2(96, 0, 32, 50)
 animations = [{
 "frames": [{
 "duration": 1.0,
+"texture": SubResource("AtlasTexture_hhh4n")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_qu1li")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_xd5bp")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_68jnm")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_hhh4n")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_qu1li")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_xd5bp")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_68jnm")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_hhh4n")
+}],
+"loop": 0,
+"name": &"destroy",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_tanm7")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_m3uer")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_6r5lv")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_u2gak")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_nvhav")
+}],
+"loop": 1,
+"name": &"gun_front",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
 "texture": SubResource("AtlasTexture_otwt0")
 }, {
 "duration": 1.0,
@@ -62,6 +153,21 @@ animations = [{
 "speed": 8.0
 }]
 
+[sub_resource type="AtlasTexture" id="AtlasTexture_jeuxe"]
+atlas = ExtResource("8_137ib")
+region = Rect2(0, 0, 32, 50)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_ojbw0"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_jeuxe")
+}],
+"loop": 1,
+"name": &"default",
+"speed": 5.0
+}]
+
 [node name="Skell" type="CharacterBody2D" unique_id=1846132312]
 scale = Vector2(3, 3)
 motion_mode = 1
@@ -69,11 +175,17 @@ script = ExtResource("1_ltsch")
 
 [node name="CollisionShape2D" type="CollisionPolygon2D" parent="." unique_id=1462013392]
 position = Vector2(-4, -7)
-polygon = PackedVector2Array(8.333334, 26.666668, -9.666667, 27.333334, 7.3333335, 28.666668, 8.333334, 16)
+polygon = PackedVector2Array(8.333334, 26.666668, -9.666667, 27.333334, 7.3333335, 28.666668, -11, 27.333334)
 
 [node name="ItemSprite2D" type="Sprite2D" parent="." unique_id=1224661117]
 visible = false
-position = Vector2(36.000004, -27.000002)
+position = Vector2(20, -16.666668)
+scale = Vector2(0.8, 0.8)
+texture = ExtResource("3_yf50s")
+
+[node name="BrokenItemSprite2D" type="Sprite2D" parent="." unique_id=680579474]
+visible = false
+position = Vector2(32, 7.9999995)
 scale = Vector2(0.2, 0.2)
 texture = ExtResource("3_yf50s")
 
@@ -133,5 +245,8 @@ texture_filter = 1
 position = Vector2(-2, -7)
 scale = Vector2(1.96875, 1.96875)
 sprite_frames = SubResource("SpriteFrames_r5iys")
-animation = &"idle"
-frame_progress = 0.37554845
+animation = &"gun_front"
+
+[node name="AnimatedSprite2DArm" type="AnimatedSprite2D" parent="AnimatedSprite2D" unique_id=19763518]
+visible = false
+sprite_frames = SubResource("SpriteFrames_ojbw0")

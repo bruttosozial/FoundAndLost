@@ -24,7 +24,7 @@ func interact():
 		return
 	if(player.current_item):
 		if(player.current_item.type == station_res.type):
-			player.remove_item()
+			player.hide_item()
 			open_detail_window()
 		else:
 			player.show_feedback_help(incorrect_item_text)
@@ -52,7 +52,6 @@ func close_detail_window():
 	# use: station_res.slot_out_sfx
 	audio_player.stream = station_res.slot_out_sfx
 	audio_player.play()
-	#TODO add destroying of media
-	
-	interacting = false
-	player.resume_player()
+
+	player.on_detail_view_closed()
+

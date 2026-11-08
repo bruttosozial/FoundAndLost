@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://bq2c64kuek34o"
-path="res://.godot/imported/playerBlock.png-5c0c9741a37b10c119fab8803ed96937.ctex"
+uid="uid://dr3m0s0yh42ny"
+path="res://.godot/imported/BoomBoxViewFilmRoll.png-83ff6838e0faca031f2c9b77934ac340.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Assets/playerBlock.png"
-dest_files=["res://.godot/imported/playerBlock.png-5c0c9741a37b10c119fab8803ed96937.ctex"]
+source_file="res://Assets/Items/BoomBoxViewFilmRoll.png"
+dest_files=["res://.godot/imported/BoomBoxViewFilmRoll.png-83ff6838e0faca031f2c9b77934ac340.ctex"]
 
 [params]
 

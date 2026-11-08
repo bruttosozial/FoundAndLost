@@ -2,12 +2,13 @@
 
 [ext_resource type="AudioStream" uid="uid://p3cht01st8id" path="res://Assets/Sound/SFX/correct_interaction.wav" id="1_7h3pn"]
 [ext_resource type="Script" uid="uid://gag8l24f5upt" path="res://Scripts/Interaction System/item_resource.gd" id="1_m2grb"]
-[ext_resource type="Texture2D" uid="uid://cbssrmergedy8" path="res://Assets/icon.svg" id="2_q8ogj"]
+[ext_resource type="Texture2D" uid="uid://doh5ou60si2a0" path="res://Assets/Items/ProjectorViewCartridge.png" id="1_q8ogj"]
 
 [resource]
 script = ExtResource("1_m2grb")
 name = "Cartridge"
-texture = ExtResource("2_q8ogj")
+texture = ExtResource("1_q8ogj")
+broken_texture = ExtResource("1_q8ogj")
 type = 2
 pickup_sfx = ExtResource("1_7h3pn")
 metadata/_custom_type_script = "uid://gag8l24f5upt"

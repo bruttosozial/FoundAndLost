@@ -3,6 +3,7 @@
 [ext_resource type="Script" uid="uid://ekx2mhxiums3" path="res://Scripts/title.gd" id="1_fp2oq"]
 [ext_resource type="Theme" uid="uid://bo45umqon0p4n" path="res://Resources/footage_deleted.tres" id="2_q2qps"]
 [ext_resource type="FontFile" uid="uid://cpgcxsfye7i8t" path="res://Assets/Fonts/home-video.regular.otf" id="3_yosvi"]
+[ext_resource type="AudioStream" uid="uid://d3knapoq1cfg2" path="res://Assets/Sound/menu-music.wav" id="4_q2qps"]
 
 [node name="Title" type="MarginContainer" unique_id=655081398]
 anchors_preset = 15
@@ -95,3 +96,8 @@ text = "MOVE
 
 
 INTERACT"
+
+[node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="." unique_id=857002469]
+stream = ExtResource("4_q2qps")
+volume_db = 10.0
+autoplay = true

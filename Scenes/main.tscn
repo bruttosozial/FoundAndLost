@@ -1,22 +1,37 @@
 [gd_scene format=3 uid="uid://cqb7314h1gu1l"]
 
 [ext_resource type="Script" uid="uid://bocwip3aex8d0" path="res://Scripts/main.gd" id="1_d1ilt"]
-[ext_resource type="Texture2D" uid="uid://dqkm3i0j5556l" path="res://Assets/ConsoleView.png" id="1_hptm8"]
+[ext_resource type="Texture2D" uid="uid://dqkm3i0j5556l" path="res://Assets/Screens/backgrounds/ConsoleView.png" id="1_hptm8"]
 [ext_resource type="PackedScene" uid="uid://c5cbhrcednbmc" path="res://Scenes/Skelly.tscn" id="1_jjgbg"]
-[ext_resource type="PackedScene" uid="uid://dkt3pqekjg5wa" path="res://Scenes/block.tscn" id="2_bo1nx"]
 [ext_resource type="PackedScene" uid="uid://dxna1atweh5uw" path="res://Scenes/perspective_base.tscn" id="3_jjvhh"]
-[ext_resource type="Script" uid="uid://g0qsv5l6ic2g" path="res://Scripts/first_perspective.gd" id="4_21xkr"]
-[ext_resource type="Script" uid="uid://b8lgq3bk1bk3c" path="res://Scripts/second_perspective.gd" id="5_344ge"]
-[ext_resource type="Script" uid="uid://bhhsbb7kympkc" path="res://Scripts/third_perspective.gd" id="6_ynf5e"]
-[ext_resource type="Script" uid="uid://co0t8nlwjqo28" path="res://Scripts/fourth_perspective.gd" id="7_hptm8"]
+[ext_resource type="Texture2D" uid="uid://buwwxd764gs3g" path="res://Assets/Screens/backgrounds/BoomBoxViewBackground.png" id="7_344ge"]
+[ext_resource type="Texture2D" uid="uid://bhrqryukoduwv" path="res://Assets/Screens/backgrounds/ProjectorViewBackground.png" id="8_ynf5e"]
+[ext_resource type="Texture2D" uid="uid://cg7lugcoj6iv5" path="res://Assets/Screens/backgrounds/ProjectorViewForeground.png" id="9_hptm8"]
 [ext_resource type="PackedScene" uid="uid://ga62wh6tp1sf" path="res://Scenes/boundary.tscn" id="9_ynf5e"]
+[ext_resource type="Texture2D" uid="uid://c4vkgasqugxcb" path="res://Assets/Screens/backgrounds/ComputerViewbackground.png" id="11_d1ilt"]
+
+[sub_resource type="GDScript" id="GDScript_hptm8"]
+script/source = "extends Area2D
+"
+
+[sub_resource type="GDScript" id="GDScript_d1ilt"]
+script/source = "extends Area2D
+"
+
+[sub_resource type="GDScript" id="GDScript_6iyac"]
+script/source = "extends Area2D
+"
+
+[sub_resource type="GDScript" id="GDScript_fdnlq"]
+script/source = "extends Area2D
+"
 
 [node name="Main" type="Node2D" unique_id=312324733]
 script = ExtResource("1_d1ilt")
 
 [node name="ConsoleView" type="Sprite2D" parent="." unique_id=1299614590]
 texture_filter = 1
-position = Vector2(471.99997, 264)
+position = Vector2(470.99994, 263)
 scale = Vector2(3, 3)
 texture = ExtResource("1_hptm8")
 
@@ -32,45 +47,126 @@ polygon = PackedVector2Array(-157.33333, -5.3333282, -127.99999, -5.3333282, -12
 position = Vector2(-0.33332825, 0.33333588)
 polygon = PackedVector2Array(35, -8.333336, 40.000015, 90.66667, 8.3333435, -3, 5.3333435, -29.333332)
 
+[node name="perspectiveChange1_1" type="Area2D" parent="ConsoleView" unique_id=1102543659]
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="ConsoleView/perspectiveChange1_1" unique_id=1796394215]
+position = Vector2(-66.33331, 45.66667)
+rotation = 1.6285248
+polygon = PackedVector2Array(39.62567, -7.6323013, 42.809998, 93.68609, 36.96344, -7.478447, 39.103546, -109.104546)
+
 [node name="plaqueBoundary" type="StaticBody2D" parent="ConsoleView" unique_id=712929622]
-visible = false
 
 [node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="ConsoleView/plaqueBoundary" unique_id=1366827132]
 polygon = PackedVector2Array(-23.999985, 13.333336, -21.333328, 29.333336, -13.333328, 29.333336, -15.999985, 48, -5.3333282, 48, -7.9999847, 29.333336, 8.000015, 24, 2.6666718, 8)
 
+[node name="ProjectorViewBackground" type="Sprite2D" parent="." unique_id=1249924910]
+position = Vector2(1424, 272.00006)
+scale = Vector2(3, 2.988889)
+texture = ExtResource("8_ynf5e")
+
+[node name="StaticBody2D" type="StaticBody2D" parent="ProjectorViewBackground" unique_id=1036701837]
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="ProjectorViewBackground/StaticBody2D" unique_id=952626470]
+polygon = PackedVector2Array(-5.333313, -91.00373, -5.333313, -32.118977, 122.66669, -26.765816, 157.33331, 48.178413, 157.33331, -91.00373)
+
+[node name="StaticBody2D2" type="StaticBody2D" parent="ProjectorViewBackground" unique_id=990798532]
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="ProjectorViewBackground/StaticBody2D2" unique_id=1033373152]
+position = Vector2(-13.333332, 24.089197)
+polygon = PackedVector2Array(-109.33334, -80.29739, -104, -18.736053, -104, 5.3531647, -146.66666, 69.59106, -154.66666, -61.561356)
+
+[node name="StaticBody2D3" type="StaticBody2D" parent="ProjectorViewBackground" unique_id=1430892427]
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="ProjectorViewBackground/StaticBody2D3" unique_id=938147009]
+position = Vector2(74.666664, -40.148716)
+polygon = PackedVector2Array(-149.33334, -48.178436, -149.33334, 16.059475, -160, -37.472115, -200, -50.855015)
+
+[node name="perspectiveChange2" type="Area2D" parent="ProjectorViewBackground" unique_id=1049286145]
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="ProjectorViewBackground/perspectiveChange2" unique_id=1299858689]
+position = Vector2(2.6666665, -2.0420683e-05)
+polygon = PackedVector2Array(-10.666687, -82.97397, -10.666687, -72.267654, -69.33334, -82.97397)
+
+[node name="perspectivechange2_1" type="Area2D" parent="ProjectorViewBackground" unique_id=1116379959]
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="ProjectorViewBackground/perspectivechange2_1" unique_id=2056899991]
+polygon = PackedVector2Array(-77.33331, -37.472137, -122.66666, -37.472137, -117.33331, -2.2888184e-05)
+
+[node name="StaticBody2D4" type="StaticBody2D" parent="ProjectorViewBackground" unique_id=271068134]
+
+[node name="collpoly" type="CollisionPolygon2D" parent="ProjectorViewBackground/StaticBody2D4" unique_id=426516518]
+position = Vector2(0, 8.0297165)
+scale = Vector2(1, 1.0000002)
+polygon = PackedVector2Array(-160, 85.65053, 160, 85.650536, 157.33331, 91.003685, -159.99997, 91.003685)
+
+[node name="ComputerViewbackground" type="Sprite2D" parent="." unique_id=734123802]
+position = Vector2(1428, 811)
+scale = Vector2(3.025, 2.988889)
+texture = ExtResource("11_d1ilt")
+
+[node name="StaticBody2D2" type="StaticBody2D" parent="ComputerViewbackground" unique_id=1138628742]
+scale = Vector2(1, 0.99999994)
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="ComputerViewbackground/StaticBody2D2" unique_id=354959126]
+position = Vector2(175.86777, 17.73234)
+polygon = PackedVector2Array(-25.123962, -59.88846, -23.801697, 8.029724, -66.11572, 21.412628, -81.98352, 48.178436, -158.6777, 34.795532, -153.38846, -69.59108)
+
+[node name="StaticBody2D" type="StaticBody2D" parent="ComputerViewbackground" unique_id=1557566390]
+scale = Vector2(1, 0.99999994)
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="ComputerViewbackground/StaticBody2D" unique_id=1406912264]
+polygon = PackedVector2Array(-25.123962, -59.88846, -83.305786, -30.446075, -80.66116, 41.821564, -154.71072, 87.323425, 157.35535, 92.676575, -157.35538, 87.323425, -154.71072, -73.27136)
+
+[node name="perspectiveChange3" type="Area2D" parent="ComputerViewbackground" unique_id=381639278]
+scale = Vector2(1, 0.9999999)
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="ComputerViewbackground/perspectiveChange3" unique_id=998334074]
+position = Vector2(-3.966942, 23.085503)
+polygon = PackedVector2Array(-23.801636, -85.65057, 153.38846, -64.23793, 55.5372, -88.32715, -15.867767, -96.35689)
+
+[node name="BoomBoxViewBackground" type="Sprite2D" parent="." unique_id=2053195635]
+position = Vector2(464, 799.99994)
+scale = Vector2(2.95, 2.9444444)
+texture = ExtResource("7_344ge")
+
+[node name="perspectiveChange4" type="Area2D" parent="BoomBoxViewBackground" unique_id=122497522]
+position = Vector2(59.66101, 5.4339805)
+scale = Vector2(1.016949, 1.0188679)
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="BoomBoxViewBackground/perspectiveChange4" unique_id=1095822346]
+position = Vector2(-66.33331, 45.66667)
+rotation = 1.5781958
+polygon = PackedVector2Array(39.62567, -7.6323013, 40.73355, 144.03587, 36.96344, -7.478447, 41.091553, -167.97531)
+
+[node name="StaticBody2D" type="StaticBody2D" parent="BoomBoxViewBackground" unique_id=2131335441]
+
+[node name="CollisionShape2D" type="CollisionPolygon2D" parent="BoomBoxViewBackground/StaticBody2D" unique_id=1884293793]
+polygon = PackedVector2Array(157.28813, 2.7170105, 27.118637, -10.867889, 16.27118, 5.4339905, -16.271194, 3.0517578e-05, -21.694916, -19.01883, -81.355934, -27.16977, -81.355934, 24.45285, -116.61017, 54.33966, -157.28813, 81.50946, -157.28813, -92.37732, 159.99998, -86.94336)
+
 [node name="Skell" parent="." unique_id=1846132312 instance=ExtResource("1_jjgbg")]
-position = Vector2(152, 299)
-
-[node name="block" parent="." unique_id=549148434 instance=ExtResource("2_bo1nx")]
-position = Vector2(-816, 120)
-
-[node name="block2" parent="." unique_id=598080572 instance=ExtResource("2_bo1nx")]
-position = Vector2(1360, -28)
-
-[node name="block3" parent="." unique_id=309277316 instance=ExtResource("2_bo1nx")]
-position = Vector2(1373, 676)
-
-[node name="block4" parent="." unique_id=698818393 instance=ExtResource("2_bo1nx")]
-position = Vector2(155, 578)
+position = Vector2(192, 360)
 
 [node name="firstPerspective" parent="." unique_id=1024044903 instance=ExtResource("3_jjvhh")]
 visible = false
 position = Vector2(-16, -8)
-script = ExtResource("4_21xkr")
+script = SubResource("GDScript_hptm8")
 
 [node name="secondPerspective" parent="." unique_id=1767435977 instance=ExtResource("3_jjvhh")]
+visible = false
 position = Vector2(944, 536)
-script = ExtResource("5_344ge")
+script = SubResource("GDScript_d1ilt")
 
 [node name="thirdPerspective" parent="." unique_id=203502483 instance=ExtResource("3_jjvhh")]
+visible = false
 position = Vector2(-16, 536)
-script = ExtResource("6_ynf5e")
+script = SubResource("GDScript_6iyac")
 
 [node name="Area2D" type="Area2D" parent="thirdPerspective" unique_id=1846886983]
 
 [node name="fourthPerspective" parent="." unique_id=1769204779 instance=ExtResource("3_jjvhh")]
+visible = false
 position = Vector2(944, -7)
-script = ExtResource("7_hptm8")
+script = SubResource("GDScript_fdnlq")
 
 [node name="Boundary" parent="." unique_id=235025924 instance=ExtResource("9_ynf5e")]
 
@@ -107,9 +203,52 @@ scale = Vector2(3, 3)
 zoom = Vector2(2, 2)
 
 [node name="camera2SpawnPos" type="Node2D" parent="." unique_id=624754445]
-position = Vector2(1008, 312)
+position = Vector2(1312, 96)
+
+[node name="camera2SpawnPos1_1" type="Node2D" parent="." unique_id=2004171482]
+position = Vector2(1320, 184)
+
+[node name="camera2SpawnPos2" type="Node2D" parent="." unique_id=625734494]
+position = Vector2(528, 416)
+
+[node name="camera2SpawnPos3" type="Node2D" parent="." unique_id=1512511112]
+position = Vector2(456, 416)
+
+[node name="camera2SpawnPos4" type="Node2D" parent="." unique_id=721975230]
+position = Vector2(1424, 648)
+
+[node name="camera2SpawnPos5" type="Node2D" parent="." unique_id=562585331]
+position = Vector2(1368, 792)
+
+[node name="camera2SpawnPos6" type="Node2D" parent="." unique_id=1795080976]
+position = Vector2(1168, 288)
+
+[node name="camera2SpawnPos6_6" type="Node2D" parent="." unique_id=280377481]
+position = Vector2(1248, 320)
+
+[node name="camera2SpawnPos7" type="Node2D" parent="." unique_id=1878576443]
+position = Vector2(344, 952)
+
+[node name="camera2SpawnPos8" type="Node2D" parent="." unique_id=694644431]
+position = Vector2(344, 848)
+
+[node name="camera2SpawnPos9" type="Node2D" parent="." unique_id=925390033]
+position = Vector2(160, 416)
+
+[node name="camera2SpawnPos10" type="Node2D" parent="." unique_id=192063440]
+position = Vector2(256, 408)
+
+[node name="ProjectorViewForeground" type="Sprite2D" parent="." unique_id=1095207937]
+position = Vector2(1528.0001, 280.00003)
+scale = Vector2(1.6874994, 1.761111)
+texture = ExtResource("9_hptm8")
 
 [connection signal="body_entered" from="ConsoleView/perspectiveChange" to="." method="_on_perspective_change_body_entered"]
+[connection signal="body_entered" from="ConsoleView/perspectiveChange1_1" to="." method="_on_perspective_change_1_1_body_entered"]
+[connection signal="body_entered" from="ProjectorViewBackground/perspectiveChange2" to="." method="_on_perspective_change_2_body_entered"]
+[connection signal="body_entered" from="ProjectorViewBackground/perspectivechange2_1" to="." method="_on_perspectivechange_2_1_body_entered"]
+[connection signal="body_entered" from="ComputerViewbackground/perspectiveChange3" to="." method="_on_perspective_change_3_body_entered"]
+[connection signal="body_entered" from="BoomBoxViewBackground/perspectiveChange4" to="." method="_on_perspective_change_4_body_entered"]
 [connection signal="body_entered" from="firstPerspective" to="transitionCamera" method="_on_first_perspective_body_entered"]
 [connection signal="body_entered" from="secondPerspective" to="transitionCamera" method="_on_second_perspective_body_entered"]
 [connection signal="body_entered" from="thirdPerspective" to="transitionCamera" method="_on_third_perspective_body_entered"]
