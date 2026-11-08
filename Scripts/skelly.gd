@@ -9,14 +9,27 @@ class_name PlayerController
 @onready var interaction_label : RichTextLabel = $InteractionHelp/MarginContainer/RichTextLabel
 @onready var feedback_help = $FeedbackHelp
 @onready var feedback_label : RichTextLabel = $FeedbackHelp/MarginContainer/RichTextLabel
+
+@onready var audio_player = $AudioStreamPlayer2D
+@onready var audio_length = 0.5
+var footStepFrames = [1,3]
+
+var walk_sfx : AudioStream = preload("res://Assets/Sound/SFX/WalkTest_4.wav")
+var gun_sfx : AudioStream = preload("res://Assets/Sound/SFX/gunshot.mp3")
+var drop_sfx : AudioStream = preload("res://Assets/Sound/SFX/ObjectDrop.wav")
+
 @onready var projector_view_foreground: Sprite2D = $"../ProjectorViewForeground"
 @onready var skell: PlayerController = $"."
+
 
 
 var speed = 300
 var current_item : ItemResource
 var paused = false
+
+var prev_anim = "idle"
 var destroyed_count = 0
+
 
 
 signal initiate_ending
@@ -41,15 +54,16 @@ func _process(_delta: float) -> void:
 		play_shoot_animation()
 		await get_tree().create_timer(0.5).timeout
 		ending_next_screen.emit()
-		
 
 func _physics_process(_delta: float) -> void:
+	if state == State.ENDING or state == State.NO: 
+		return
+
 	if (skell.position.y - 366) <= (projector_view_foreground.position.y - 269):
 		projector_view_foreground.set_z_index(1)
 	elif (skell.position.y - 366) >= (projector_view_foreground.position.y - 269):
 		projector_view_foreground.set_z_index(0)
 		
-	if state == State.ENDING or state == State.NO: return
 	
 	if Input.is_action_just_released("debug_ending"):
 		initiate_ending_func()
@@ -61,7 +75,7 @@ func _physics_process(_delta: float) -> void:
 	else:
 		if direction != Vector2.ZERO:
 			velocity = direction * speed
-			if direction == Vector2.UP:
+			if direction == Vector2.UP:	
 				playAnimation("")
 			if direction == Vector2.DOWN:
 				playAnimation("")
@@ -76,9 +90,17 @@ func _physics_process(_delta: float) -> void:
 		else:
 			velocity = Vector2.ZERO
 			animated_sprite.play("idle")
+			prev_anim = "idle"
 		
 		move_and_slide() 
 
+func sfx_on_animation():
+	if animated_sprite.animation == "run" and prev_anim == "idle":
+		audio_player.stream = walk_sfx
+		audio_player.play()
+	elif animated_sprite.animation == "idle" and prev_anim == "run":
+		audio_player.stop()
+	
 func playAnimation(flip: String):
 	if flip == "right":
 		animated_sprite.flip_h = true
@@ -90,6 +112,7 @@ func playAnimation(flip: String):
 		animated_sprite.play("run")
 	else:
 		animated_sprite.play("run")
+	prev_anim = "run"
 	
 func pickup_item(item: ItemResource):
 	#TODO add SFX
@@ -188,5 +211,12 @@ func set_ending_state():
 func initiate_ending_func():
 	initiate_ending.emit()
 	state = State.ENDING
-	show_interaction_help("SHOOT")
-	
+	show_interaction_help("SHOOT")	
+
+func _on_animated_sprite_2d_sprite_frames_changed() -> void:
+	if animated_sprite.animation == "gun_side" and animated_sprite.frame == 5 or animated_sprite.animation == "gun_front" and animated_sprite.frame == 1:
+		audio_player.stream = gun_sfx
+		audio_player.play()
+	if animated_sprite.animation == "destroy" and animated_sprite.frame == 5:
+		audio_player.stream = drop_sfx
+		audio_player.play()
