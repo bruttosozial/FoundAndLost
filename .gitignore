@@ -25,5 +25,3 @@ mono_crash.*.json
 # *.pck
 
 export/*
-config.bat
-node_modules
