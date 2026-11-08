@@ -181,7 +181,7 @@ scale = Vector2(1.016949, 1.0188679)
 position = Vector2(-132.66666, -89.00001)
 rotation = 1.5781958
 scale = Vector2(4.252994, 0.7389822)
-polygon = PackedVector2Array(20.073032, 6.3625183, 13.329388, 3.9432068, 14.379646, -32.63925, 24.77489, 5.7112045)
+polygon = PackedVector2Array(15.686989, 8.804726, 13.648689, 8.440445, 14.315193, -21.810516, 20.230942, 7.257965)
 
 [node name="ProjectorViewForeground" type="Sprite2D" parent="." unique_id=1095207937]
 texture_filter = 1
@@ -196,6 +196,10 @@ position = Vector2(180, 366)
 
 [node name="Boundary3" parent="." unique_id=87306768 instance=ExtResource("9_ynf5e")]
 position = Vector2(5, -161)
+rotation = 1.5707964
+
+[node name="Boundary5" parent="." unique_id=782592375 instance=ExtResource("9_ynf5e")]
+position = Vector2(937, -174)
 rotation = 1.5707964
 
 [node name="Boundary4" parent="." unique_id=392623354 instance=ExtResource("9_ynf5e")]
@@ -238,7 +242,7 @@ position = Vector2(528, 416)
 position = Vector2(456, 416)
 
 [node name="camera2SpawnPos11" type="Node2D" parent="." unique_id=1933058151]
-position = Vector2(346, 1260)
+position = Vector2(290, 1198)
 
 [node name="camera2SpawnPos4" type="Node2D" parent="." unique_id=721975230]
 position = Vector2(1697, 1302)
@@ -268,7 +272,13 @@ position = Vector2(246, 346)
 position = Vector2(277, 382)
 
 [node name="camera2SpawnPos13" type="Node2D" parent="." unique_id=1164005409]
-position = Vector2(1451, 1449)
+position = Vector2(1372, 1457)
+
+[node name="camera2SpawnPos14" type="Node2D" parent="." unique_id=674012364]
+position = Vector2(1455, 1441)
+
+[node name="camera2SpawnPos15" type="Node2D" parent="." unique_id=453801251]
+position = Vector2(347, 1237)
 
 [node name="InteractionController" type="Node2D" parent="." unique_id=1800761327 node_paths=PackedStringArray("player")]
 script = ExtResource("10_fdnlq")
@@ -301,7 +311,7 @@ position = Vector2(3, 1)
 shape = SubResource("RectangleShape2D_fevyy")
 
 [node name="ItemFilmRoll" parent="InteractionController" unique_id=1322681370 node_paths=PackedStringArray("player") instance=ExtResource("11_jkdf5")]
-position = Vector2(185, 1297)
+position = Vector2(186, 1300)
 item_res = ExtResource("16_hibaj")
 player = NodePath("../../Skell")
 
