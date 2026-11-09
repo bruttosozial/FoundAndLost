@@ -65,7 +65,7 @@ func _physics_process(_delta: float) -> void:
 		projector_view_foreground.set_z_index(0)
 		
 	
-	if Input.is_action_just_released("debug_ending"):
+	if Input.is_action_just_released("debug_ending") && OS.has_feature('debug'):
 		initiate_ending_func()
 	
 	var direction := Input.get_vector("left", "right", "up", "down")	

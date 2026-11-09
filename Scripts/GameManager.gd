@@ -27,19 +27,18 @@ func _process(delta) -> void:
 	elif state == GameState.CREDITS:
 		process_credits()
 
-
 func process_main():
-	if  Input.is_action_just_pressed("debug_switchscene"):
+	if  Input.is_action_just_pressed("debug_switchscene") && OS.has_feature('debug'):
 		switch_main_credits()
 
 func process_title():
-	if Input.is_action_just_pressed("debug_mainnodialogue"):
+	if Input.is_action_just_pressed("debug_mainnodialogue") && OS.has_feature('debug'):
 		switch_title_main(true)
-	if Input.is_action_just_pressed("interact") || Input.is_action_just_pressed("debug_switchscene"):
+	if Input.is_action_just_pressed("interact") || (Input.is_action_just_pressed("debug_switchscene") && OS.has_feature('debug')):
 		switch_title_main()
 
 func process_credits():
-	if Input.is_action_just_pressed("debug_switchscene"):
+	if Input.is_action_just_pressed("debug_switchscene") && OS.has_feature('debug'):
 		for child in scene_container.get_children():
 			child.queue_free()
 		scene_container.add_child(title_scene.instantiate())
