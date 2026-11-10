@@ -3,7 +3,7 @@
 [ext_resource type="Script" uid="uid://b67wdaeyofmy3" path="res://Scripts/Detail views/media_detail_game.gd" id="1_7h30u"]
 [ext_resource type="Texture2D" uid="uid://0lok76bvks4g" path="res://Assets/console.png" id="2_0i1c0"]
 [ext_resource type="VideoStream" uid="uid://dgxinbolntyvf" path="res://Assets/media_details/game_recording_pixel.ogv" id="2_gq3o4"]
-[ext_resource type="Theme" uid="uid://bo45umqon0p4n" path="res://Resources/footage_deleted.tres" id="3_bgejd"]
+[ext_resource type="Theme" uid="uid://dqi4kvhsxgpiv" path="res://Resources/footage_deleted_bold.tres" id="4_0i1c0"]
 
 [sub_resource type="Theme" id="Theme_g4v7s"]
 
@@ -51,7 +51,7 @@ ratio = 1.25
 propagate_maximum_size = true
 layout_mode = 2
 stream = ExtResource("2_gq3o4")
-volume_db = 7.999999
+volume_db = 7.9999986
 autoplay = true
 expand = true
 
@@ -76,18 +76,18 @@ custom_minimum_size = Vector2(250, 0)
 layout_mode = 2
 size_flags_horizontal = 8
 size_flags_vertical = 0
-theme = ExtResource("3_bgejd")
+theme = ExtResource("4_0i1c0")
 
 [node name="MarginContainer" type="MarginContainer" parent="CloseHelp/PanelContainer" unique_id=1602937491]
 layout_mode = 2
 theme_override_constants/margin_left = 5
-theme_override_constants/margin_top = 4
+theme_override_constants/margin_top = 15
 theme_override_constants/margin_right = 5
-theme_override_constants/margin_bottom = 4
+theme_override_constants/margin_bottom = 15
 
 [node name="RichTextLabel" type="RichTextLabel" parent="CloseHelp/PanelContainer/MarginContainer" unique_id=660537868]
 layout_mode = 2
-theme = ExtResource("3_bgejd")
+theme = ExtResource("4_0i1c0")
 theme_override_font_sizes/normal_font_size = 36
 text = "[E] TO CLOSE"
 fit_content = true

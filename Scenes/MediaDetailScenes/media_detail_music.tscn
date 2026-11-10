@@ -2,7 +2,7 @@
 
 [ext_resource type="Script" uid="uid://bsroybcxayjx0" path="res://Scripts/Detail views/media_detail_music.gd" id="1_2jkmk"]
 [ext_resource type="AudioStream" uid="uid://gsc2qu7iu3tq" path="res://Assets/Sound/Divorce-music.wav" id="2_6spfm"]
-[ext_resource type="Theme" uid="uid://bo45umqon0p4n" path="res://Resources/footage_deleted.tres" id="5_6spfm"]
+[ext_resource type="Theme" uid="uid://dqi4kvhsxgpiv" path="res://Resources/footage_deleted_bold.tres" id="5_6spfm"]
 [ext_resource type="Texture2D" uid="uid://cvfrb3l5417vy" path="res://Assets/Screens/boombox_screen_animation-Sheet.png" id="5_50a30"]
 [ext_resource type="PackedScene" uid="uid://bt8utwxauv83n" path="res://Scenes/subtitle_player.tscn" id="5_g203u"]
 [ext_resource type="Texture2D" uid="uid://d1dfkl65dh5o3" path="res://Assets/Screens/boombox_screen_full.png" id="5_ruqcr"]
@@ -111,9 +111,9 @@ theme = ExtResource("5_6spfm")
 [node name="MarginContainer" type="MarginContainer" parent="CloseHelp/PanelContainer" unique_id=536324112]
 layout_mode = 2
 theme_override_constants/margin_left = 5
-theme_override_constants/margin_top = 4
+theme_override_constants/margin_top = 15
 theme_override_constants/margin_right = 5
-theme_override_constants/margin_bottom = 4
+theme_override_constants/margin_bottom = 15
 
 [node name="RichTextLabel" type="RichTextLabel" parent="CloseHelp/PanelContainer/MarginContainer" unique_id=1780150762]
 layout_mode = 2

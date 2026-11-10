@@ -1,0 +1,21 @@
+[gd_resource type="Theme" format=3 uid="uid://dqi4kvhsxgpiv"]
+
+[ext_resource type="FontFile" uid="uid://r2j7070qjkre" path="res://Assets/Fonts/home-video.bold.otf" id="1_oa7i4"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_cq3c8"]
+content_margin_left = 0.0
+content_margin_top = 0.0
+content_margin_right = 0.0
+content_margin_bottom = 0.0
+bg_color = Color(0.101960786, 0.101960786, 0.101960786, 0)
+border_width_left = 10
+border_width_top = 10
+border_width_right = 10
+border_width_bottom = 10
+border_color = Color(0.7176471, 0, 0, 1)
+corner_detail = 5
+
+[resource]
+PanelContainer/styles/panel = SubResource("StyleBoxFlat_cq3c8")
+RichTextLabel/colors/default_color = Color(0.7176471, 0, 0, 1)
+RichTextLabel/fonts/normal_font = ExtResource("1_oa7i4")

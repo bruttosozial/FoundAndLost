@@ -5,7 +5,7 @@
 [ext_resource type="Material" uid="uid://b5t1tq20v25tk" path="res://Shaders/film-opacity.tres" id="3_jsyho"]
 [ext_resource type="PackedScene" uid="uid://bt8utwxauv83n" path="res://Scenes/subtitle_player.tscn" id="3_rxnwp"]
 [ext_resource type="VideoStream" uid="uid://7ulg14rsm2f7" path="res://Assets/media_details/output-1by1.ogv" id="4_jsyho"]
-[ext_resource type="Theme" uid="uid://bo45umqon0p4n" path="res://Resources/footage_deleted.tres" id="4_uoivk"]
+[ext_resource type="Theme" uid="uid://dqi4kvhsxgpiv" path="res://Resources/footage_deleted_bold.tres" id="6_wts54"]
 
 [node name="MediaDetailVideo" type="Control" unique_id=6383193]
 layout_mode = 3
@@ -73,18 +73,18 @@ custom_minimum_size = Vector2(250, 0)
 layout_mode = 2
 size_flags_horizontal = 8
 size_flags_vertical = 0
-theme = ExtResource("4_uoivk")
+theme = ExtResource("6_wts54")
 
 [node name="MarginContainer" type="MarginContainer" parent="CloseHelp/PanelContainer" unique_id=1800200968]
 layout_mode = 2
 theme_override_constants/margin_left = 5
-theme_override_constants/margin_top = 4
+theme_override_constants/margin_top = 15
 theme_override_constants/margin_right = 5
-theme_override_constants/margin_bottom = 4
+theme_override_constants/margin_bottom = 15
 
 [node name="RichTextLabel" type="RichTextLabel" parent="CloseHelp/PanelContainer/MarginContainer" unique_id=420255694]
 layout_mode = 2
-theme = ExtResource("4_uoivk")
+theme = ExtResource("6_wts54")
 theme_override_font_sizes/normal_font_size = 36
 text = "[E] TO CLOSE"
 fit_content = true

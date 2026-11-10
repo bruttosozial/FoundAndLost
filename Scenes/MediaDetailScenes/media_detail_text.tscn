@@ -2,8 +2,8 @@
 
 [ext_resource type="Script" uid="uid://ctgg2n0fwb2fk" path="res://Scripts/Detail views/media_detail_text.gd" id="1_im5rv"]
 [ext_resource type="Texture2D" uid="uid://d2tsso112s6pk" path="res://Assets/media_details/floppy_screen.png" id="2_aglhs"]
-[ext_resource type="Theme" uid="uid://bo45umqon0p4n" path="res://Resources/footage_deleted.tres" id="3_13p33"]
 [ext_resource type="Texture2D" uid="uid://rbig5ypnwy2u" path="res://Assets/Screens/DetailedViewComputer.png" id="4_aglhs"]
+[ext_resource type="Theme" uid="uid://dqi4kvhsxgpiv" path="res://Resources/footage_deleted_bold.tres" id="4_iywwe"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_aglhs"]
 content_margin_left = 0.0
@@ -54,18 +54,18 @@ custom_minimum_size = Vector2(250, 0)
 layout_mode = 2
 size_flags_horizontal = 8
 size_flags_vertical = 0
-theme = ExtResource("3_13p33")
+theme = ExtResource("4_iywwe")
 
 [node name="MarginContainer" type="MarginContainer" parent="CloseHelp/PanelContainer" unique_id=1747786125]
 layout_mode = 2
 theme_override_constants/margin_left = 5
-theme_override_constants/margin_top = 4
+theme_override_constants/margin_top = 15
 theme_override_constants/margin_right = 5
-theme_override_constants/margin_bottom = 4
+theme_override_constants/margin_bottom = 15
 
 [node name="RichTextLabel" type="RichTextLabel" parent="CloseHelp/PanelContainer/MarginContainer" unique_id=1205333134]
 layout_mode = 2
-theme = ExtResource("3_13p33")
+theme = ExtResource("4_iywwe")
 theme_override_font_sizes/normal_font_size = 36
 text = "[E] TO CLOSE"
 fit_content = true
