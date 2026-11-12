@@ -1,14 +1,14 @@
 [gd_scene format=3 uid="uid://cqb7314h1gu1l"]
 
 [ext_resource type="Script" uid="uid://bocwip3aex8d0" path="res://Scripts/main.gd" id="1_d1ilt"]
-[ext_resource type="Texture2D" uid="uid://dqkm3i0j5556l" path="res://Assets/Screens/backgrounds/ConsoleView.png" id="1_hptm8"]
 [ext_resource type="PackedScene" uid="uid://c5cbhrcednbmc" path="res://Scenes/Skelly.tscn" id="1_jjgbg"]
+[ext_resource type="Texture2D" uid="uid://dt4k112mx0tw5" path="res://Assets/Screens/backgrounds/ConsoleViewBackground.png" id="2_3pmx8"]
+[ext_resource type="Texture2D" uid="uid://cijat37ow0cqv" path="res://Assets/Screens/backgrounds/ComputerViewBackground.png" id="4_u50mg"]
 [ext_resource type="Texture2D" uid="uid://buwwxd764gs3g" path="res://Assets/Screens/backgrounds/BoomBoxViewBackground.png" id="7_344ge"]
 [ext_resource type="Texture2D" uid="uid://bhrqryukoduwv" path="res://Assets/Screens/backgrounds/ProjectorViewBackground.png" id="8_ynf5e"]
 [ext_resource type="Texture2D" uid="uid://cg7lugcoj6iv5" path="res://Assets/Screens/backgrounds/ProjectorViewForeground.png" id="9_hptm8"]
 [ext_resource type="PackedScene" uid="uid://ga62wh6tp1sf" path="res://Scenes/boundary.tscn" id="9_ynf5e"]
 [ext_resource type="Script" uid="uid://cqwkfip48jcms" path="res://Scripts/Interaction System/interaction_controller.gd" id="10_fdnlq"]
-[ext_resource type="Texture2D" uid="uid://c4vkgasqugxcb" path="res://Assets/Screens/backgrounds/ComputerViewbackground.png" id="11_d1ilt"]
 [ext_resource type="PackedScene" uid="uid://bgfal12hurkah" path="res://Scenes/item.tscn" id="11_jkdf5"]
 [ext_resource type="Resource" uid="uid://dd83h02c8trhs" path="res://Data/Items/cassette_item.tres" id="12_wsu2k"]
 [ext_resource type="Texture2D" uid="uid://cwdie4xchlk2" path="res://Assets/Items/ComputerViewCassete.png" id="13_k12tt"]
@@ -56,7 +56,7 @@ script = ExtResource("1_d1ilt")
 texture_filter = 1
 position = Vector2(470.99994, 263)
 scale = Vector2(3, 3)
-texture = ExtResource("1_hptm8")
+texture = ExtResource("2_3pmx8")
 
 [node name="tvWallBoundary" type="StaticBody2D" parent="ConsoleView" unique_id=1847157749]
 
@@ -126,7 +126,7 @@ polygon = PackedVector2Array(-158.33331, 75.27879, -34.151184, 75.27879, 130.478
 texture_filter = 1
 position = Vector2(1768, 1213)
 scale = Vector2(3.025, 2.988889)
-texture = ExtResource("11_d1ilt")
+texture = ExtResource("4_u50mg")
 
 [node name="StaticBody2D2" type="StaticBody2D" parent="ComputerViewbackground" unique_id=1138628742]
 scale = Vector2(1, 0.99999994)
