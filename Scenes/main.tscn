@@ -146,7 +146,7 @@ scale = Vector2(1, 0.9999998)
 
 [node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="ComputerViewbackground/perspectiveChangePCCassette" unique_id=151477190]
 position = Vector2(-79.669426, 158.5874)
-polygon = PackedVector2Array(-82.64464, -113.420105, -82.55806, -102.3801, -82.31404, -71.26398, -74.38017, -70.260254, -75.041336, -113.75467)
+polygon = PackedVector2Array(-91.239655, -159.25653, -92.231384, -68.58737, -79.6694, -67.249084, -79.33884, -147.54648)
 
 [node name="perspectiveChange3" type="Area2D" parent="ComputerViewbackground" unique_id=381639278]
 scale = Vector2(1, 0.9999999)
@@ -217,7 +217,11 @@ position = Vector2(2266, -133)
 rotation = 1.5707964
 
 [node name="Boundary2" parent="." unique_id=453792594 instance=ExtResource("9_ynf5e")]
-position = Vector2(278, 1533)
+position = Vector2(1221, 1499)
+
+[node name="Boundary6" parent="." unique_id=1062098941 instance=ExtResource("9_ynf5e")]
+position = Vector2(1281, 1090)
+rotation = 1.5707964
 
 [node name="transitionCamera" type="Camera2D" parent="." unique_id=59504772]
 position = Vector2(472, 272)
@@ -282,10 +286,10 @@ position = Vector2(246, 346)
 position = Vector2(277, 382)
 
 [node name="camera2SpawnPos13" type="Node2D" parent="." unique_id=1164005409]
-position = Vector2(1372, 1457)
+position = Vector2(1420, 1440)
 
 [node name="camera2SpawnPos14" type="Node2D" parent="." unique_id=674012364]
-position = Vector2(1455, 1441)
+position = Vector2(1510, 1424)
 
 [node name="camera2SpawnPos15" type="Node2D" parent="." unique_id=453801251]
 position = Vector2(347, 1237)
