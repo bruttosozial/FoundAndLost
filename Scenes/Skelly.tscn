@@ -184,21 +184,23 @@ animations = [{
 }, {
 "duration": 1.0,
 "texture": SubResource("AtlasTexture_uuobk")
-}, {
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_4cv4b")
-}, {
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_7aqa8")
-}, {
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_2mkpq")
-}, {
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_qewkf")
 }],
 "loop": 0,
 "name": &"gun_side",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 2.0,
+"texture": SubResource("AtlasTexture_4cv4b")
+}, {
+"duration": 2.0,
+"texture": SubResource("AtlasTexture_7aqa8")
+}, {
+"duration": 2.0,
+"texture": SubResource("AtlasTexture_2mkpq")
+}],
+"loop": 0,
+"name": &"gun_side_end",
 "speed": 5.0
 }, {
 "frames": [{
@@ -322,7 +324,7 @@ texture_filter = 1
 position = Vector2(-2, -7)
 scale = Vector2(1.96875, 1.96875)
 sprite_frames = SubResource("SpriteFrames_r5iys")
-animation = &"destroy"
+animation = &"gun_side_end"
 
 [node name="AnimatedSprite2DArm" type="AnimatedSprite2D" parent="AnimatedSprite2D" unique_id=19763518]
 visible = false

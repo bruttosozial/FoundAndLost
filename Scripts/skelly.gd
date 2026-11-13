@@ -175,8 +175,11 @@ func destroy_item():
 	#TODO add sfx
 	item_sprite.visible = false
 	broken_item_sprite.visible = true
-	
-	await get_tree().create_timer(3.0).timeout
+	await animated_sprite.animation_finished
+	broken_item_sprite.visible = false
+	play_shoot_destroyed_item_end()
+	await animated_sprite.animation_finished
+	#await get_tree().create_timer(3.0).timeout
 	
 	broken_item_sprite.visible = false
 	broken_item_sprite.texture = null
@@ -194,6 +197,9 @@ func play_destroy_animation():
 	
 func play_shoot_destroyed_item():
 	animated_sprite.play("gun_side")
+
+func play_shoot_destroyed_item_end():
+	animated_sprite.play("gun_side_end")
 	
 func play_shoot_animation():
 	animated_sprite.play("gun_front")
